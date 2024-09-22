@@ -5,17 +5,20 @@ ano_nascimento = int(input("Ano:"))
 
 print("Preencha com a data de hoje:")
 dia_atual = int(input("Dia:"))
-mes_atual= int(input("Mês:"))
+mes_atual = int(input("Mês:"))
 ano_atual = int(input("Ano:"))
 
 ano_em_dias = (ano_atual - ano_nascimento) * 365
 mes_em_dias = (mes_atual - mes_nascimento) * 30
 
+if dia_atual < dia_nascimento:
+    mes_em_dias -= 30
+    dias = (dia_atual - dia_nascimento) + 30
+else:
+    dias = (dia_atual - dia_nascimento)
+
 if mes_atual < mes_nascimento or (mes_atual == mes_nascimento and dia_atual < dia_nascimento):
-  ano_em_dias -= 1
-
-
-dias = (dia_atual - dia_nascimento)
+    ano_em_dias -= 1
 
 idade_em_dias = ano_em_dias + mes_em_dias + dias
-print(f"A sua idade em dias é:", idade_em_dias)
+print(f"A sua idade em dias é: {idade_em_dias}")
