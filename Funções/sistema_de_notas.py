@@ -27,24 +27,23 @@ def adicionar_alunos():
         cond = False
 
 def imprime_boletim_turma():
-    if not alunos:
-        print("O Boletim está vazio.")
-        return
+  if not alunos:
+    print("O Boletim está vazio.")
+    return
     
-    print("\Boletim da Turma:")
-    for aluno in alunos:
-      print(f"Nome: {aluno['nome']}")
-      print(f"Notas: {aluno['notas']}")
+  print("\Boletim da Turma:")
+  for aluno in alunos:
+    print(f"Nome: {aluno['nome']}")
+    print(f"Notas: {aluno['notas']}")
 
 def calcular_media():
-    for aluno in alunos:
-      print(f"Nome: {aluno['nome']}")
-      print(f"Notas: {aluno['notas']}")
-      media = sum(aluno['notas']) / 3
-      print(f"Média do aluno {aluno['nome']} é {media}")
+  for aluno in alunos:
+    print(f"Nome: {aluno['nome']}")
+    print(f"Notas: {aluno['notas']}")
+    media = sum(aluno['notas']) / 3
+    print(f"Média do aluno {aluno['nome']} é {media}")
 
-
-# def classifica_aluno():
+def classifica_aluno():
 
 def sistema_de_notas():
         print("\n=== Sistema de Notas ===")
