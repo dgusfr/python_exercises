@@ -41,10 +41,22 @@ def calcular_media():
     print(f"Nome: {aluno['nome']}")
     print(f"Notas: {aluno['notas']}")
     media = sum(aluno['notas']) / 3
+    aluno['media'] = media
     print(f"Média do aluno {aluno['nome']} é {media}")
 
-def classifica_aluno():
 
+def classifica_aluno():
+  for aluno in alunos:
+     if ['media'] not in aluno:
+        print("É necessario calcular as medias.")
+  
+  alunos.sort(key=lambda aluno:aluno['media'], reverse=True)
+
+  for aluno in alunos:
+    print(f"Nome: {aluno['nome']}")
+    print(f"Notas: {aluno['media']}")
+
+      
 def sistema_de_notas():
         print("\n=== Sistema de Notas ===")
         print("1. Adicionar Aluno")
