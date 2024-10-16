@@ -65,7 +65,7 @@ def sistema_de_notas():
             case 3:
                 classifica_aluno()
             case 4:
-                imprime_boletim_classe()
+                imprime_boletim_turma()
             case 5:
                 print("Saindo do sistema...")
             case _:
