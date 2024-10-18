@@ -65,3 +65,21 @@ Alguns dos tópicos abordados nos exercícios incluem:
    ```bash
    git clone https://github.com/SeuUsuario/NomeDoRepositorio.git
    ```
+
+Navegue até a pasta do projeto:
+
+```bash
+cd NomeDoRepositorio
+```
+
+Execute os exercícios desejados:
+
+```bash
+python nome_do_arquivo.py
+```
+
+Siga as instruções de cada exercício para interagir com o código.
+
+## Autor
+
+Desenvolvido por Diego Franco
