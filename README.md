@@ -44,7 +44,9 @@ Cada exercício tem como objetivo ajudar no desenvolvimento das habilidades de p
 
 ## Explicação
 
-Cada exercício está implementado em Python e utiliza uma abordagem didática para solucionar o problema proposto. A estrutura do código é planejada para ser de fácil compreensão, permitindo que o usuário aprenda conceitos importantes e veja exemplos de implementação.
+Cada exercício está implementado em Python e utiliza uma abordagem didática para solucionar o problema proposto.
+
+A estrutura do código é planejada para ser de fácil compreensão, permitindo que o usuário aprenda conceitos importantes e veja exemplos de implementação.
 
 Alguns dos tópicos abordados nos exercícios incluem:
 
