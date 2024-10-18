@@ -30,7 +30,9 @@ Este projeto foi desenvolvido com o objetivo de consolidar o aprendizado em Pyth
 
 Este repositório contém uma coleção de exercícios de programação em Python.
 
-Os exercícios abrangem diversos tópicos, desde tipos de dados e estruturas condicionais até funções recursivas e manipulação de strings. Cada exercício tem como objetivo ajudar no desenvolvimento das habilidades de programação, explorando conceitos teóricos na prática.
+Os exercícios abrangem diversos tópicos, desde tipos de dados e estruturas condicionais até funções recursivas e manipulação de strings.
+
+Cada exercício tem como objetivo ajudar no desenvolvimento das habilidades de programação, explorando conceitos teóricos na prática.
 
 ## Funcionalidades
 
