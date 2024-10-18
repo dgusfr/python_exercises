@@ -61,10 +61,11 @@ Alguns dos tópicos abordados nos exercícios incluem:
 
 ## Como Usar
 
-1. Clone o repositório para sua máquina local:
-   ```bash
-   git clone https://github.com/SeuUsuario/NomeDoRepositorio.git
-   ```
+Clone o repositório para sua máquina local:
+
+```bash
+git clone https://github.com/SeuUsuario/NomeDoRepositorio.git
+```
 
 Navegue até a pasta do projeto:
 
