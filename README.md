@@ -1,4 +1,4 @@
-# Algoritmos em Python
+# Python
 
 Repositório contendo diversos exercícios de programação em Python, abordando desde conceitos básicos até tópicos mais avançados, como funções recursivas e manipulação de dados.
 
@@ -59,27 +59,46 @@ Alguns dos tópicos abordados nos exercícios incluem:
 - **Manipulação de Strings:** Processamento e modificação de textos.
 - **Bibliotecas Integradoras:** Uso de `datetime` e `random` para funcionalidades específicas.
 
-## Como Usar
+## **Gerenciadores de Pacotes e Ambientes Virtuais**
 
-Clone o repositório para sua máquina local:
-
+### **PIP e PyPI**
+O **PIP** instala pacotes do **PyPI**:
 ```bash
-git clone https://github.com/SeuUsuario/NomeDoRepositorio.git
+pip install requests
+```
+Arquivo `requirements.txt`:
+```
+requests==2.25.1
+Flask==1.1.2
+```
+Instalação em lote:
+```bash
+pip install -r requirements.txt
 ```
 
-Navegue até a pasta do projeto:
-
+### **Ambientes Virtuais**
+Criando um ambiente:
 ```bash
-cd NomeDoRepositorio
+virtualenv meu_ambiente
+```
+Ativando:
+```bash
+source meu_ambiente/bin/activate  # Linux/macOS
+meu_ambiente\Scripts\activate     # Windows
+```
+Saindo do ambiente:
+```bash
+deactivate
 ```
 
-Execute os exercícios desejados:
-
+### **Pipenv**
+Gerencia ambientes virtuais e dependências.
 ```bash
-python nome_do_arquivo.py
+pip install pipenv
+pipenv install flask
+pipenv shell
 ```
-
-Siga as instruções de cada exercício para interagir com o código.
+---
 
 ## Autor
 
