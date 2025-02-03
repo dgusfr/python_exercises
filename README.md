@@ -288,7 +288,6 @@ except ValueError:
 
 # Continuação do Material
 
-O conteúdo é extenso. Deseja que eu continue a formatação em Markdown para os próximos tópicos?
 
 
 ## Autor
