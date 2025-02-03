@@ -286,8 +286,6 @@ except ValueError:
 
 ---
 
-# Continuação do Material
-
 
 
 ## Autor
