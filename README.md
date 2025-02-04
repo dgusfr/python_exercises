@@ -8,10 +8,6 @@ Repositório contendo diversos exercícios de programação em Python, abordando
   </div>
 </div>
 
-## Status
-
-![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
-
 
 ## **Gerenciadores de Pacotes e Ambientes Virtuais**
 
