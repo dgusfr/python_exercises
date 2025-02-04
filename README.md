@@ -5,7 +5,6 @@ Repositório contendo diversos exercícios de programação em Python, abordando
 Este projeto foi desenvolvido com o objetivo de consolidar o aprendizado em Python por meio de práticas e exercícios.
 
 
-## Tecnologias Utilizadas
 
 <div style="display: flex; flex-direction: row;">
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
