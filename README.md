@@ -26,38 +26,7 @@ Este projeto foi desenvolvido com o objetivo de consolidar o aprendizado em Pyth
 
 ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
 
-## Descrição
 
-Este repositório contém uma coleção de exercícios de programação em Python.
-
-Os exercícios abrangem diversos tópicos, desde tipos de dados e estruturas condicionais até funções recursivas e manipulação de strings.
-
-Cada exercício tem como objetivo ajudar no desenvolvimento das habilidades de programação, explorando conceitos teóricos na prática.
-
-## Funcionalidades
-
-- Implementação de funções básicas e intermediárias.
-- Simulação de cenários do mundo real, como sistemas de inventário e controle de tráfego.
-- Utilização de bibliotecas integradas para funcionalidades específicas.
-- Aplicação de algoritmos para cálculos matemáticos, manipulação de listas e dicionários.
-- Classificação de alunos por média, manipulação de strings e cálculo de distâncias.
-
-## Explicação
-
-Cada exercício está implementado em Python e utiliza uma abordagem didática para solucionar o problema proposto.
-
-A estrutura do código é planejada para ser de fácil compreensão, permitindo que o usuário aprenda conceitos importantes e veja exemplos de implementação.
-
-Alguns dos tópicos abordados nos exercícios incluem:
-
-- **Tipos de Dados:** Uso de listas, tuplas, dicionários e sets para organizar informações.
-- **Estruturas Condicionais:** Implementação de decisões lógicas com `if`, `elif` e `else`.
-- **Operadores e Funções:** Realização de operações matemáticas e definição de funções.
-- **Loops:** Utilização de laços de repetição para percorrer listas e gerar sequências.
-- **Funções Anônimas (Lambda):** Uso de expressões lambda para simplificar a lógica.
-- **Funções Recursivas:** Resolução de problemas utilizando recursão.
-- **Manipulação de Strings:** Processamento e modificação de textos.
-- **Bibliotecas Integradoras:** Uso de `datetime` e `random` para funcionalidades específicas.
 
 ## **Gerenciadores de Pacotes e Ambientes Virtuais**
 
@@ -285,8 +254,187 @@ except ValueError:
 ```
 
 ---
+# Guia de Aprendizado em Python
 
+## Tipagem
+A tipagem em programação classifica os diferentes tipos de informações em um programa. Isso é essencial para:
 
+1. **Correção na Interpretação dos Dados**  
+   O computador precisa saber o tipo do dado para interpretá-lo corretamente. Exemplo:
+   - `01101000` como inteiro pode representar `104`
+   - `01101000` como caractere pode ser `'h'`
+
+2. **Alocação Eficiente de Memória**  
+   - Um `int` pode ocupar `4 bytes`
+   - Um `float` pode ocupar `8 bytes`
+   - Uma `string` ocupa espaço variável
+
+3. **Operações Corretas em Variáveis**  
+   - Inteiros podem ser somados, subtraídos, multiplicados.
+   - Strings podem ser concatenadas, divididas.
+   - Operações incompatíveis geram erros (`'texto' + 5` não é válido).
+
+## Variáveis
+Uma variável é um espaço na memória onde um valor pode ser armazenado e acessado.
+
+### Criando Variáveis
+Python não exige declaração de tipo:
+```python
+x = 5
+y = "John"
+print(x)  # 5
+print(y)  # John
+```
+
+Variáveis podem mudar de tipo:
+```python
+x = 4      # int
+x = "Sally"  # str
+print(x)  # Sally
+```
+
+### Atribuição e Referência
+A atribuição de uma variável a outra não cria uma nova cópia do valor, mas ambas apontam para o mesmo objeto:
+```python
+a = 3
+b = a  # 'b' aponta para o mesmo objeto que 'a'
+```
+
+### Tipagem Dinâmica
+As variáveis podem mudar de tipo dinamicamente:
+```python
+x = 4       # int
+x = "Sally" # str
+print(x)    # Sally
+```
+
+### Conversão de Tipos (Casting)
+```python
+x = str(3)    # '3'
+y = int(3)    # 3
+z = float(3)  # 3.0
+```
+
+### Obtendo o Tipo de uma Variável
+```python
+x = 5
+y = "John"
+print(type(x))  # <class 'int'>
+print(type(y))  # <class 'str'>
+```
+
+### Sensibilidade a Maiúsculas e Minúsculas
+```python
+a = 4
+A = "Sally"
+print(a)  # 4
+print(A)  # Sally
+```
+
+## Tipos de Dados
+Python possui vários tipos de dados integrados:
+
+| Categoria   | Tipo       | Descrição                         |
+|------------|-----------|---------------------------------|
+| Texto      | `str`      | Sequência de caracteres         |
+| Numéricos  | `int`      | Números inteiros                |
+|            | `float`    | Números de ponto flutuante      |
+|            | `complex`  | Números complexos               |
+| Sequência  | `list`     | Coleção ordenada e mutável      |
+|            | `tuple`    | Coleção ordenada e imutável     |
+|            | `range`    | Sequência de números            |
+| Mapeamento | `dict`     | Coleção de pares chave-valor    |
+| Conjuntos  | `set`      | Coleção não ordenada, sem duplicatas |
+|            | `frozenset`| Semelhante a `set`, mas imutável |
+| Booleano   | `bool`     | Representa `True` ou `False`    |
+| Binários   | `bytes`    | Sequência imutável de bytes     |
+|            | `bytearray`| Sequência mutável de bytes      |
+|            | `memoryview`| Acesso a dados binários         |
+| Nenhum     | `NoneType` | Representa ausência de valor    |
+
+### Inteiros (`int`)
+```python
+numero_inteiro = 10
+outro_inteiro = -3
+resultado = numero_inteiro + outro_inteiro  # 7
+print(resultado)
+```
+
+### Ponto Flutuante (`float`)
+```python
+numero_float = 3.14
+outro_float = 2.5
+resultado = numero_float * outro_float
+print(resultado)  # 7.85
+```
+
+#### Precisão de Ponto Flutuante
+```python
+resultado = 0.1 + 0.2
+print(resultado)  # 0.30000000000000004
+print(round(resultado, 2))  # 0.3
+print(f"{resultado:.2f}")  # 0.30
+```
+
+### Strings (`str`)
+```python
+nome = "Diego"
+mensagem = "Olá, " + nome + "!"
+print(mensagem)  # Olá, Diego!
+```
+
+#### Métodos Comuns de String
+```python
+texto = "Python é incrível"
+print(len(texto))        # 17
+print(texto.lower())     # python é incrível
+print(texto.upper())     # PYTHON É INCRÍVEL
+print(texto.strip())     # "Python é incrível"
+print(texto.replace("Python", "Programação"))
+print(texto.split())     # ['Python', 'é', 'incrível']
+```
+
+#### Índices e Fatiamento
+```python
+texto = "Python"
+print(texto[0])      # P
+print(texto[2:5])    # tho
+print(texto[::-1])   # nohtyP (inverso)
+```
+
+### Booleanos (`bool`)
+```python
+maior_de_idade = True
+if maior_de_idade:
+    print("Você tem permissão para votar.")
+```
+
+## Tipos Mutáveis e Imutáveis
+
+| Tipo         | Mutável? |
+|-------------|---------|
+| `int`       | Não     |
+| `float`     | Não     |
+| `str`       | Não     |
+| `tuple`     | Não     |
+| `list`      | Sim     |
+| `dict`      | Sim     |
+| `set`       | Sim     |
+
+Exemplo de tipo mutável:
+```python
+lista = [1, 2, 3]
+lista[1] = 10
+print(lista)  # [1, 10, 3]
+```
+
+Exemplo de tipo imutável:
+```python
+a = 5
+a = 10  # Cria um novo objeto, não altera o original
+```
+
+---
 
 ## Autor
 
