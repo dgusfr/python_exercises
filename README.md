@@ -447,9 +447,6 @@ pipenv install flask
 pipenv shell
 ```
 ---
----
----
----
 
 ## Autor
 
