@@ -1,6 +1,6 @@
 # Python
 
-Repositório contendo diversos exercícios de programação em Python, abordando desde conceitos básicos até tópicos mais avançados, além disso ele tambem possui.
+Repositório contendo diversos exercícios de programação em Python, abordando desde conceitos básicos até tópicos mais avançados, além disso ele tambem possui uma apostila detalhada com os principais conceitos de programação com Python.
 
 Este projeto foi desenvolvido com o objetivo de consolidar o aprendizado em Python por meio de práticas e exercícios.
 
