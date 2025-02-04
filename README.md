@@ -4,15 +4,6 @@ Repositório contendo diversos exercícios de programação em Python, abordando
 
 Este projeto foi desenvolvido com o objetivo de consolidar o aprendizado em Python por meio de práticas e exercícios.
 
-## Sumário
-
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Status](#status)
-- [Descrição](#descrição)
-- [Funcionalidades](#funcionalidades)
-- [Explicação](#explicação)
-- [Como Usar](#como-usar)
-- [Autor](#autor)
 
 ## Tecnologias Utilizadas
 
@@ -25,7 +16,6 @@ Este projeto foi desenvolvido com o objetivo de consolidar o aprendizado em Pyth
 ## Status
 
 ![Concluído](http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge)
-
 
 
 ## **Gerenciadores de Pacotes e Ambientes Virtuais**
