@@ -8,6 +8,38 @@ Repositório contendo diversos exercícios de programação em Python, abordando
   </div>
 </div>
 
+## Sumário
+
+1. [Tipagem](#tipagem)
+   - [Correção na Interpretação dos Dados](#correção-na-interpretação-dos-dados)
+   - [Alocação Eficiente de Memória](#alocação-eficiente-de-memória)
+   - [Operações Corretas em Variáveis](#operações-corretas-em-variáveis)
+2. [Variáveis](#variáveis)
+   - [Criando Variáveis](#criando-variáveis)
+   - [Atribuição e Referência](#atribuição-e-referência)
+   - [Tipagem Dinâmica](#tipagem-dinâmica)
+   - [Conversão de Tipos (Casting)](#conversão-de-tipos-casting)
+   - [Obtendo o Tipo de uma Variável](#obtendo-o-tipo-de-uma-variável)
+   - [Sensibilidade a Maiúsculas e Minúsculas](#sensibilidade-a-maiúsculas-e-minúsculas)
+3. [Tipos de Dados](#tipos-de-dados)
+   - [Inteiros (int)](#inteiros-int)
+   - [Ponto Flutuante (float)](#ponto-flutuante-float)
+   - [Precisão de Ponto Flutuante](#precisão-de-ponto-flutuante)
+   - [Strings (str)](#strings-str)
+   - [Métodos Comuns de String](#métodos-comuns-de-string)
+   - [Índices e Fatiamento](#índices-e-fatiamento)
+   - [Booleanos (bool)](#booleanos-bool)
+4. [Tipos Mutáveis e Imutáveis](#tipos-mutáveis-e-imutáveis)
+5. [Gerenciadores de Pacotes e Ambientes Virtuais](#gerenciadores-de-pacotes-e-ambientes-virtuais)
+   - [PIP e PyPI](#pip-e-pypi)
+   - [Ambientes Virtuais](#ambientes-virtuais)
+   - [Pipenv](#pipenv)
+6. [Autor](#autor)
+
+...
+
+
+
 # Fundamentos
 
 ## Introdução à Computação
