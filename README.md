@@ -1,7 +1,6 @@
 # Python
 
-Repositório contendo diversos exercícios de programação em Python, abordando desde conceitos básicos até tópicos mais avançados, além disso ele tambem possui uma apostila detalhada com os principais conceitos de programação com Python.
-
+Repositório contendo diversos exercícios de programação em Python, abordando desde conceitos básicos até tópicos mais avançados, além disso, ele também possui uma apostila detalhada com os principais conceitos de programação com Python.
 
 <div style="display: flex; flex-direction: row;">
   <div style="margin-right: 20px; display: flex; justify-content: flex-start;">
