@@ -652,6 +652,47 @@ Crie um sistema de notas escolares:
 
 ---
 
+## **Gerenciadores de Pacotes e Ambientes Virtuais**
+
+### **PIP e PyPI**
+O **PIP** instala pacotes do **PyPI**:
+```bash
+pip install requests
+```
+Arquivo `requirements.txt`:
+```
+requests==2.25.1
+Flask==1.1.2
+```
+Instalação em lote:
+```bash
+pip install -r requirements.txt
+```
+
+### **Ambientes Virtuais**
+Criando um ambiente:
+```bash
+virtualenv meu_ambiente
+```
+Ativando:
+```bash
+source meu_ambiente/bin/activate  # Linux/macOS
+meu_ambiente\Scripts\activate     # Windows
+```
+Saindo do ambiente:
+```bash
+deactivate
+```
+
+### **Pipenv**
+Gerencia ambientes virtuais e dependências.
+```bash
+pip install pipenv
+pipenv install flask
+pipenv shell
+```
+---
+
 ## Autor
 
 Desenvolvido por Diego Franco
