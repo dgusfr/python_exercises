@@ -658,7 +658,7 @@ Crie um sistema de notas escolares:
 
 Este guia cobre os principais conceitos básicos da programação em Python, incluindo estruturas condicionais, operadores, loops, funções e tratamento de exceções. Ele também apresenta exemplos de bibliotecas integradas e exercícios práticos para reforçar o aprendizado.
 
-
+---
 
 ## Autor
 
