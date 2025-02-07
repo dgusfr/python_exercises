@@ -70,7 +70,7 @@ Repositório contendo diversos exercícios de programação em Python, abordando
     - [Ranking de Alunos](#ranking-de-alunos)
     - [Cálculo de Fibonacci](#cálculo-de-fibonacci)
     - [Manipulação de Strings](#manipulação-de-strings)
-6. [Autor](#autor)
+13. [Autor](#autor)
 
 ...
 
