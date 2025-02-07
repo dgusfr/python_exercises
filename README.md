@@ -484,8 +484,6 @@ pipenv shell
 ```
 ---
 
-# Guia de Aprendizado em Python
-
 ## Estruturas Condicionais
 Estruturas condicionais permitem tomar decisões com base em condições.
 
