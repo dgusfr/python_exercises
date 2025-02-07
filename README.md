@@ -448,6 +448,218 @@ pipenv shell
 ```
 ---
 
+# Guia de Aprendizado em Python
+
+## Estruturas Condicionais
+Estruturas condicionais permitem tomar decisões com base em condições.
+
+### If
+```python
+idade = 20
+if idade >= 18:
+    print("Você é maior de idade.")
+```
+
+### Elif e Else
+```python
+idade = 16
+if idade >= 18:
+    print("Maior de idade.")
+elif idade >= 16:
+    print("Pode aprender a dirigir.")
+else:
+    print("Muito jovem para dirigir.")
+```
+
+## Operadores
+### Aritméticos
+- `+` Adição  
+- `-` Subtração  
+- `*` Multiplicação  
+- `/` Divisão  
+- `//` Divisão inteira  
+- `%` Módulo  
+- `**` Exponenciação  
+
+### Relacionais
+- `==` Igualdade  
+- `!=` Diferença  
+- `>` Maior  
+- `<` Menor  
+- `>=` Maior ou igual  
+- `<=` Menor ou igual  
+
+```python
+print(5 > 3)  # True
+print(5 == 5)  # True
+```
+
+### Lógicos
+- `and` Ambas condições verdadeiras  
+- `or` Pelo menos uma condição verdadeira  
+- `not` Inverte o valor lógico  
+
+```python
+print(True and False)  # False
+print(True or False)  # True
+print(not True)  # False
+```
+
+## Estruturas de Repetição (Loops)
+
+### Loop For
+```python
+for i in range(1, 21):
+    print(i, end=' ')
+```
+
+### Loop While
+```python
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1
+```
+
+## Exceções (Exceptions)
+
+### Tratamento de Exceções
+```python
+try:
+    x = int(input("Digite um número: "))
+except ValueError:
+    print("Erro! Esse não é um número válido.")
+```
+
+### Levantando Exceções
+```python
+def verificar_idade(idade):
+    if idade < 18:
+        raise ValueError("Idade menor que 18.")
+    print("Idade válida.")
+```
+
+## Bibliotecas Integradas
+
+### datetime
+```python
+import datetime
+now = datetime.datetime.now()
+print(f"Data e Hora Atual: {now}")
+```
+
+### random
+```python
+import random
+numero_aleatorio = random.randint(1, 10)
+print(f"Número aleatório: {numero_aleatorio}")
+```
+
+### os
+```python
+import os
+diretorio_atual = os.getcwd()
+print(f"Diretório atual: {diretorio_atual}")
+```
+
+### sys
+```python
+import sys
+print(f"Versão do Python: {sys.version}")
+```
+
+### math
+```python
+import math
+print(f"Raiz quadrada de 25: {math.sqrt(25)}")
+```
+
+### re (Expressões Regulares)
+```python
+import re
+texto = "O email de contato é exemplo@email.com"
+padrao = r"\w+@\w+\.\w+"
+email = re.search(padrao, texto)
+print(f"Email encontrado: {email.group()}")
+```
+
+## Funções
+
+### Definição de Funções
+```python
+def saudar(nome):
+    print("Olá, " + nome + "!")
+saudar("Diego")
+```
+
+### Funções Lambda
+```python
+soma = lambda a, b: a + b
+print(soma(5, 3))
+```
+
+### Funções Recursivas
+```python
+def fatorial(n):
+    if n == 1:
+        return 1
+    return n * fatorial(n - 1)
+print(fatorial(5))
+```
+
+### Função main()
+```python
+def main():
+    print("Este é o ponto de entrada do programa.")
+if __name__ == "__main__":
+    main()
+```
+
+## Exercícios
+
+### Inventário
+Crie um sistema de inventário que:
+- Armazene produtos, quantidades e preços.
+- Permita adicionar, remover e listar produtos.
+- Gere um relatório com a quantidade total e valor do estoque.
+
+### Sistema de Notas
+Crie um sistema de notas escolares:
+- Receba notas e calcule a média.
+- Classifique alunos como "Aprovado" (>=7), "Recuperação" (5-6.9) ou "Reprovado" (<5).
+
+### Controle de Tráfego
+- Pergunte quantos veículos passaram por um ponto.
+- Exiba "Tráfego alto" se passar do limite definido.
+
+### Simulador de Investimentos
+- Permita calcular juros compostos e comparar diferentes cenários.
+
+### Gerador de Números Primos
+- Encontre números primos até um limite informado.
+
+### Jogo de Adivinhação
+- Usuário tenta adivinhar um número aleatório de 1 a 100.
+- Informe se o número é maior ou menor após cada tentativa.
+
+### Sistema de Agendamento
+- Agende compromissos e calcule o tempo restante até a data.
+
+### Ranking de Alunos
+- Insira alunos e notas.
+- Ordene os alunos por desempenho.
+
+### Cálculo de Fibonacci
+- Compare versão iterativa e recursiva.
+
+### Manipulação de Strings
+- Conte vogais em uma frase.
+- Inverta uma string sem usar slicing.
+
+Este guia cobre os principais conceitos básicos da programação em Python, incluindo estruturas condicionais, operadores, loops, funções e tratamento de exceções. Ele também apresenta exemplos de bibliotecas integradas e exercícios práticos para reforçar o aprendizado.
+
+
+
 ## Autor
 
 Desenvolvido por Diego Franco
