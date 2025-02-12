@@ -175,6 +175,8 @@ A alocação de memória funciona de maneira semelhante à das listas simples, m
 
 ---
 
+<br></br>
+
 # Entrada e Saída de Dados
 
 ## A Função `print()`
