@@ -341,6 +341,8 @@ print(a)  # 4
 print(A)  # Sally
 ```
 
+<br></br>
+
 ## Tipos de Dados
 Python possui vários tipos de dados integrados:
 
