@@ -620,11 +620,6 @@ if __name__ == "__main__":
 
 
 
-
-
-### Sistema de Agendamento
-- Agende compromissos e calcule o tempo restante até a data.
-
 ### Ranking de Alunos
 - Insira alunos e notas.
 - Ordene os alunos por desempenho.
