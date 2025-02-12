@@ -621,9 +621,6 @@ if __name__ == "__main__":
 
 
 
-### Cálculo de Fibonacci
-- Compare versão iterativa e recursiva.
-
 ### Manipulação de Strings
 - Conte vogais em uma frase.
 - Inverta uma string sem usar slicing.
