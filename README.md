@@ -620,8 +620,7 @@ if __name__ == "__main__":
 
 
 
-### Gerador de Números Primos
-- Encontre números primos até um limite informado.
+
 
 ### Jogo de Adivinhação
 - Usuário tenta adivinhar um número aleatório de 1 a 100.
