@@ -618,13 +618,6 @@ if __name__ == "__main__":
 ```
 ---
 
-## Exercícios
-
-### Inventário
-Crie um sistema de inventário que:
-- Armazene produtos, quantidades e preços.
-- Permita adicionar, remover e listar produtos.
-- Gere um relatório com a quantidade total e valor do estoque.
 
 ### Sistema de Notas
 Crie um sistema de notas escolares:
