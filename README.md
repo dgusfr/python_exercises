@@ -85,6 +85,8 @@ Todo programa computacional exige dois recursos principais: **processamento** e 
 
 Em Python, assim como em outras linguagens de programação, a memória é um recurso fundamental que precisa ser gerido com eficiência para garantir que os programas funcionem corretamente e sem desperdícios.
 
+<br></br>
+
 ## Alocação de Memória
 
 A alocação de memória é o processo pelo qual o sistema operacional reserva espaço na memória RAM para que os programas possam armazenar e acessar dados. Em Python, esse processo é **gerenciado automaticamente** pelo interpretador, mas entender como a memória é alocada e gerida pode ajudar a escrever programas mais eficientes.
