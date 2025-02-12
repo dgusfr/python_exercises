@@ -619,10 +619,6 @@ if __name__ == "__main__":
 ---
 
 
-### Sistema de Notas
-Crie um sistema de notas escolares:
-- Receba notas e calcule a média.
-- Classifique alunos como "Aprovado" (>=7), "Recuperação" (5-6.9) ou "Reprovado" (<5).
 
 ### Controle de Tráfego
 - Pergunte quantos veículos passaram por um ponto.
