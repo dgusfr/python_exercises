@@ -620,9 +620,6 @@ if __name__ == "__main__":
 
 
 
-### Ranking de Alunos
-- Insira alunos e notas.
-- Ordene os alunos por desempenho.
 
 ### Cálculo de Fibonacci
 - Compare versão iterativa e recursiva.
