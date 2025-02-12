@@ -620,10 +620,6 @@ if __name__ == "__main__":
 
 
 
-### Controle de Tráfego
-- Pergunte quantos veículos passaram por um ponto.
-- Exiba "Tráfego alto" se passar do limite definido.
-
 ### Simulador de Investimentos
 - Permita calcular juros compostos e comparar diferentes cenários.
 
