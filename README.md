@@ -263,7 +263,8 @@ except ValueError:
 ```
 
 ---
-# Guia de Aprendizado em Python
+
+<br></br>
 
 ## Tipagem
 A tipagem em programação classifica os diferentes tipos de informações em um programa. Isso é essencial para:
