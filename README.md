@@ -659,6 +659,8 @@ Crie um sistema de notas escolares:
 
 ---
 
+<br></br>
+
 ## **Gerenciadores de Pacotes e Ambientes Virtuais**
 
 ### **PIP e PyPI**
