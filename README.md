@@ -539,6 +539,8 @@ def verificar_idade(idade):
     print("Idade válida.")
 ```
 
+<br></br>
+
 ## Bibliotecas Integradas
 
 ### datetime
