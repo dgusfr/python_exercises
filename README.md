@@ -622,10 +622,6 @@ if __name__ == "__main__":
 
 
 
-### Jogo de Adivinhação
-- Usuário tenta adivinhar um número aleatório de 1 a 100.
-- Informe se o número é maior ou menor após cada tentativa.
-
 ### Sistema de Agendamento
 - Agende compromissos e calcule o tempo restante até a data.
 
