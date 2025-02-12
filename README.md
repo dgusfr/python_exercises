@@ -620,9 +620,6 @@ if __name__ == "__main__":
 
 
 
-### Simulador de Investimentos
-- Permita calcular juros compostos e comparar diferentes cenários.
-
 ### Gerador de Números Primos
 - Encontre números primos até um limite informado.
 
