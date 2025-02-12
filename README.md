@@ -618,9 +618,6 @@ if __name__ == "__main__":
 ```
 ---
 
-
----
-
 <br></br>
 
 ## **Gerenciadores de Pacotes e Ambientes Virtuais**
