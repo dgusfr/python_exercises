@@ -74,8 +74,6 @@ Repositório contendo diversos exercícios de programação em Python, abordando
 
 ...
 
-
-
 # Fundamentos
 
 ## Introdução à Computação
