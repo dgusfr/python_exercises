@@ -448,6 +448,8 @@ a = 10  # Cria um novo objeto, não altera o original
 
 ---
 
+<br></br>
+
 # Estruturas Condicionais
 Estruturas condicionais permitem tomar decisões com base em condições.
 
