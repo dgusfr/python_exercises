@@ -14,7 +14,6 @@ def determinante_laplace_3x3(matriz):
 
     # O determinante é a soma dos produtos de cada elemento pelo seu cofator
     determinante = (a * cofator_a) + (b * cofator_b) + (c * cofator_c)
-
     return determinante
 
 # Matriz de exemplo fornecida:
