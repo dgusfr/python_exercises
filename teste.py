@@ -1,8 +1,6 @@
 def determinante_laplace_3x3(matriz):
     """
 
-    Args:
-        matriz: Uma lista de listas representando uma matriz 3x3.
 
     Returns:
         O determinante da matriz.
