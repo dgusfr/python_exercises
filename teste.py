@@ -2,8 +2,6 @@ def determinante_laplace_3x3(matriz):
     """
 
 
-    Returns:
-        O determinante da matriz.
 
     Raises:
         ValueError: Se a matriz de entrada não for 3x3.
