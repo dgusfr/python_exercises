@@ -1,6 +1,5 @@
 def determinante_laplace_3x3(matriz):
     """
-    Calcula o determinante de uma matriz 3x3 usando o Teorema de Laplace (expansão por cofatores).
 
     Args:
         matriz: Uma lista de listas representando uma matriz 3x3.
