@@ -1,6 +1,4 @@
 def determinante_laplace_3x3(matriz):
-    """
-
     if len(matriz) != 3 or any(len(row) != 3 for row in matriz):
         raise ValueError("A matriz deve ser 3x3.")
 
