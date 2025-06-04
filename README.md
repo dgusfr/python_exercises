@@ -334,86 +334,43 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 ---
 
-## Exercício 
+# Lista de Exercícios – Python Básico e Estrutura de Dados
+
+
+1. Leia três números inteiros, calcule a média aritmética simples e informe se cada número está abaixo, acima ou exatamente na média, apresentando os resultados em uma única linha organizada.
+
+2. Solicite o valor de um investimento inicial, a taxa de juros anual e o número de anos, então calcule e mostre o montante anual acumulado usando juros compostos, imprimindo uma linha para cada ano com o saldo atualizado.
+
+3. Crie um programa que solicite dois números inteiros e uma operação matemática (`+`, `-`, `*`, `/`). Execute a operação escolhida e exiba o resultado. Utilize tratamento de exceções para divisões por zero e entradas inválidas.
+
+4. Solicite ao usuário seu nome completo e idade. Imprima uma saudação personalizada e informe em que ano ele completará 100 anos.
+
+5. Faça um programa que receba uma lista de 5 nomes digitados pelo usuário, ordene-os alfabeticamente e exiba o resultado com uma numeração.
+
+6. Crie uma função `classificar_idade()` que recebe a idade como parâmetro e retorna se a pessoa é "criança", "adolescente", "adulto" ou "idoso". Utilize essa função com dados lidos do usuário.
+
+7. Crie um dicionário para armazenar dados de um livro: título, autor, ano e número de páginas. Solicite os dados ao usuário e, ao final, exiba o dicionário formatado.
+
+8. Solicite um número inteiro positivo e use um laço `for` para imprimir todos os números pares de 0 até esse número, inclusive.
+
+9. Crie uma lista de números inteiros e utilize um laço `for` para imprimir a soma acumulada dos elementos, passo a passo, linha por linha.
+
+10. Escreva uma função chamada `dividir()` que receba dois números como parâmetros, realize a divisão e trate o caso de divisão por zero com um `try/except`.
+
+11. Solicite uma sequência de números separados por vírgula. Converta a entrada para uma lista de inteiros, remova duplicatas usando um `set` e exiba os valores únicos ordenados.
+
+12. Dada uma tupla com cinco notas de um aluno, calcule a média e informe se ele foi aprovado (média ≥ 6), exibindo também a maior e menor nota.
+
+13. Crie um dicionário com o nome de três cidades como chaves e suas temperaturas atuais como valores. Depois, exiba qual cidade está mais quente e qual está mais fria.
+
+14. Faça um programa que simula um menu de opções com `while`: o usuário pode digitar `1` para adicionar um nome a uma lista, `2` para listar os nomes, `0` para sair. O menu deve se repetir até que o usuário digite `0`.
+
+15. Escreva uma função `conversor_temperatura()` que receba um valor em Celsius e retorne o valor correspondente em Fahrenheit. Peça ao usuário a temperatura e exiba o resultado usando a função.
+
+---
 
 
 
-
-
-
-
-
-
-
-
-
-17. Solicite uma frase, remova pontuação e acentuação, e verifique se é um palíndromo; caso seja, mostre “palíndromo perfeito”, caso contrário exiba a frase invertida e o índice da primeira divergência.
-
-18. Desenvolva uma calculadora de frações que leia duas frações no formato a/b, peça a operação (+, −, \*, /) e devolva o resultado simplificado juntamente com a fração mista, se houver.
-
-19. Implemente um sistema de login simples que leia usuário e senha, verifique-os em um dicionário pré-definido e registre tentativas incorretas em um arquivo .log, avisando o usuário apenas após três erros consecutivos.
-
-20. Crie uma função recursiva que calcule o fatorial, mas utilize memoização com um dicionário global para evitar recomputações e mostre o conteúdo do cache após a chamada principal.
-
-21. Leia um número inteiro positivo e identifique o par de números amigos imediatamente anterior e posterior a ele (se existirem), exibindo-os em frase única.
-
-22. Peça ao usuário um texto grande, substitua todas as ocorrências de datas DD/MM/AAAA por AAAA-MM-DD usando expressão regular e indique quantas substituições foram feitas.
-
-23. Implemente uma função que receba um número inteiro e devolva uma lista com sua representação em base binária, octal e hexadecimal, todas sem prefixos.
-
-24. Crie um script que aceite, via linha de comando (argparse), um arquivo CSV contendo nomes e idades, calcule a média de idades e imprima “Arquivo X ok: média Y” ou mensagem de erro caso o arquivo não exista.
-
-25. Escreva uma classe ContaBancaria com métodos depositar, sacar e transferir e atributos protegidos saldo e titular; crie dois objetos, realize algumas operações e imprima um extrato resumido final.
-
-26. Crie uma subclasse ContaPoupanca que herde de ContaBancaria, aplique juros mensais em método próprio e demonstre o efeito após doze meses, exibindo saldo inicial e final.
-
-27. Desenvolva um gerenciador de contexto (with) chamado temporizador que meça o tempo de execução de um bloco de código e imprima “Executado em X,YYY s” ao sair do contexto.
-
-28. Implemente uma classe Data que suporte operadores de comparação (<, >, ==) baseados em dia, mês e ano e permita incremento de um dia usando o operador +=; demonstre comparações e incrementos.
-
-29. Crie uma função decoradora que registre, em JSON, o nome da função decorada, os argumentos recebidos e o timestamp de execução; aplique a deco­radora a duas funções de sua escolha e mostre o arquivo gerado.
-
-30. Utilize o módulo threading para disparar simultaneamente três tarefas que imprimam “tarefa N iniciada” e “tarefa N concluída” com sleep aleatório; sincronize a conclusão usando join e avise quando todas finalizarem.
-
-31. Reescreva o exercício anterior usando asyncio e corrotinas, garantindo que o relatório final indique qual abordagem (threads ou async) concluiu primeiro.
-
-32. Escreva um analisador de logs Apache que leia um arquivo access.log, conte requisições por código de status HTTP e exiba o top 3 em frase contínua.
-
-33. Implemente uma API REST mínima com Flask que possua endpoints GET /itens, POST /itens e DELETE /itens/<id>, armazene dados em memória e exiba um resumo das rotas disponíveis quando executada.
-
-34. Adapte a API anterior para usar SQLite via SQLAlchemy, criando automaticamente a tabela Item se não existir e retornando JSON detalhado das operações.
-
-35. Crie testes unitários usando pytest para os endpoints da API SQLAlchemy, verificando códigos de resposta e conteúdo JSON, e informe a cobertura de testes ao final.
-
-36. Desenvolva um script que faça requisição GET a uma API pública de cotação de moedas, converta um valor de BRL para USD e EUR e exiba as três quantias em um único parágrafo.
-
-37. Escreva um programa que gere um arquivo Excel (.xlsx) contendo três colunas: número, quadrado e cubo para valores de 1 a 50, salvando o arquivo como tabela-potencias.xlsx e confirmando a criação.
-
-38. Implemente uma classe Pessoa com nome e idade e uma propriedade calculada chamada categoria que retorna “menor”, “adulto” ou “idoso”; leia cinco pessoas, armazene-as em lista e mostre quantas caem em cada categoria.
-
-39. Crie um script que leia um arquivo de configuração INI, aplique-lhe uma atualização de chave solicitada pelo usuário e grave o arquivo atualizado, indicando sucesso ou falha.
-
-40. Leia um diretório informado na linha de comando e gere um relatório CSV com caminho completo, tamanho em bytes e data de modificação de cada arquivo, ignorando subdiretórios ocultos.
-
-41. Faça um validador de senha que exija no mínimo 8 caracteres, uma letra maiúscula, uma minúscula, um número e um símbolo; informe ao usuário quais requisitos ainda faltam até a senha ser aceita.
-
-42. Implemente um algoritmo que encontre o menor caminho entre duas cidades usando o algoritmo de Dijkstra em um grafo não dirigido lido de um JSON de distâncias e mostre o trajeto calculado.
-
-43. Crie um compress-decompress simples: leia um texto, comprima-o usando zlib, mostre o tamanho original e comprimido e depois descomprima confirmando integridade.
-
-44. Desenvolva um sistema de votação que registre candidatos em um dicionário, permita votos por número e, ao fim, exiba vencedor, total de votos e percentual de participação.
-
-45. Implemente um crawler que visite uma URL inicial, siga até 30 links internos distintos, colete títulos das páginas e salve em arquivo HTML com uma lista de links e títulos.
-
-46. Crie uma classe Vetor2D com operações de soma, subtração, produto escalar e módulo, suportando operadores +, − e \*. Demonstre as operações com dois vetores lidos do usuário.
-
-47. Construa um script que converta arquivos Markdown de um diretório em HTML usando a biblioteca markdown, salvando cada arquivo com o mesmo nome e extensão .html, e indique quantos foram convertidos.
-
-48. Desenvolva um analisador sintático simples que leia expressões matemáticas contendo +, −, \*, / e parênteses, converta-as para árvore de expressão e avalie o resultado, exibindo a forma pós-fixa e o valor numérico.
-
-49. Implemente um simulador de fila de atendimento usando a classe Queue do módulo queue, com threads produtoras que geram senhas e consumidoras que atendem, mostrando tempo médio de espera.
-
-50. Crie um jogo texto-baseado “Aventuras no Castelo” com classes Sala, Item e Jogador, permitindo mover-se entre salas, pegar itens, salvar e carregar o estado em arquivo JSON e exibindo a conclusão quando o jogador encontrar o tesouro final.
 
 
 ## Autor
