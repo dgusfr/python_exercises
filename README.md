@@ -347,19 +347,6 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 
 
-
-11. Gere a sequência de Fibonacci até ultrapassar 10 000, armazene-a em lista, e exiba quantos termos foram gerados, qual o maior termo e a soma de todos eles.
-
-12. Leia um número inteiro positivo e informe se ele é perfeito, abundante ou deficiente, explicando o critério na mesma sentença de saída.
-
-13. Escreva um algoritmo que construa o Triângulo de Floyd para N linhas (fornecido pelo usuário) e represente o triângulo completo em uma única string multiline sem usar loops aninhados explícitos.
-
-14. Implemente uma função que ordene uma lista de tuplas (nome, nota) por nota descendente e, em caso de empate, por nome ascendente; depois peça dez entradas ao usuário, aplique a função e mostre o ranking final em uma linha.
-
-15. Faça um simulador de lançamento de dois dados que execute 1 000 jogadas, registre as somas obtidas em um dicionário de frequências e mostre o par valor–frequência mais recorrente.
-
-16. Crie um gerador (yield) que, dado um número N, produza todos os números primos menores que N; então leia N, consuma o gerador e mostre quantos primos foram gerados e qual o maior deles.
-
 17. Solicite uma frase, remova pontuação e acentuação, e verifique se é um palíndromo; caso seja, mostre “palíndromo perfeito”, caso contrário exiba a frase invertida e o índice da primeira divergência.
 
 18. Desenvolva uma calculadora de frações que leia duas frações no formato a/b, peça a operação (+, −, \*, /) e devolva o resultado simplificado juntamente com a fração mista, se houver.
