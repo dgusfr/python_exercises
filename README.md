@@ -1,6 +1,5 @@
 # Python
 
-
 # Python Básico
 
 ## 1. Sintaxe Básica
