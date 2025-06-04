@@ -347,13 +347,6 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 
 
-7. Solicite um valor monetário em reais e apresente a quantidade mínima de cédulas e moedas necessárias, usando notas de 200, 100, 50, 20, 10, 5 e 2 e moedas de 1, 0,50, 0,25, 0,10, 0,05 e 0,01, separadas apenas por vírgulas.
-
-8. Receba dois horários no formato HH\:MM\:SS, calcule a diferença absoluta entre eles em horas, minutos e segundos e mostre o resultado em frase única.
-
-9. Peça ao usuário uma palavra e uma letra, conte quantas vezes a letra aparece, informe as posições onde ocorre e mostre a palavra com essas letras em maiúsculas no mesmo output.
-
-10. Crie um programa que leia vários números até que o usuário digite “fim”; ao final informe a soma total, a média, o maior, o menor e a quantidade de valores, tudo em um único parágrafo.
 
 11. Gere a sequência de Fibonacci até ultrapassar 10 000, armazene-a em lista, e exiba quantos termos foram gerados, qual o maior termo e a soma de todos eles.
 
