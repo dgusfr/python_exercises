@@ -245,6 +245,100 @@ Teste a função com diferentes valores, incluindo zero como divisor.
 ---
 
 
+# Estruturas de Dados
+
+Estruturas de dados são formas de organizar e armazenar valores para uso eficiente. Em Python, as mais comuns são listas, tuplas, conjuntos (sets) e dicionários. Cada uma tem características específicas, vantagens e limitações.
+
+---
+
+## 1. Listas
+
+**Listas** são coleções ordenadas e **mutáveis** de elementos. Permitem armazenar qualquer tipo de dado e alterar o conteúdo após a criação.
+
+```python
+frutas = ["maçã", "banana", "laranja"]
+print(frutas[0])       # Acessa o primeiro item
+frutas.append("uva")   # Adiciona um item
+frutas.remove("banana")  # Remove um item
+print(frutas)
+```
+
+É possível acessar os elementos por índices, modificar, ordenar, iterar com `for`, entre outros.
+
+---
+
+## 2. Tuplas
+
+**Tuplas** são semelhantes às listas, mas são **imutáveis**. Após criadas, seus valores não podem ser alterados. Isso as torna mais seguras e eficientes em termos de desempenho.
+
+```python
+coordenadas = (10, 20)
+print(coordenadas[0])   # Acessa o primeiro item
+
+# coordenadas[0] = 30 → Erro: tuplas não podem ser modificadas
+```
+
+Tuplas são úteis quando os dados não devem ser alterados, como posições fixas, constantes ou valores de configuração.
+
+---
+
+## 3. Sets (Conjuntos)
+
+**Sets** são coleções **não ordenadas**, **sem elementos duplicados**. São ideais para eliminar repetições e realizar operações matemáticas como união, interseção e diferença.
+
+```python
+numeros = {1, 2, 3, 3, 4}
+print(numeros)  # {1, 2, 3, 4}
+
+numeros.add(5)
+numeros.remove(2)
+
+outro_set = {3, 4, 6}
+print(numeros.intersection(outro_set))  # {3, 4}
+```
+
+Por não terem ordem, não é possível acessar os elementos por índice.
+
+---
+
+## 4. Dicionários
+
+**Dicionários** armazenam pares **chave\:valor**. São mutáveis, rápidos e usados para representar dados estruturados.
+
+```python
+pessoa = {
+    "nome": "Ana",
+    "idade": 30,
+    "cidade": "São Paulo"
+}
+
+print(pessoa["nome"])         # Ana
+pessoa["idade"] = 31          # Atualiza valor
+pessoa["profissão"] = "Engenheira"  # Adiciona novo par
+del pessoa["cidade"]          # Remove uma chave
+print(pessoa)
+```
+
+Dicionários são fundamentais em APIs, bancos de dados e manipulação de dados JSON.
+
+---
+
+## Aplicação no Mundo Real
+
+* **Listas**: armazenar listas de produtos, nomes ou dados retornados de um banco.
+* **Tuplas**: representar dados fixos como coordenadas geográficas ou configurações imutáveis.
+* **Sets**: verificar itens únicos, filtrar duplicatas ou comparar grupos.
+* **Dicionários**: armazenar objetos estruturados, como dados de usuário em um sistema web.
+
+Em Flask, os dados das requisições (como formulários e JSON) muitas vezes são tratados como dicionários.
+
+---
+
+## Exercício 
+
+
+
+
 
 
 
