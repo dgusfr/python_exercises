@@ -346,13 +346,6 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 
 
-3. Receba a data de nascimento de uma pessoa no formato DD/MM/AAAA e a data atual, calcule a idade exata em anos, meses e dias e exiba a mensagem em uma única sentença clara.
-
-4. Leia um inteiro de 0 a 999 999, converta-o em texto por extenso (sem acentos) e informe também quantos algarismos o compõem.
-
-5. Peça ao usuário o raio e a altura de um cilindro, calcule volume e área total e explique, na mesma linha, se a área é maior que, menor que ou igual ao dobro do volume.
-
-6. Implemente um verificador de CPF que leia uma string, normalize-a removendo caracteres não numéricos, calcule os dígitos verificadores e diga se o CPF informado é válido ou qual seria o CPF corrigido.
 
 7. Solicite um valor monetário em reais e apresente a quantidade mínima de cédulas e moedas necessárias, usando notas de 200, 100, 50, 20, 10, 5 e 2 e moedas de 1, 0,50, 0,25, 0,10, 0,05 e 0,01, separadas apenas por vírgulas.
 
