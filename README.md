@@ -369,8 +369,37 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 ---
 
+media_tres_numeros.py
 
+juros_compostos_anuais.py
 
+calculadora_simples_com_excecoes.py
+
+ano_cem_anos.py
+
+ordenar_nomes_lista.py
+
+classificacao_idade_funcao.py
+
+dicionario_dados_livro.py
+
+pares_ate_numero.py
+
+soma_acumulada_lista.py
+
+divisao_com_tratamento.py
+
+lista_unica_ordenada.py
+
+avaliacao_aluno_tupla.py
+
+temperatura_cidades.py
+
+menu_interativo_nomes.py
+
+conversor_celsius_fahrenheit.py
+
+---
 
 
 ## Autor
