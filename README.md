@@ -344,11 +344,7 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 
 
-## Exercícios
 
-1. Leia três números inteiros, calcule a média aritmética simples e informe se cada número está abaixo, acima ou exatamente na média, apresentando os resultados em uma única linha organizada.
-
-2. Solicite o valor de um investimento inicial, a taxa de juros anual e o número de anos, então calcule e mostre o montante anual acumulado usando juros compostos, imprimindo uma linha para cada ano com o saldo atualizado.
 
 3. Receba a data de nascimento de uma pessoa no formato DD/MM/AAAA e a data atual, calcule a idade exata em anos, meses e dias e exiba a mensagem em uma única sentença clara.
 
