@@ -401,6 +401,110 @@ conversor_celsius_fahrenheit.py
 ---
 
 
+# Módulos
+
+Programas bem organizados são divididos em partes menores e reutilizáveis. Em Python, essas partes são chamadas de **módulos**. Usar módulos ajuda a manter o código limpo, reaproveitável e mais fácil de manter.
+
+---
+
+## 1. O Que São Módulos?
+
+Um **módulo** é um arquivo `.py` que contém definições e implementações de variáveis, funções ou classes. Ao importar um módulo, podemos usar seus recursos em outro arquivo ou programa.
+
+Python já vem com uma biblioteca padrão de módulos prontos para uso, mas você também pode criar os seus.
+
+---
+
+## 2. Módulos Embutidos (Built-in)
+
+Python possui diversos módulos nativos que você pode importar a qualquer momento sem instalar nada.
+
+Exemplo com o módulo `math`, usado para cálculos matemáticos:
+
+```python
+import math
+
+raiz = math.sqrt(25)
+print("Raiz quadrada de 25:", raiz)
+
+print("Valor de PI:", math.pi)
+```
+
+Outros módulos embutidos úteis:
+
+* `random`: geração de números aleatórios
+* `datetime`: manipulação de datas e horários
+* `os`: interação com o sistema operacional
+* `sys`: acesso a informações do sistema Python
+* `statistics`: funções estatísticas básicas
+
+---
+
+## 3. Módulos Personalizados
+
+Você pode criar seu próprio módulo. Basta escrever um arquivo `.py` com funções ou variáveis e importá-lo em outro arquivo.
+
+### Exemplo prático:
+
+**Arquivo: `meu_modulo.py`**
+
+```python
+def saudacao(nome):
+    return f"Olá, {nome}!"
+```
+
+**Arquivo: `app.py`**
+
+```python
+import meu_modulo
+
+mensagem = meu_modulo.saudacao("Ana")
+print(mensagem)
+```
+
+Ambos os arquivos devem estar no mesmo diretório (ou seguir a estrutura de pacotes correta).
+
+---
+
+## 4. Importando de Forma Específica
+
+Você pode importar somente o que deseja de um módulo:
+
+```python
+from math import sqrt
+
+print(sqrt(16))  # Não precisa escrever math.sqrt
+```
+
+Também é possível dar apelidos:
+
+```python
+import math as m
+print(m.pi)
+```
+
+---
+
+## Aplicação no Mundo Real
+
+Módulos são fundamentais em projetos maiores. Por exemplo, em uma aplicação Flask, cada parte do sistema pode estar em um módulo diferente:
+
+* Um módulo para as rotas
+* Um módulo para o banco de dados
+* Um módulo para funções auxiliares
+
+Isso torna o código mais organizado, facilita testes e reaproveitamento de código.
+
+
+## Exercício Sugerido
+
+1. Crie um módulo chamado `calculadora.py` com funções: `somar(a, b)`, `subtrair(a, b)`, `multiplicar(a, b)` e `dividir(a, b)`.
+2. Em outro arquivo `app.py`, importe esse módulo e use as funções com valores fornecidos pelo usuário.
+
+---
+
+
+
 ## Autor
 
 Desenvolvido por Diego Franco
