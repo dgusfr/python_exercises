@@ -752,8 +752,6 @@ Use-a com um `for` para imprimir os pares de 2 a 10.
 
 ---
 
-
-
 ## Autor
 
 Desenvolvido por Diego Franco
