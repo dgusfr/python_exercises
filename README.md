@@ -653,6 +653,119 @@ Crie um decorador chamado `@mostrar_log` que imprima uma mensagem antes e depois
 
 ---
 
+````markdown
+# Python Básico (Parte 7)  
+## Iteradores (Iterators)
+
+Em Python, um **iterador** é um objeto que permite **percorrer uma sequência de elementos**, um por vez. Ele é a base de estruturas como loops `for` e `while`.
+
+---
+
+## 1. Introdução Teórica
+
+Um iterador segue dois princípios:
+
+- Ele **mantém um estado interno**, ou seja, sabe onde parou na sequência.
+- Ele fornece os elementos **um por um**, por meio da função `next()`.
+
+Para ser considerado um iterador, um objeto precisa implementar os métodos especiais:
+
+- `__iter__()` – retorna o próprio objeto iterador.
+- `__next__()` – retorna o próximo item ou gera um erro `StopIteration` quando a sequência termina.
+
+Todo **objeto iterável** (como listas, strings, tuplas) pode gerar um iterador.
+
+---
+
+## 2. Exemplo Prático
+
+```python
+nomes = ["Ana", "Bruno", "Carlos"]
+it = iter(nomes)
+
+print(next(it))  # Ana
+print(next(it))  # Bruno
+print(next(it))  # Carlos
+# print(next(it)) → Lança StopIteration
+````
+
+Outro exemplo com `for`, que usa internamente um iterador:
+
+```python
+for nome in nomes:
+    print(nome)
+```
+
+---
+
+## 3. Criando um Iterador Personalizado
+
+Você também pode criar sua própria classe que se comporta como um iterador:
+
+```python
+class Contador:
+    def __init__(self, limite):
+        self.atual = 0
+        self.limite = limite
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.atual < self.limite:
+            num = self.atual
+            self.atual += 1
+            return num
+        else:
+            raise StopIteration
+
+contador = Contador(3)
+for numero in contador:
+    print(numero)
+```
+
+---
+
+## 4. Explicação do Código
+
+A classe `Contador` começa no zero e vai até o limite definido. Cada chamada ao `next()` retorna o número atual e incrementa.
+
+Quando atinge o limite, a exceção `StopIteration` é lançada automaticamente para encerrar a iteração.
+
+---
+
+## 5. Aplicações no Mundo Real
+
+Iteradores são amplamente usados para percorrer coleções de dados:
+
+* Em APIs para processar grandes volumes de registros paginados.
+* Em leitura de arquivos linha por linha com `open()`.
+* Em bibliotecas como `pandas`, `Flask` (para `request.stream`) e `itertools`.
+
+Além disso, ao criar um iterador personalizado, você tem controle total sobre o fluxo e formato dos dados sendo percorridos.
+
+---
+
+## 6. Exercício Sugerido
+
+Crie uma classe `IntervaloPares` que recebe dois números inteiros (início e fim). Ela deve ser um iterador que retorna **apenas os números pares** entre esses valores, inclusive.
+
+Use-a com um `for` para imprimir os pares de 2 a 10.
+
+---
+
+## Referências
+
+* [W3Schools – Python Iterators](https://www.w3schools.com/python/python_iterators.asp)
+* [Documentação Oficial do Python](https://docs.python.org/3/)
+* *Python Fluente* — Luciano Ramalho
+
+```
+
+Deseja seguir com **generators** (geradores), que são uma continuação natural dos iteradores? Ou deseja fechar o módulo de fundamentos e iniciar os conteúdos de **Flask**?
+```
+
+
 
 
 
