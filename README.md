@@ -579,12 +579,10 @@ Crie uma lista com tuplas representando produtos: `(nome, preço)`. Use `sorted(
 
 ---
 
-
 # Decoradores (Decorators)
 
 Decoradores são um recurso avançado e poderoso do Python. Eles permitem **modificar o comportamento de funções** de forma elegante, sem alterar diretamente o código da função original.
 
----
 
 ## 1. Introdução Teórica
 
