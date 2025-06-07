@@ -653,9 +653,8 @@ Crie um decorador chamado `@mostrar_log` que imprima uma mensagem antes e depois
 
 ---
 
-````markdown
-# Python Básico (Parte 7)  
-## Iteradores (Iterators)
+
+# Iteradores (Iterators)
 
 Em Python, um **iterador** é um objeto que permite **percorrer uma sequência de elementos**, um por vez. Ele é a base de estruturas como loops `for` e `while`.
 
@@ -753,17 +752,6 @@ Crie uma classe `IntervaloPares` que recebe dois números inteiros (início e fi
 Use-a com um `for` para imprimir os pares de 2 a 10.
 
 ---
-
-## Referências
-
-* [W3Schools – Python Iterators](https://www.w3schools.com/python/python_iterators.asp)
-* [Documentação Oficial do Python](https://docs.python.org/3/)
-* *Python Fluente* — Luciano Ramalho
-
-```
-
-Deseja seguir com **generators** (geradores), que são uma continuação natural dos iteradores? Ou deseja fechar o módulo de fundamentos e iniciar os conteúdos de **Flask**?
-```
 
 
 
