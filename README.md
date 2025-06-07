@@ -685,7 +685,7 @@ print(next(it))  # Ana
 print(next(it))  # Bruno
 print(next(it))  # Carlos
 # print(next(it)) → Lança StopIteration
-````
+```
 
 Outro exemplo com `for`, que usa internamente um iterador:
 
