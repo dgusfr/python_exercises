@@ -658,7 +658,6 @@ Crie um decorador chamado `@mostrar_log` que imprima uma mensagem antes e depois
 
 Em Python, um **iterador** é um objeto que permite **percorrer uma sequência de elementos**, um por vez. Ele é a base de estruturas como loops `for` e `while`.
 
----
 
 ## 1. Introdução Teórica
 
