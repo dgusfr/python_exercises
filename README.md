@@ -580,6 +580,85 @@ Crie uma lista com tuplas representando produtos: `(nome, preço)`. Use `sorted(
 ---
 
 
+# Decoradores (Decorators)
+
+Decoradores são um recurso avançado e poderoso do Python. Eles permitem **modificar o comportamento de funções** de forma elegante, sem alterar diretamente o código da função original.
+
+---
+
+## 1. Introdução Teórica
+
+Um decorador é, na prática, uma **função que recebe outra função como argumento e retorna uma nova função com comportamento modificado**.
+
+Decoradores são muito usados para adicionar funcionalidades extras, como:
+
+- Verificar permissões
+- Registrar chamadas
+- Medir tempo de execução
+- Validar parâmetros
+
+Python já possui decoradores prontos, como `@staticmethod` ou `@property`, mas também é possível criar seus próprios decoradores.
+
+---
+
+## 2. Exemplo Prático
+
+```python
+def meu_decorador(funcao_original):
+    def nova_funcao():
+        print("Antes da função")
+        funcao_original()
+        print("Depois da função")
+    return nova_funcao
+
+@meu_decorador
+def diga_ola():
+    print("Olá!")
+
+diga_ola()
+```
+
+---
+
+## 3. Explicação do Código
+
+A função `meu_decorador` recebe `funcao_original` como argumento. Dentro dela, é definida `nova_funcao()`, que chama `funcao_original()` no meio de dois `print()`.
+
+O uso de `@meu_decorador` antes da definição de `diga_ola()` significa que, ao chamar `diga_ola()`, o Python na verdade executa `nova_funcao()` — ou seja, a função decorada.
+
+---
+
+## 4. Aplicações no Mundo Real
+
+Decoradores são muito utilizados em frameworks como Flask e Django.
+
+Por exemplo, no Flask:
+
+```python
+@app.route('/home')
+def home():
+    return "Página inicial"
+```
+
+Aqui, `@app.route` é um decorador que associa a função `home()` à rota `/home`.
+
+Outros exemplos práticos:
+
+* `@login_required`: usado para proteger rotas que só podem ser acessadas por usuários autenticados.
+* `@cache`: para armazenar o resultado de funções e acelerar execuções futuras.
+* `@log_execution`: para registrar em log quando a função foi chamada.
+
+
+## 5. Exercício Sugerido
+
+Crie um decorador chamado `@mostrar_log` que imprima uma mensagem antes e depois da execução de uma função. Use-o para decorar uma função que imprime "Processando dados...".
+
+---
+
+
+
+
+
 
 
 
