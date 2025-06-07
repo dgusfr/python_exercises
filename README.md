@@ -503,6 +503,84 @@ Isso torna o código mais organizado, facilita testes e reaproveitamento de cód
 
 ---
 
+# Funções Lambda
+
+Funções **lambda** são funções anônimas em Python — ou seja, funções que **não têm nome**. São usadas quando se precisa de uma função rápida e simples, geralmente passada como argumento para outra função.
+
+---
+
+## 1. Introdução Teórica
+
+Uma função lambda é definida em **uma única linha**, usando a palavra-chave `lambda`. Ela pode ter **vários parâmetros**, mas **apenas uma expressão**, que é automaticamente retornada.
+
+A sintaxe é:
+
+```python
+lambda argumentos: expressão
+```
+
+Funções lambda são comumente usadas quando se quer evitar a criação de uma função nomeada para tarefas pequenas.
+
+---
+
+## 2. Exemplo Prático
+
+```python
+# Função lambda que soma dois números
+soma = lambda x, y: x + y
+
+print(soma(3, 5))  # Resultado: 8
+```
+
+Elas também são muito usadas com funções como `map()`, `filter()` e `sorted()`:
+
+```python
+# Dobrar todos os números de uma lista
+numeros = [1, 2, 3, 4]
+dobrados = list(map(lambda x: x * 2, numeros))
+print(dobrados)  # [2, 4, 6, 8]
+```
+
+---
+
+## 3. Explicação do Código
+
+No primeiro exemplo, `lambda x, y: x + y` define uma função que recebe dois parâmetros e retorna a soma deles. Essa função é atribuída à variável `soma`, que pode ser chamada como qualquer função normal.
+
+No segundo exemplo, `map()` aplica a função lambda (que multiplica por 2) a cada item da lista `numeros`.
+
+---
+
+## 4. Aplicações no Mundo Real
+
+Funções lambda são úteis em situações onde funções são **passadas como argumentos**, especialmente em programação funcional e manipulação de dados.
+
+Exemplos reais incluem:
+
+* Ordenar listas de dicionários com base em um campo.
+* Aplicar transformações rápidas a listas de dados.
+* Definir regras de ordenação em frameworks como Flask ou Pandas.
+
+```python
+# Ordenando lista de dicionários por idade
+pessoas = [
+    {"nome": "Ana", "idade": 30},
+    {"nome": "Bruno", "idade": 25}
+]
+
+ordenadas = sorted(pessoas, key=lambda pessoa: pessoa["idade"])
+print(ordenadas)
+```
+
+
+## 5. Exercício Sugerido
+
+Crie uma lista com tuplas representando produtos: `(nome, preço)`. Use `sorted()` com uma função lambda para ordenar os produtos pelo preço, do menor para o maior, e imprima o resultado formatado.
+
+---
+
+
+
 
 
 ## Autor
