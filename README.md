@@ -784,7 +784,7 @@ Estes exercícios avançam no uso de recursos intermediários da linguagem Pytho
 
 ---
 
-**Dica:** Tente implementar cada exercício de forma modular. Onde for possível, divida em funções, use comentários explicativos e teste com diferentes valores de entrada.
+
 
 ---
 
