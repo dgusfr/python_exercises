@@ -744,13 +744,55 @@ Além disso, ao criar um iterador personalizado, você tem controle total sobre 
 
 ---
 
-## 6. Exercício Sugerido
+```markdown
+# Lista de Exercícios – Python Básico (Parte 2)  
+## Módulos, Lambdas, Decoradores e Iteradores
 
-Crie uma classe `IntervaloPares` que recebe dois números inteiros (início e fim). Ela deve ser um iterador que retorna **apenas os números pares** entre esses valores, inclusive.
-
-Use-a com um `for` para imprimir os pares de 2 a 10.
+Estes exercícios avançam no uso de recursos intermediários da linguagem Python. Eles visam fortalecer o domínio sobre modularização, programação funcional, controle de execução e iteração personalizada.
 
 ---
+
+1. Crie um módulo chamado `utilitarios.py` que contenha uma função `dobrar(numero)` e outra `eh_par(numero)`. Em outro arquivo, importe e use essas funções com valores fornecidos pelo usuário.
+
+2. Implemente uma função lambda que receba dois números e retorne o maior deles. Teste a função com diferentes pares de valores.
+
+3. Use `map()` com uma lambda para transformar uma lista de temperaturas em graus Celsius para Fahrenheit. Imprima a nova lista.
+
+4. Dada a lista `palavras = ["python", "lambda", "decorador", "função"]`, use `filter()` com lambda para exibir apenas as palavras com mais de 6 letras.
+
+5. Crie um decorador chamado `@logar` que imprima `"Iniciando execução..."` antes da função e `"Execução finalizada."` depois. Use-o para decorar uma função que imprime "Processando dados...".
+
+6. Implemente um decorador `@verificar_login` que só executa a função se o usuário estiver autenticado (`usuario_autenticado = True`). Caso contrário, exiba "Acesso negado".
+
+7. Escreva uma função `ordenar_produtos()` que recebe uma lista de tuplas `(produto, preço)` e retorna a lista ordenada do mais barato ao mais caro usando `sorted()` com lambda.
+
+8. Escreva uma função `contar_letras()` que recebe uma lista de palavras e retorna outra lista com o número de letras de cada palavra. Use `map()` com lambda.
+
+9. Crie um módulo chamado `calculadora.py` com funções `somar`, `subtrair`, `multiplicar` e `dividir`. Faça um programa que importe esse módulo e use as funções com base na escolha do usuário.
+
+10. Escreva um decorador `@tempo_execucao` que calcula o tempo que uma função leva para ser executada. Use a função `time.time()` e aplique-o sobre uma função que faz um `sleep(2)`.
+
+11. Crie uma classe `ContadorRegressivo` que recebe um número inteiro `n` e implementa um iterador que conta de `n` até 0, imprimindo cada valor com `for`.
+
+12. Faça uma classe `MultiploDeTres` que implemente um iterador que percorre de 1 até um limite informado, retornando apenas múltiplos de 3.
+
+13. Escreva uma função que recebe uma lista de nomes e retorna um dicionário onde as chaves são os nomes e os valores são o número de letras de cada nome. Use `lambda` e `map()` ou `dict comprehension`.
+
+14. Crie um iterador que percorra uma string letra por letra, mas apenas retorne as consoantes, ignorando vogais.
+
+15. Implemente uma função `executar_duas_vezes(func)` como decorador, que faz com que a função decorada seja executada duas vezes seguidas.
+
+---
+
+**Dica:** Tente implementar cada exercício de forma modular. Onde for possível, divida em funções, use comentários explicativos e teste com diferentes valores de entrada.
+
+---
+```
+
+Se desejar, posso gerar o **gabarito comentado** para essa lista depois que você praticar. Pronto para começar Flask ou deseja ainda mais prática com esses conceitos?
+
+
+
 
 ## Autor
 
