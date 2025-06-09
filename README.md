@@ -787,9 +787,7 @@ Estes exercícios avançam no uso de recursos intermediários da linguagem Pytho
 **Dica:** Tente implementar cada exercício de forma modular. Onde for possível, divida em funções, use comentários explicativos e teste com diferentes valores de entrada.
 
 ---
-```
 
-Se desejar, posso gerar o **gabarito comentado** para essa lista depois que você praticar. Pronto para começar Flask ou deseja ainda mais prática com esses conceitos?
 
 
 
