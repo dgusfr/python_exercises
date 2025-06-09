@@ -788,10 +788,6 @@ Estes exercícios avançam no uso de recursos intermediários da linguagem Pytho
 
 ---
 
-
-
-
-
 ## Autor
 
 Desenvolvido por Diego Franco
