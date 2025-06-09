@@ -745,7 +745,6 @@ Além disso, ao criar um iterador personalizado, você tem controle total sobre 
 ---
 
 # Lista de Exercícios 
-## Módulos, Lambdas, Decoradores e Iteradores
 
 Estes exercícios avançam no uso de recursos intermediários da linguagem Python. Eles visam fortalecer o domínio sobre modularização, programação funcional, controle de execução e iteração personalizada.
 
