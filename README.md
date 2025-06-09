@@ -747,8 +747,6 @@ Além disso, ao criar um iterador personalizado, você tem controle total sobre 
 # Lista de Exercícios 
 
 
----
-
 1. Crie um módulo chamado `utilitarios.py` que contenha uma função `dobrar(numero)` e outra `eh_par(numero)`. Em outro arquivo, importe e use essas funções com valores fornecidos pelo usuário.
 
 2. Implemente uma função lambda que receba dois números e retorne o maior deles. Teste a função com diferentes pares de valores.
