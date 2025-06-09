@@ -744,7 +744,6 @@ Além disso, ao criar um iterador personalizado, você tem controle total sobre 
 
 ---
 
-```markdown
 # Lista de Exercícios – Python Básico (Parte 2)  
 ## Módulos, Lambdas, Decoradores e Iteradores
 
@@ -781,10 +780,6 @@ Estes exercícios avançam no uso de recursos intermediários da linguagem Pytho
 14. Crie um iterador que percorra uma string letra por letra, mas apenas retorne as consoantes, ignorando vogais.
 
 15. Implemente uma função `executar_duas_vezes(func)` como decorador, que faz com que a função decorada seja executada duas vezes seguidas.
-
----
-
-
 
 ---
 
