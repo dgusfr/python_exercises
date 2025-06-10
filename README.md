@@ -1130,9 +1130,6 @@ Implemente testes manuais em um arquivo `main.py` que:
 - *Flask Web Development* — Miguel Grinberg  
 
 
-
-
-
 ## Autor
 
 Desenvolvido por Diego Franco
