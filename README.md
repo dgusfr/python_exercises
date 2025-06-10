@@ -1087,7 +1087,50 @@ Implemente testes manuais em um arquivo `main.py` que:
 
 ## Referências
 
-* [Real Python – Object-Oriented Programming](https://realpython.com/python3-object-oriented-programming/)
+# Referências Utilizadas até o Momento
+
+## Documentação Oficial do Python
+- https://docs.python.org/3/  
+- https://docs.python.org/3/tutorial/modules.html  
+- https://docs.python.org/3/py-modindex.html  
+- https://docs.python.org/3/tutorial/errors.html#exceptions  
+- https://docs.python.org/3/tutorial/classes.html  
+
+## Tutoriais e Artigos Técnicos
+- **TutorialsPoint** – Sintaxe Básica  
+  - https://www.tutorialspoint.com/python/python_basic_syntax.htm  
+- **Programiz** – Conversão de Tipos  
+  - https://www.programiz.com/python-programming/type-conversion-and-casting  
+- **Real Python**  
+  - Variáveis: https://realpython.com/python-variables/  
+  - Exceções: https://realpython.com/python-exceptions/  
+  - Módulos e Pacotes: https://realpython.com/python-modules-packages/  
+  - Lambda: https://realpython.com/python-lambda/  
+  - POO: https://realpython.com/python3-object-oriented-programming/  
+- **DataCamp** – Decorators  
+  - https://www.datacamp.com/tutorial/decorators-python  
+- **PythonBasics** – Decorators  
+  - https://pythonbasics.org/decorators/  
+- **TutorialsTeacher** – Magic (Dunder) Methods  
+  - https://www.tutorialsteacher.com/python/magic-methods-in-python  
+
+## W3Schools – Seção Python
+- Página principal: https://www.w3schools.com/python/  
+- Variáveis: https://www.w3schools.com/python/python_variables.asp  
+- Listas: https://www.w3schools.com/python/python_lists.asp  
+- Tuplas: https://www.w3schools.com/python/python_tuples.asp  
+- Sets: https://www.w3schools.com/python/python_sets.asp  
+- Dicionários: https://www.w3schools.com/python/python_dictionaries.asp  
+- Inheritance: https://www.w3schools.com/python/python_inheritance.asp  
+- Lambda: https://www.w3schools.com/python/python_lambda.asp  
+- Iterators: https://www.w3schools.com/python/python_iterators.asp  
+
+## Livros
+- *Python Fluente* — Luciano Ramalho  
+- *Flask Web Development* — Miguel Grinberg  
+
+
+
 * [Python Docs – Classes](https://docs.python.org/3/tutorial/classes.html)
 * [W3Schools – Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 * [TutorialsTeacher – Magic Methods](https://www.tutorialsteacher.com/python/magic-methods-in-python)
