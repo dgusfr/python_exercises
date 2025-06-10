@@ -1005,16 +1005,6 @@ Esse pequeno domínio mostra classes cooperando via composição, herança opcio
 
 ---
 
-## 11. Exercícios Finais
-
-1. Construa `ContaBancaria` com saldo e limite. Adicione depósito, saque e transferência entre contas usando validação de saldo.
-2. Implemente `Produto` com preço e estoque. Crie `Carrinho` que adiciona produtos e calcula total, usando composição.
-3. Crie `Animal`, `Cachorro` e `Gato`. Cada um deve sobrescrever `falar()`. Use polimorfismo para imprimir o som de cada animal em um loop.
-4. Desenvolva `Polinomio` que aceita lista de coeficientes, implementa `__add__`, `__call__` (avaliação em x) e `__repr__`.
-5. Modele `Agenda` que armazena contatos. Cada `Contato` possui vários telefones. Use propriedades para validar formato de telefone.
-
----
-
 ## Referências
 
 * [Real Python – Object-Oriented Programming](https://realpython.com/python3-object-oriented-programming/)
