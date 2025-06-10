@@ -1127,8 +1127,6 @@ Implemente testes manuais em um arquivo `main.py` que:
 
 ## Livros
 - *Python Fluente* — Luciano Ramalho  
-- *Flask Web Development* — Miguel Grinberg  
-
 
 ## Autor
 
