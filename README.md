@@ -1005,6 +1005,86 @@ Esse pequeno domínio mostra classes cooperando via composição, herança opcio
 
 ---
 
+
+# Lista de Exercícios de POO
+
+
+## 1. Exercício 1 — Classe `Retângulo`
+
+Crie uma classe `Retangulo` que receba base e altura no construtor.  
+Implemente:
+
+- Método `area()` que devolve a área.  
+- Método `perimetro()` que devolve o perímetro.  
+- Dunder `__repr__` para exibir `Retangulo(base=..., altura=...)`.
+
+Escreva um script que leia dois retângulos, exiba área e perímetro de cada um e indique qual possui maior área.
+
+---
+
+## 2. Exercício 2 — Herança e Polimorfismo em `Veículo`
+
+Crie a classe base `Veiculo` com atributo `velocidade`.  
+Crie duas classes filhas:
+
+- `Carro` com atributo adicional `portas`.  
+- `Moto` com atributo adicional `cilindradas`.
+
+Ambas devem sobrescrever o método `descrever()` herdado da classe pai para incluir seus detalhes.  
+Escreva uma função `mostrar_info(veiculo)` que receba qualquer veículo e chame `descrever()`, demonstrando polimorfismo.
+
+---
+
+## 3. Exercício 3 — Dunder Methods em `Fracao`
+
+Implemente a classe `Fracao` com numerador e denominador.  
+Adicione:
+
+- Validação para denominador diferente de zero.  
+- `__add__`, `__sub__` e `__mul__` para somar, subtrair e multiplicar frações.  
+- `__repr__` retornando `"Fracao(n/d)"`.  
+
+Crie um script que leia duas frações do usuário e exiba os resultados das três operações.
+
+---
+
+## 4. Projeto — Sistema de Biblioteca Simplificado
+
+**Objetivo**: modelar uma pequena biblioteca que gerencia livros e empréstimos.  
+
+### Requisitos
+
+1. **Classes principais**  
+   - `Livro` → título, autor, ano, total de exemplares e exemplares disponíveis.  
+   - `Usuario` → nome, e-mail e lista de livros emprestados.  
+   - `Biblioteca` → coleções de livros e usuários.
+
+2. **Métodos essenciais**  
+   - `Biblioteca.adicionar_livro(livro)`  
+   - `Biblioteca.cadastrar_usuario(usuario)`  
+   - `Biblioteca.emprestar(titulo, usuario)` com validações de disponibilidade.  
+   - `Biblioteca.devolver(titulo, usuario)` que atualiza status e datas.  
+
+3. **Relatórios**  
+   - Método para listar livros disponíveis ordenados por ano.  
+   - Método para listar usuários e quantidade de livros emprestados.
+
+4. **Extras sugeridos**  
+   - Dunder `__repr__` para `Livro` e `Usuario`.  
+   - Persistência simples em JSON para salvar e carregar dados.  
+   - Tratamento de exceções para casos de livro inexistente ou usuário não cadastrado.
+
+Implemente testes manuais em um arquivo `main.py` que:
+
+1. Cadastre três livros e dois usuários.  
+2. Realize dois empréstimos e uma devolução.  
+3. Exiba os relatórios.
+
+---
+
+> Resolva cada exercício em um arquivo separado antes de iniciar o projeto. Isso garante domínio das técnicas usadas no desafio maior.
+```
+
 ## Referências
 
 * [Real Python – Object-Oriented Programming](https://realpython.com/python3-object-oriented-programming/)
