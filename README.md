@@ -1131,7 +1131,7 @@ Implemente testes manuais em um arquivo `main.py` que:
 
 
 
-* [Python Docs – Classes](https://docs.python.org/3/tutorial/classes.html)
+
 * [W3Schools – Inheritance](https://www.w3schools.com/python/python_inheritance.asp)
 * [TutorialsTeacher – Magic Methods](https://www.tutorialsteacher.com/python/magic-methods-in-python)
 * *Python Fluente* — Luciano Ramalho
