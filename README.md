@@ -1133,10 +1133,6 @@ Implemente testes manuais em um arquivo `main.py` que:
 
 
 
-* [TutorialsTeacher – Magic Methods](https://www.tutorialsteacher.com/python/magic-methods-in-python)
-* *Python Fluente* — Luciano Ramalho
-
-
 ## Autor
 
 Desenvolvido por Diego Franco
