@@ -1083,7 +1083,7 @@ Implemente testes manuais em um arquivo `main.py` que:
 ---
 
 > Resolva cada exercício em um arquivo separado antes de iniciar o projeto. Isso garante domínio das técnicas usadas no desafio maior.
-```
+
 
 ## Referências
 
