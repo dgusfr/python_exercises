@@ -1125,6 +1125,8 @@ Implemente testes manuais em um arquivo `main.py` que:
 ## Livros
 - *Python Fluente* — Luciano Ramalho  
 
+---
+
 ## Autor
 
 Desenvolvido por Diego Franco
