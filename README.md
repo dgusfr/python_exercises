@@ -1084,8 +1084,6 @@ Implemente testes manuais em um arquivo `main.py` que:
 
 ## Referências
 
-# Referências Utilizadas até o Momento
-
 ## Documentação Oficial do Python
 - https://docs.python.org/3/  
 - https://docs.python.org/3/tutorial/modules.html  
