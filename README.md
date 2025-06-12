@@ -26,7 +26,7 @@
   - [4. Dicionários](#4-dicionários)
   - [Aplicação no Mundo Real](#aplicação-no-mundo-real-1)
 
-- [Lista de Exercícios – Python Básico e Estrutura de Dados](#lista-de-exercícios--python-básico-e-estrutura-de-dados)
+- [Lista de Exercícios 1](#lista-de-exercícios-1)
 
 - [Módulos](#módulos)
   - [1. O Que São Módulos?](#1-o-que-são-módulos)
@@ -391,8 +391,7 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 ---
 
-# Lista de Exercícios – Python Básico e Estrutura de Dados
-
+# Lista de Exercícios 1
 
 1. Leia três números inteiros, calcule a média aritmética simples e informe se cada número está abaixo, acima ou exatamente na média, apresentando os resultados em uma única linha organizada.
 
