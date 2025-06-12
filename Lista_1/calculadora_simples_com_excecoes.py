@@ -25,6 +25,8 @@ except ValueError as e:
     print(f"Erro: {e}")
     resultado = None
 
+print(f"O resultado da operação {num1} {operacao} {num2} é: {resultado}" if resultado is not None else "Não foi possível calcular o resultado devido a um erro.")
+
        
     
 
