@@ -1127,5 +1127,5 @@ Implemente testes manuais em um arquivo `main.py` que:
 
 ## Autor
 
-Desenvolvido por Diego Franco
+
 
