@@ -1,6 +1,6 @@
 lista_nomes = []
 
-for i in range(5):
+for i in range(1, 6):
   nome = input(f"Digite o {i} nome: ")
   lista_nomes.append(nome)
 
