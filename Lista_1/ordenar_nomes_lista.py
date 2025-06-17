@@ -1,7 +1,7 @@
 lista_nomes = []
 
 for i in range(5):
-  nome = input("Digite o nome: ")
+  nome = input(f"Digite o {i} nome: ")
   lista_nomes.append(nome)
 
 lista_nomes.sort()
