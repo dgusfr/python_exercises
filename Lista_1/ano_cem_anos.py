@@ -1,1 +1,1 @@
-idade = 
+idade = int(input)
