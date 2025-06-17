@@ -1,1 +1,1 @@
-idade = int(input)
+idade = int(input("Digite sua idade:"))
