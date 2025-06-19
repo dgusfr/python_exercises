@@ -411,18 +411,6 @@ Em Flask, os dados das requisições (como formulários e JSON) muitas vezes sã
 
 9. Crie uma lista de números inteiros e utilize um laço `for` para imprimir a soma acumulada dos elementos, passo a passo, linha por linha.
 
-10. Escreva uma função chamada `dividir()` que receba dois números como parâmetros, realize a divisão e trate o caso de divisão por zero com um `try/except`.
-
-11. Solicite uma sequência de números separados por vírgula. Converta a entrada para uma lista de inteiros, remova duplicatas usando um `set` e exiba os valores únicos ordenados.
-
-12. Dada uma tupla com cinco notas de um aluno, calcule a média e informe se ele foi aprovado (média ≥ 6), exibindo também a maior e menor nota.
-
-13. Crie um dicionário com o nome de três cidades como chaves e suas temperaturas atuais como valores. Depois, exiba qual cidade está mais quente e qual está mais fria.
-
-14. Faça um programa que simula um menu de opções com `while`: o usuário pode digitar `1` para adicionar um nome a uma lista, `2` para listar os nomes, `0` para sair. O menu deve se repetir até que o usuário digite `0`.
-
-15. Escreva uma função `conversor_temperatura()` que receba um valor em Celsius e retorne o valor correspondente em Fahrenheit. Peça ao usuário a temperatura e exiba o resultado usando a função.
-
 ---
 
 media_tres_numeros.py
