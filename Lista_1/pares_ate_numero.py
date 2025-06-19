@@ -8,7 +8,5 @@ if numero < 0:
 else:
     print(f"Os numeros pares de 0 até{numero} são:")
     for i in range(0, numero + 1, 2):
-        print(i, end='  ')
-    print()  
-
-        
+        print(i, end="  ")
+    print()
