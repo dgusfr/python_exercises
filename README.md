@@ -39,6 +39,7 @@
 - [Funções Lambda](#funções-lambda)
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
+## List Comprehensions
 - [Lista de Exercícios](#lista-de-exercícios)
 
 - [Programação Orientada a Objetos em Python](#programação-orientada-a-objetos-em-python)
@@ -755,6 +756,191 @@ Iteradores são amplamente usados para percorrer coleções de dados:
 * Em bibliotecas como `pandas`, `Flask` (para `request.stream`) e `itertools`.
 
 Além disso, ao criar um iterador personalizado, você tem controle total sobre o fluxo e formato dos dados sendo percorridos.
+
+---
+
+## List Comprehensions
+
+**List Comprehensions** são uma forma concisa e elegante de criar listas em Python. Elas permitem que você gere novas listas aplicando operações a elementos de um iterável existente, ou filtrando esses elementos, tudo em uma única linha de código. Essa ferramenta poderosa não só torna o código mais curto, mas também mais legível e eficiente em muitos casos.
+
+### Por que usar List Comprehensions?
+
+Vamos ver um exemplo prático. Suponha que você tenha uma lista de frutas e queira criar uma nova lista contendo apenas as frutas que possuem a letra "a" no nome.
+
+**Sem List Comprehension:**
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for x in fruits:
+  if "a" in x:
+    newlist.append(x)
+
+print(newlist)
+# Saída: ['apple', 'banana', 'mango']
+```
+
+Para alcançar o mesmo resultado com uma **List Comprehension**, o código fica muito mais compacto:
+
+**Com List Comprehension:**
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist)
+# Saída: ['apple', 'banana', 'mango']
+```
+
+Como você pode ver, a **List Comprehension** simplifica o código, tornando-o mais fácil de ler e entender.
+
+### A Sintaxe
+
+A sintaxe básica de uma **List Comprehension** é a seguinte:
+
+```python
+newlist = [expression for item in iterable if condition == True]
+```
+
+  * **`expression`**: É o item que será adicionado à nova lista. Você pode manipular o `item` aqui (por exemplo, `x.upper()`, `x*2`).
+  * **`item`**: É a variável que representa cada elemento no `iterable`.
+  * **`iterable`**: É qualquer objeto que pode ser iterado (como uma lista, tupla, conjunto, range, etc.).
+  * **`condition` (opcional)**: É uma expressão booleana que atua como um filtro. Somente os itens para os quais a condição é `True` serão incluídos na nova lista.
+
+O valor de retorno de uma **List Comprehension** é sempre uma **nova lista**, deixando a lista original inalterada.
+
+### Detalhes dos Componentes
+
+#### Condição
+
+A condição funciona como um filtro, aceitando apenas os itens que avaliam como `True`.
+
+**Exemplo:** Filtrar itens que não sejam "apple".
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if x != "apple"]
+print(newlist)
+# Saída: ['banana', 'cherry', 'kiwi', 'mango']
+```
+
+A condição `if x != "apple"` retornará `True` para todos os elementos, exceto "apple", resultando em uma nova lista sem a maçã.
+
+A condição é **opcional** e pode ser omitida se você quiser incluir todos os elementos do iterável original na nova lista:
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits]
+print(newlist)
+# Saída: ['apple', 'banana', 'cherry', 'kiwi', 'mango']
+```
+
+#### Iterável
+
+O `iterable` pode ser qualquer objeto que possa ser iterado. Isso inclui listas, tuplas, conjuntos (sets), strings, e até mesmo a função `range()`.
+
+**Exemplo:** Usando `range()` para criar uma lista de números.
+
+```python
+newlist = [x for x in range(10)]
+print(newlist)
+# Saída: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+**Exemplo:** Combinando `range()` com uma condição.
+
+```python
+newlist = [x for x in range(10) if x < 5]
+print(newlist)
+# Saída: [0, 1, 2, 3, 4]
+```
+
+#### Expressão
+
+A `expression` é o item atual na iteração, mas também é o resultado final que será adicionado à nova lista. Você pode manipular o item aqui antes que ele seja incluído.
+
+**Exemplo:** Transformar todos os nomes de frutas para maiúsculas.
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x.upper() for x in fruits]
+print(newlist)
+# Saída: ['APPLE', 'BANANA', 'CHERRY', 'KIWI', 'MANGO']
+```
+
+Você pode até definir um valor fixo para todos os itens na nova lista:
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = ['hello' for x in fruits]
+print(newlist)
+# Saída: ['hello', 'hello', 'hello', 'hello', 'hello']
+```
+
+A expressão também pode conter uma **condição ternária** (ou seja, um `if-else` em uma linha), que manipula o resultado com base em uma condição, em vez de filtrar itens:
+
+**Exemplo:** Substituir "banana" por "orange".
+
+```python
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x if x != "banana" else "orange" for x in fruits]
+print(newlist)
+# Saída: ['apple', 'orange', 'cherry', 'kiwi', 'mango']
+```
+
+Neste exemplo, a expressão diz: "Retorne o item `x` se ele não for 'banana'; caso contrário, retorne 'orange'".
+
+### Múltiplos `for` e `if`
+
+**List Comprehensions** também podem incluir múltiplos cláusulas `for` e `if`, o que as torna incrivelmente flexíveis para operações mais complexas, como achatar listas ou combinar elementos de diferentes iteráveis.
+
+**Exemplo:** Combinar elementos de duas listas onde eles não são iguais.
+
+```python
+list1 = [1, 2, 3]
+list2 = [3, 1, 4]
+
+# Equivalente a laços for aninhados:
+# combs = []
+# for x in list1:
+#     for y in list2:
+#         if x != y:
+#             combs.append((x, y))
+
+combs = [(x, y) for x in list1 for y in list2 if x != y]
+print(combs)
+# Saída: [(1, 3), (1, 4), (2, 3), (2, 1), (2, 4), (3, 1), (3, 4)]
+```
+
+Observe que a ordem das cláusulas `for` e `if` na **List Comprehension** corresponde à ordem dos laços aninhados.
+
+**Exemplo:** Achatar uma lista de listas.
+
+```python
+vec = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+flattened_list = [num for elem in vec for num in elem]
+print(flattened_list)
+# Saída: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+```
+
+-----
+
+**Exercício:**
+
+Considere o seguinte código:
+
+```python
+fruits = ['apple', 'banana', 'cherry']
+newlist = [x for x in fruits if x == 'banana']
+```
+
+Qual será o valor de `newlist`?
+
+a) `['apple', 'cherry']`
+b) `['banana']`
+c) `True`
 
 ---
 
