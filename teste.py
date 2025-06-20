@@ -1,8 +1,6 @@
-def multiply(*args):
-    result = 1
-    for arg in args:
-        result *= arg
-    return result
 
 
-print(multiply(2, 3, 4))
+
+def apply(*args, operator):
+  if operator == "*":
+    result multiply(args)

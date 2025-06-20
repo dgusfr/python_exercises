@@ -37,6 +37,7 @@
   - [Exercício Sugerido](#exercício-sugerido-2)
 
 - [Funções Lambda](#funções-lambda)
+  - 
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
 - [List Comprehensions](#list_comprehensions)
@@ -589,10 +590,41 @@ ordenadas = sorted(pessoas, key=lambda pessoa: pessoa["idade"])
 print(ordenadas)
 ```
 
+## Unpacking Arguments com *args
+O *args em Python é uma forma poderosa de passar um número variável de argumentos não nomeados para uma função. O asterisco (*) na frente de args (você pode usar outro nome, mas args é a convenção) faz duas coisas principais:
 
-## 5. Exercício Sugerido
+Empacota (Packing): Quando você define uma função com *args nos parâmetros, ele "empacota" todos os argumentos adicionais que são passados para a função em uma tupla.
 
-Crie uma lista com tuplas representando produtos: `(nome, preço)`. Use `sorted()` com uma função lambda para ordenar os produtos pelo preço, do menor para o maior, e imprima o resultado formatado.
+Desempacota (Unpacking): Quando você chama uma função e usa * na frente de uma lista ou tupla, ele "desempacota" os elementos dessa lista ou tupla, passando cada elemento como um argumento individual para a função.
+
+Vamos ver os exemplos que você forneceu:
+
+Exemplo 1: Empacotando Argumentos em uma Função
+Python
+
+def multiply(*args):
+    result = 1
+    for arg in args: # 'args' aqui é uma tupla contendo todos os números passados
+        result *= arg
+    return result
+
+print(multiply(2, 3, 4)) # Você pode passar quantos números quiser
+# Saída: 24 (2 * 3 * 4)
+Neste exemplo, a função multiply é definida para aceitar *args. Quando você chama multiply(2, 3, 4), os números 2, 3 e 4 são empacotados na tupla args dentro da função. Então, args se torna (2, 3, 4), e a função itera sobre essa tupla para multiplicar os valores.
+
+Exemplo 2: Desempacotando Argumentos ao Chamar uma Função
+Python
+
+def add(x, y):
+    return x + y
+
+nums = [1, 2]
+print(add(*nums)) # O '*' desempacota a lista 'nums'
+# Saída: 3 (é como chamar add(1, 2))
+Aqui, a função add espera exatamente dois argumentos (x e y). A variável nums é uma lista. Ao chamar add(*nums), o * pega os elementos de nums (1 e 2) e os passa como argumentos individuais para add. É o mesmo que escrever add(1, 2). Isso é super útil quando você tem os argumentos de uma função já prontos em uma lista ou tupla.
+
+Em resumo, *args é flexível e permite que suas funções aceitem um número variável de entradas ou que você passe coleções como argumentos individuais.
+
 
 ---
 
