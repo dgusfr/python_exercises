@@ -761,7 +761,7 @@ Além disso, ao criar um iterador personalizado, você tem controle total sobre 
 
 # List Comprehensions
 
-**List Comprehensions** permite gerar novas listas aplicando operações a elementos de um iterável existente, ou filtrando esses elementos, tudo em uma única linha de código. Essa ferramenta poderosa não só torna o código mais curto, mas também mais legível e eficiente em muitos casos.
+**List Comprehensions** permite gerar novas listas aplicando operações a elementos de uma lista pre-existente, tudo em uma única linha de código.
 
 ### Por que usar List Comprehensions?
 
