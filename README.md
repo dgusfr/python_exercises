@@ -40,6 +40,7 @@
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
 - [List Comprehensions](#list_comprehensions)
+
 - [Lista de Exercícios](#lista-de-exercícios)
 
 - [Programação Orientada a Objetos em Python](#programação-orientada-a-objetos-em-python)
@@ -941,6 +942,111 @@ Qual será o valor de `newlist`?
 a) `['apple', 'cherry']`
 b) `['banana']`
 c) `True`
+
+---
+
+
+# Desestruturação (Unpacking) 
+
+**Desestruturação**, ou **unpacking**, é uma forma eficiente de extrair valores de coleções (como listas e tuplas) e atribuí-los a variáveis de uma vez só. É uma ferramenta muito usada por desenvolvedores Python para escrever código mais limpo e direto.
+
+### Atribuições Simples
+
+Você pode atribuir vários valores a várias variáveis em uma única linha. O número de variáveis deve ser igual ao número de valores.
+
+**Exemplo:**
+
+```python
+x, y = 5, 11
+print(f"x: {x}, y: {y}") # Saída: x: 5, y: 11
+
+a, b, c = [10, 20, 30] # Funciona com listas também
+print(f"a: {a}, b: {b}, c: {c}") # Saída: a: 10, b: 20, c: 30
+```
+
+Se o número de variáveis e valores for diferente, você receberá um erro (`ValueError`).
+
+### Desestruturação em Laços `for`
+
+A desestruturação é especialmente útil em laços `for` quando você está iterando sobre coleções que contêm pares ou grupos de valores (como tuplas).
+
+**Exemplo com `enumerate()`:**
+
+A função `enumerate()` retorna pares de (índice, valor) para cada item em uma lista.
+
+```python
+minha_lista = ["maçã", "banana", "cereja"]
+for indice, fruta in enumerate(minha_lista):
+    print(f"{indice}: {fruta}")
+# Saída:
+# 0: maçã
+# 1: banana
+# 2: cereja
+```
+
+**Exemplo com lista de tuplas:**
+
+Se você tem uma lista de tuplas, pode desestruturar cada tupla diretamente no laço.
+
+```python
+pessoas = [
+    ("Alice", 30),
+    ("Bob", 25),
+    ("Carol", 35)
+]
+
+for nome, idade in pessoas:
+    print(f"Nome: {nome}, Idade: {idade}")
+# Saída:
+# Nome: Alice, Idade: 30
+# Nome: Bob, Idade: 25
+# Nome: Carol, Idade: 35
+```
+
+Isso é muito mais legível do que acessar os elementos por índice (`pessoa[0]`, `pessoa[1]`).
+
+### Ignorando Valores com `_` (Underscore)
+
+Às vezes, você não precisa de todos os valores de uma coleção. Use o **underscore (`_`)** para ignorar valores que você não vai usar.
+
+**Exemplo:**
+
+```python
+dados = ("produto_a", 150.00, "em_estoque")
+nome_produto, _, status = dados # Ignoramos o preço
+print(f"Produto: {nome_produto}, Status: {status}") # Saída: Produto: produto_a, Status: em_estoque
+```
+
+O `_` também é comum em laços quando você precisa repetir algo um certo número de vezes, mas não precisa do valor da iteração:
+
+```python
+for _ in range(5):
+    print("Olá!") # Imprime "Olá!" 5 vezes
+```
+
+### Coletando Valores Restantes com `*` (Asterisco)
+
+O operador **`*`** permite coletar múltiplos valores restantes em uma nova lista durante a desestruturação.
+
+**Exemplo:**
+
+```python
+numeros = [1, 2, 3, 4, 5]
+primeiro, *resto = numeros
+print(f"Primeiro: {primeiro}") # Saída: Primeiro: 1
+print(f"Resto: {resto}")       # Saída: Resto: [2, 3, 4, 5]
+```
+
+Você também pode coletar valores do meio:
+
+```python
+primeiro, *meio, ultimo = [10, 20, 30, 40, 50]
+print(f"Primeiro: {primeiro}") # Saída: Primeiro: 10
+print(f"Meio: {meio}")         # Saída: Meio: [20, 30, 40]
+print(f"Último: {ultimo}")     # Saída: Último: 50
+```
+
+Lembre-se: você só pode usar um `*` por atribuição de desestruturação.
 
 ---
 
