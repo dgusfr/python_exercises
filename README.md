@@ -38,7 +38,7 @@
 
 - [Funções Lambda](#funções-lambda)
   - [Unpacking Arguments](#unpacking-arguments)
-  - [Unpacking Arguments](#unpacking-arguments)
+  - [Unpacking Keyword Arguments](#unpacking-keyword-arguments)
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
 - [List Comprehensions](#list_comprehensions)
