@@ -38,6 +38,7 @@
 
 - [Funções Lambda](#funções-lambda)
   - [Unpacking Arguments](#unpacking-arguments)
+  - [Unpacking Arguments](#unpacking-arguments)
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
 - [List Comprehensions](#list_comprehensions)
@@ -634,9 +635,6 @@ Aqui, `*nums` desempacota a lista `[1, 2]` e a função recebe os valores como s
 
 ---
 
-Claro! Abaixo está a explicação no mesmo molde da anterior, agora abordando **`**kwargs` (Unpacking Keyword Arguments)**:
-
----
 
 ## Unpacking Keyword Arguments
 
