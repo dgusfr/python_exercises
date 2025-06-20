@@ -40,7 +40,8 @@
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
 - [List Comprehensions](#list_comprehensions)
-
+- [Desestruturação](#desestruturação)
+Desestruturação
 - [Lista de Exercícios](#lista-de-exercícios)
 
 - [Programação Orientada a Objetos em Python](#programação-orientada-a-objetos-em-python)
@@ -948,7 +949,7 @@ c) `True`
 
 # Desestruturação (Unpacking) 
 
-**Desestruturação**, ou **unpacking**, é uma forma eficiente de extrair valores de coleções (como listas e tuplas) e atribuí-los a variáveis de uma vez só. É uma ferramenta muito usada por desenvolvedores Python para escrever código mais limpo e direto.
+**Desestruturação**, ou **unpacking**, é uma forma eficiente de extrair valores de coleções (como listas e tuplas) e atribuí-los a variáveis de uma vez só.
 
 ### Atribuições Simples
 
