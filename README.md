@@ -39,7 +39,7 @@
 - [Funções Lambda](#funções-lambda)
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
-## List Comprehensions
+- [List Comprehensions](#list_comprehensions)
 - [Lista de Exercícios](#lista-de-exercícios)
 
 - [Programação Orientada a Objetos em Python](#programação-orientada-a-objetos-em-python)
