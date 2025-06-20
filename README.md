@@ -947,7 +947,7 @@ c) `True`
 ---
 
 
-# Desestruturação (Unpacking) 
+# Desestruturação
 
 **Desestruturação**, ou **unpacking**, é uma forma eficiente de extrair valores de coleções (como listas e tuplas) e atribuí-los a variáveis de uma vez só.
 
