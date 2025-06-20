@@ -1,6 +1,1 @@
-
-
-
-def apply(*args, operator):
-  if operator == "*":
-    result multiply(args)
+def name(name, age)

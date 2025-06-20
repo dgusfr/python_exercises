@@ -37,7 +37,7 @@
   - [Exercício Sugerido](#exercício-sugerido-2)
 
 - [Funções Lambda](#funções-lambda)
-  - 
+  - [Unpacking Arguments](#unpacking-arguments)
 - [Decoradores (Decorators)](#decoradores-decorators)
 - [Iteradores (Iterators)](#iteradores-iterators)
 - [List Comprehensions](#list_comprehensions)
@@ -590,43 +590,110 @@ ordenadas = sorted(pessoas, key=lambda pessoa: pessoa["idade"])
 print(ordenadas)
 ```
 
-## Unpacking Arguments com *args
-O *args em Python é uma forma poderosa de passar um número variável de argumentos não nomeados para uma função. O asterisco (*) na frente de args (você pode usar outro nome, mas args é a convenção) faz duas coisas principais:
+Sua explicação está muito boa: clara, bem estruturada e com exemplos didáticos. Ainda assim, posso sugerir pequenas melhorias para deixá-la **mais direta, técnica e precisa**, especialmente se for usada em um contexto de estudo ou documentação. Aqui vão as sugestões:
 
-Empacota (Packing): Quando você define uma função com *args nos parâmetros, ele "empacota" todos os argumentos adicionais que são passados para a função em uma tupla.
+---
 
-Desempacota (Unpacking): Quando você chama uma função e usa * na frente de uma lista ou tupla, ele "desempacota" os elementos dessa lista ou tupla, passando cada elemento como um argumento individual para a função.
 
-Vamos ver os exemplos que você forneceu:
+## Unpacking Arguments
 
-Exemplo 1: Empacotando Argumentos em uma Função
-Python
+O `*args` em Python é uma forma prática de permitir que uma função aceite um **número variável de argumentos posicionais** (ou seja, não nomeados). O asterisco (`*`) diante de `args` (nome convencional, mas não obrigatório) tem dois usos principais:
 
+1. **Empacotamento (*Packing*)**: ao definir uma função com `*args`, todos os argumentos posicionais extras são **empacotados em uma tupla**.
+2. **Desempacotamento (*Unpacking*)**: ao chamar uma função com `*` antes de uma lista ou tupla, os elementos são **desempacotados** e passados como argumentos individuais.
+
+---
+
+### Exemplo 1: Empacotando argumentos em uma função
+
+```python
 def multiply(*args):
     result = 1
-    for arg in args: # 'args' aqui é uma tupla contendo todos os números passados
+    for arg in args:
         result *= arg
     return result
 
-print(multiply(2, 3, 4)) # Você pode passar quantos números quiser
-# Saída: 24 (2 * 3 * 4)
-Neste exemplo, a função multiply é definida para aceitar *args. Quando você chama multiply(2, 3, 4), os números 2, 3 e 4 são empacotados na tupla args dentro da função. Então, args se torna (2, 3, 4), e a função itera sobre essa tupla para multiplicar os valores.
+print(multiply(2, 3, 4))  # Saída: 24
+```
 
-Exemplo 2: Desempacotando Argumentos ao Chamar uma Função
-Python
+Neste exemplo, `args` será a tupla `(2, 3, 4)`. A função itera sobre os elementos e multiplica os valores. O número de argumentos passados pode variar.
 
+---
+
+### Exemplo 2: Desempacotando argumentos ao chamar uma função
+
+```python
 def add(x, y):
     return x + y
 
 nums = [1, 2]
-print(add(*nums)) # O '*' desempacota a lista 'nums'
-# Saída: 3 (é como chamar add(1, 2))
-Aqui, a função add espera exatamente dois argumentos (x e y). A variável nums é uma lista. Ao chamar add(*nums), o * pega os elementos de nums (1 e 2) e os passa como argumentos individuais para add. É o mesmo que escrever add(1, 2). Isso é super útil quando você tem os argumentos de uma função já prontos em uma lista ou tupla.
+print(add(*nums))  # Saída: 3
+```
 
-Em resumo, *args é flexível e permite que suas funções aceitem um número variável de entradas ou que você passe coleções como argumentos individuais.
-
+Aqui, `*nums` desempacota a lista `[1, 2]` e a função recebe os valores como se fossem passados diretamente: `add(1, 2)`.
 
 ---
+
+Claro! Abaixo está a explicação no mesmo molde da anterior, agora abordando **`**kwargs` (Unpacking Keyword Arguments)**:
+
+---
+
+## Unpacking Keyword Arguments
+
+O `**kwargs` em Python permite que uma função aceite um **número variável de argumentos nomeados** (ou seja, passados com chave e valor). O duplo asterisco (`**`) diante de `kwargs` (nome convencional, mas não obrigatório) tem dois usos principais:
+
+1. **Empacotamento (*Packing*)**: ao definir uma função com `**kwargs`, todos os argumentos nomeados extras são **empacotados em um dicionário**.
+2. **Desempacotamento (*Unpacking*)**: ao chamar uma função com `**` antes de um dicionário, os pares chave-valor são **desempacotados** como argumentos nomeados.
+
+---
+
+### Exemplo 1: Empacotando argumentos nomeados em uma função
+
+```python
+def display_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+display_info(nome="Diego", idade=30, linguagem="Python")
+```
+
+**Saída:**
+
+```
+nome: Diego  
+idade: 30  
+linguagem: Python
+```
+
+Neste exemplo, os argumentos nomeados passados são empacotados em um dicionário:
+`kwargs = {'nome': 'Diego', 'idade': 30, 'linguagem': 'Python'}`
+
+A função então percorre esse dicionário e imprime cada par chave-valor. A quantidade e os nomes dos argumentos podem variar.
+
+---
+
+### Exemplo 2: Desempacotando argumentos nomeados ao chamar uma função
+
+```python
+def conectar(host, porta, protocolo):
+    print(f"Conectando ao {host}:{porta} via {protocolo}...")
+
+config = {"host": "localhost", "porta": 8080, "protocolo": "HTTP"}
+conectar(**config)
+```
+
+**Saída:**
+
+```
+Conectando ao localhost:8080 via HTTP...
+```
+
+Aqui, o `**config` desempacota o dicionário e passa os valores como argumentos nomeados:
+`conectar(host="localhost", porta=8080, protocolo="HTTP")`.
+
+---
+---
+
 
 # Decoradores (Decorators)
 
