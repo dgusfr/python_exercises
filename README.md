@@ -44,7 +44,7 @@
 - [List Comprehensions](#list_comprehensions)
 - [Desestruturação](#desestruturação)
 
-- [Lista de Exercícios](#lista-de-exercícios)
+- [Lista de Exercícios 2](#lista-de-exercícios-2)
 
 - [Programação Orientada a Objetos em Python](#programação-orientada-a-objetos-em-python)
   - [1. Conceito Central](#1-conceito-central)
