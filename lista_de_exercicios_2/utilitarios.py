@@ -9,6 +9,6 @@ def dobrar(numero):
 
 def eh_par(numero):
     if numero % 2 == 0:
-        return "O numeor é par."
+        return "O numero é par."
     else:
-        return "O numeor é impar."
+        return "O numero é impar."
