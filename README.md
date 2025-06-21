@@ -1148,7 +1148,7 @@ Lembre-se: você só pode usar um `*` por atribuição de desestruturação.
 
 ---
 
-# Lista de Exercícios 
+# Lista de Exercícios 2
 
 
 1. Crie um módulo chamado `utilitarios.py` que contenha uma função `dobrar(numero)` e outra `eh_par(numero)`. Em outro arquivo, importe e use essas funções com valores fornecidos pelo usuário.
