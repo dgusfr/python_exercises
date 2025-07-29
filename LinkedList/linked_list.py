@@ -27,15 +27,6 @@ class LinkedList:
     def tamanho_lista(self):
         return self._size
 
-    def _getnode(self, index):
-        ponteiro = self.head
-        for i in range(index):
-            if ponteiro:
-                ponteiro = ponteiro.next
-            else:
-                raise IndexError("list index out of range")  # return None
-        return ponteiro
-
     # usamos metoddos especiais __getitem__ e __setitem__ para permitir o acesso e modificação de elementos da lista usando a notação de colchetes, como em listas normais. Com sobre carga de operadores: a = lista[6]. Sem sobrecarga de operadores: a = lista.get(6).
     def __getitem__(self, index):
         ponteiro = self.head
