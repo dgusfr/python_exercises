@@ -38,80 +38,41 @@ class LinkedList:
 
     # usamos metoddos especiais __getitem__ e __setitem__ para permitir o acesso e modificação de elementos da lista usando a notação de colchetes, como em listas normais. Com sobre carga de operadores: a = lista[6]. Sem sobrecarga de operadores: a = lista.get(6).
     def __getitem__(self, index):
-        ponteiro = self._getnode(index)
+        ponteiro = self.head
+        # percorremos a lista até o índice desejado
+        for i in range(index):
+            # se o ponteiro não for None, seguimos para o próximo nó
+            if ponteiro:
+                ponteiro = ponteiro.next
+            else:
+                raise IndexError("list index out of range")
+        # se o ponteiro não for None, retornamos o dado do nó
         if ponteiro:
             return ponteiro.data
-        else:
-            raise IndexError("list index out of range")
+        raise IndexError("list index out of range")
 
-    def __setitem__(self, index, elemento):
-        # lista[5] = 9
-        ponteiro = self._getnode(index)
+    def __setitem__(self, index, elem):
+        ponteiro = self.head
+        for i in range(index):
+            if ponteiro:
+                ponteiro = ponteiro.next
+            else:
+                raise IndexError("list index out of range")
         if ponteiro:
-            ponteiro.data = elemento
+            # se o ponteiro não for None, atualizamos o dado do nó
+            ponteiro.data = elem
         else:
             raise IndexError("list index out of range")
 
     def index(self, elemento):
-        """Retorna o índice do elemento na lista"""
-        ponteiro = self.head
-        i = 0
-        while ponteiro:
-            if ponteiro.data == elemento:
-                return i
-            ponteiro = ponteiro.next
-            i = i + 1
+        # Retorna o índice do elem na lista
+        pointer = self.head
+        indice = 0
+        # Percorremos a lista até encontrarmos o elemento ou chegarmos ao final da lista
+        while pointer:
+            # Se o dado do nó atual for igual ao elemento procurado, retornamos o índice
+            if pointer.data == elemento:
+                return indice
+            pointer = pointer.next
+            indice = indice + 1
         raise ValueError("{} is not in list".format(elemento))
-
-    def insert(self, index, elemento):
-        node = Node(elemento)
-        if index == 0:
-            node.next = self.head
-            self.head = node
-        else:
-            ponteiro = self._getnode(index - 1)
-            node.next = ponteiro.next
-            ponteiro.next = node
-        self._size = self._size + 1
-
-    def remove(self, elemento):
-        if self.head == None:
-            raise ValueError("{} is not in list".format(elemento))
-        elif self.head.data == elemento:
-            self.head = self.head.next
-            self._size = self._size - 1
-            return True
-        else:
-            ancestor = self.head
-            ponteiro = self.head.next
-            while ponteiro:
-                if ponteiro.data == elemento:
-                    ancestor.next = ponteiro.next
-                    ponteiro.next = None
-                    self._size = self._size - 1
-                    return True
-                ancestor = ponteiro
-                ponteiro = ponteiro.next
-        raise ValueError("{} is not in list".format(elemento))
-
-    def __repr__(self):
-        r = ""
-        ponteiro = self.head
-        while ponteiro:
-            r = r + str(ponteiro.data) + "->"
-            ponteiro = ponteiro.next
-        return r
-
-    def __str__(self):
-        return self.__repr__()
-
-
-if __name__ == "__main__":
-    # sequencial = []
-    # sequencial.insere_final_lista(7)
-    lista = LinkedList()
-    lista.insere_final_lista(7)
-    lista.insere_final_lista(80)
-    lista.insere_final_lista(56)
-    lista.insere_final_lista(32)
-    lista.insere_final_lista(17)
