@@ -28,10 +28,10 @@ class LinkedList:
         return self._size
 
     # usamos metoddos especiais __getitem__ e __setitem__ para permitir o acesso e modificação de elementos da lista usando a notação de colchetes, como em listas normais. Com sobre carga de operadores: a = lista[6]. Sem sobrecarga de operadores: a = lista.get(6).
-    def __getitem__(self, index):
+    def __getitem__(self, posicao_desejada):
         ponteiro = self.head
         # percorremos a lista até o índice desejado
-        for i in range(index):
+        for i in range(posicao_desejada):
             # se o ponteiro não for None, seguimos para o próximo nó
             if ponteiro:
                 ponteiro = ponteiro.next
@@ -42,9 +42,9 @@ class LinkedList:
             return ponteiro.data
         raise IndexError("list index out of range")
 
-    def __setitem__(self, index, elem):
+    def __setitem__(self, posicao_desejada, elem):
         ponteiro = self.head
-        for i in range(index):
+        for i in range(posicao_desejada):
             if ponteiro:
                 ponteiro = ponteiro.next
             else:

@@ -6,3 +6,4 @@ if __name__ == "__main__":
     lista.insere_final_lista(6)
     lista.tamanho_lista()
     print(lista.index(6))
+    print(lista[1])
