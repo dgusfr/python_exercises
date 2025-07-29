@@ -24,7 +24,7 @@ class LinkedList:
             self.head = Node(elemento)
         self._size = self._size + 1
 
-    def __len__(self):
+    def tamanho_lista(self):
         """Retorna o tamanho da lista"""
         return self._size
 
