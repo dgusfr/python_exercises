@@ -36,15 +36,8 @@ class LinkedList:
                 raise IndexError("list index out of range")  # return None
         return ponteiro
 
-    def get(self, index):
-        pass
-
-    def set(self, index, elemento):
-        # lista.set(5, 9)
-        pass
-
+    # usamos metoddos especiais __getitem__ e __setitem__ para permitir o acesso e modificação de elementos da lista usando a notação de colchetes, como em listas normais. Com sobre carga de operadores: a = lista[6]. Sem sobrecarga de operadores: a = lista.get(6).
     def __getitem__(self, index):
-        # a = lista[6]
         ponteiro = self._getnode(index)
         if ponteiro:
             return ponteiro.data
