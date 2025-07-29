@@ -9,13 +9,15 @@ class LinkedList:
         self._size = 0
 
     def insere_final_lista(self, elemento):
-        # Se isso é verdade, temos elementos na lista:
+        # Se isso é verdade, temos elementos na lista, e seguimos a seguinte logica para inserir o elemento no final da lista:
         if self.head:
-            # inserção quando a lista já possui elementoentos
-            pointer = self.head
-            while pointer.next:
-                pointer = pointer.next
-            pointer.next = Node(elemento)
+            # Usamos a variavel auxiliar ponteiro que aponta para Head (Proximo elemento da lista)
+            ponteiro = self.head
+            # Enquanto o ponteiro.next não for None (ou seja, não tiver chegado no final da lista), continuamos percorrendo a lista
+            while ponteiro.next:
+                ponteiro = ponteiro.next
+            # Quando chegamos no final da lista, o ponteiro.next é None, e podemos inserir o novo nó com o elemento no final da lista
+            ponteiro.next = Node(elemento)
         # Se não tivermos elementos na lista, então o head é None, e devemos criar o primeiro nó.
         else:
             # aqui estamos pássando o 'elemento' para o construtor do nó como oparametro 'data' da classe Node, realizando assim a primeira inserção:
@@ -27,13 +29,13 @@ class LinkedList:
         return self._size
 
     def _getnode(self, index):
-        pointer = self.head
+        ponteiro = self.head
         for i in range(index):
-            if pointer:
-                pointer = pointer.next
+            if ponteiro:
+                ponteiro = ponteiro.next
             else:
                 raise IndexError("list index out of range")  # return None
-        return pointer
+        return ponteiro
 
     def set(self, index, elemento):
         # lista.set(5, 9)
@@ -41,28 +43,28 @@ class LinkedList:
 
     def __getitem__(self, index):
         # a = lista[6]
-        pointer = self._getnode(index)
-        if pointer:
-            return pointer.data
+        ponteiro = self._getnode(index)
+        if ponteiro:
+            return ponteiro.data
         else:
             raise IndexError("list index out of range")
 
     def __setitem__(self, index, elemento):
         # lista[5] = 9
-        pointer = self._getnode(index)
-        if pointer:
-            pointer.data = elemento
+        ponteiro = self._getnode(index)
+        if ponteiro:
+            ponteiro.data = elemento
         else:
             raise IndexError("list index out of range")
 
     def index(self, elemento):
         """Retorna o índice do elemento na lista"""
-        pointer = self.head
+        ponteiro = self.head
         i = 0
-        while pointer:
-            if pointer.data == elemento:
+        while ponteiro:
+            if ponteiro.data == elemento:
                 return i
-            pointer = pointer.next
+            ponteiro = ponteiro.next
             i = i + 1
         raise ValueError("{} is not in list".format(elemento))
 
@@ -72,9 +74,9 @@ class LinkedList:
             node.next = self.head
             self.head = node
         else:
-            pointer = self._getnode(index - 1)
-            node.next = pointer.next
-            pointer.next = node
+            ponteiro = self._getnode(index - 1)
+            node.next = ponteiro.next
+            ponteiro.next = node
         self._size = self._size + 1
 
     def remove(self, elemento):
@@ -86,23 +88,23 @@ class LinkedList:
             return True
         else:
             ancestor = self.head
-            pointer = self.head.next
-            while pointer:
-                if pointer.data == elemento:
-                    ancestor.next = pointer.next
-                    pointer.next = None
+            ponteiro = self.head.next
+            while ponteiro:
+                if ponteiro.data == elemento:
+                    ancestor.next = ponteiro.next
+                    ponteiro.next = None
                     self._size = self._size - 1
                     return True
-                ancestor = pointer
-                pointer = pointer.next
+                ancestor = ponteiro
+                ponteiro = ponteiro.next
         raise ValueError("{} is not in list".format(elemento))
 
     def __repr__(self):
         r = ""
-        pointer = self.head
-        while pointer:
-            r = r + str(pointer.data) + "->"
-            pointer = pointer.next
+        ponteiro = self.head
+        while ponteiro:
+            r = r + str(ponteiro.data) + "->"
+            ponteiro = ponteiro.next
         return r
 
     def __str__(self):
