@@ -25,7 +25,6 @@ class LinkedList:
         self._size = self._size + 1
 
     def tamanho_lista(self):
-        """Retorna o tamanho da lista"""
         return self._size
 
     def _getnode(self, index):
@@ -36,6 +35,9 @@ class LinkedList:
             else:
                 raise IndexError("list index out of range")  # return None
         return ponteiro
+
+    def get(self, index):
+        pass
 
     def set(self, index, elemento):
         # lista.set(5, 9)
