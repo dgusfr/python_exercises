@@ -43,11 +43,27 @@ Tarefa 2 concluída!
 
 ## A Biblioteca `asyncio` e os Awaitables
 
-`asyncio` é a biblioteca padrão do Python para código assíncrono. [cite\_start]Ela gerencia um "loop de eventos" que executa objetos do tipo **Awaitable** (aguardáveis)[cite: 75]. Existem 3 tipos principais:
+`asyncio` é a biblioteca padrão do Python para código assíncrono. Ela gerencia um "loop de eventos" que executa objetos do tipo **Awaitable** (aguardáveis). 
 
-#### a. Corrotinas (`async def`)
 
-[cite\_start]É uma função especial declarada com `async def` que pode ser pausada e retomada[cite: 89, 90]. [cite\_start]A palavra-chave `await` pausa a corrotina e devolve o controle ao loop de eventos para que outra tarefa possa ser executada[cite: 91].
+Existem 3 tipos principais:
+
+### 1. Corrotinas (`async def`)
+
+É uma função especial declarada com `async def` que pode ser pausada e retomada. 
+
+A palavra-chave `await` pausa a corrotina e devolve o controle ao loop de eventos para que outra tarefa possa ser executada.
+
+```python
+import asyncio
+
+async def corrotina(numero):
+    print(f"Iniciando tarefa {numero}.")
+    await asyncio.sleep(2)
+    print(f"Tarefa {numero} concluída!")
+
+  #Continua a baixo...
+```
 
 **Importante**: Usar `await` de forma sequencial não gera concorrência. No código abaixo, `corrotina(2)` só inicia após `corrotina(1)` ter finalizado completamente.
 
@@ -55,9 +71,12 @@ Tarefa 2 concluída!
 async def main():
     await corrotina(1) # Espera a corrotina 1 terminar
     await corrotina(2) # Só então executa a corrotina 2
+
+asyncio.run(main())
 ```
 
-[cite\_start]**Saída:** O resultado é sequencial, similar ao síncrono[cite: 106, 107, 108, 109].
+
+**Saída:** O resultado é sequencial, `similar ao síncrono`.
 
 ```
 Iniciando tarefa 1.
@@ -65,11 +84,18 @@ Tarefa 1 concluída!
 Iniciando tarefa 2.
 ```
 
-#### b. Tasks (Tarefas)
+### 2. Tasks (Tarefas)
 
-[cite\_start]Uma `Task` é um objeto que agenda uma corrotina para ser executada de forma concorrente[cite: 126]. Usa-se `asyncio.create_task()` para agendar a execução da corrotina imediatamente, sem bloqueá-la.
+Uma `Task` é um objeto que agenda uma corrotina para ser executada de forma **concorrente** . Usa-se `asyncio.create_task()` para agendar a execução da corrotina imediatamente, sem bloqueá-la.
 
 ```python
+import asyncio
+
+async def corrotina(numero):
+    print(f"Iniciando tarefa {numero}.")
+    await asyncio.sleep(2)
+    print(f"Tarefa {numero} concluída!")
+
 async def main():
     # As tarefas são agendadas e começam a rodar em segundo plano
     tarefa1 = asyncio.create_task(corrotina(1))
@@ -78,9 +104,15 @@ async def main():
     # O await aqui apenas espera as tarefas já iniciadas terminarem
     await tarefa1
     await tarefa2
+
+asyncio.run(main())
 ```
 
-[cite\_start]**Saída:** Ambas as tarefas iniciam juntas, demonstrando a concorrência[cite: 129, 130].
+Ao usar `asyncio.create_task()`, as funções `corrotina` são agendadas para rodarem em paralelo no *event loop*. 
+
+O `await tarefa1` e `await tarefa2` garantem que o programa só prossiga depois que **ambas as tarefas tenham sido concluídas**, permitindo que elas finalizem ao mesmo tempo ou em ordem diferente, dependendo do *scheduler*. 
+
+**Saída:** Ambas as tarefas iniciam juntas, demonstrando a concorrência.
 
 ```
 Iniciando tarefa 1.
@@ -89,9 +121,11 @@ Tarefa 1 concluída!
 Tarefa 2 concluída!
 ```
 
-#### c. Futures (Futuros)
+Isso demonstra como o `asyncio.create_task` permite iniciar e gerenciar múltiplas operações que podem ser executadas "simultaneamente" dentro do contexto assíncrono.
 
-[cite\_start]Um `Future` é um objeto que representa um resultado que ainda não está disponível[cite: 138]. É um mecanismo de baixo nível usado para comunicação entre tarefas, onde uma tarefa pode esperar pelo resultado que outra tarefa irá definir.
+### 3. Futures (Futuros)
+
+Um `Future` é um objeto que representa um resultado que ainda não está disponível. É um mecanismo de baixo nível usado para comunicação entre tarefas, onde uma tarefa pode esperar pelo resultado que outra tarefa irá definir.
 
 No exemplo abaixo, `corrotina2` aguarda (`await futuro`) até que `corrotina1` defina um resultado (`futuro.set_result(...)`).
 
@@ -99,16 +133,16 @@ No exemplo abaixo, `corrotina2` aguarda (`await futuro`) até que `corrotina1` d
 # corrotina1 define o resultado
 async def corrotina1(futuro):
     await asyncio.sleep(2)
-    [cite_start]futuro.set_result("Resultado da Tarefa 1") [cite: 153]
+    futuro.set_result("Resultado da Tarefa 1") 
 
 # corrotina2 espera pelo resultado
 async def corrotina2(futuro):
     print("Tarefa 2 iniciada, aguardando o futuro.")
-    [cite_start]resultado = await futuro [cite: 156]
+    resultado = await futuro [cite: 156]
     print(f"Tarefa 2 finalizada com o resultado: {resultado}")
 ```
 
-[cite\_start]**Saída:** A `Tarefa 2` fica pausada até que a `Tarefa 1` publique o resultado no objeto `futuro`[cite: 170, 171, 172].
+**Saída:** A `Tarefa 2` fica pausada até que a `Tarefa 1` publique o resultado no objeto `futuro`.
 
 ```
 Tarefa 1 iniciada.
