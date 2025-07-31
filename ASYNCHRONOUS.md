@@ -25,9 +25,10 @@ Iniciando tarefa 2.
 Tarefa 2 concluída!
 ```
 
-### 2\. Programação Assíncrona, Concorrência e Paralelismo
+# Programação Assíncrona, Concorrência e Paralelismo
 
-  * [cite\_start]**Programação Assíncrona**: Permite que um programa execute várias tarefas ao mesmo tempo, sem que uma precise esperar a outra terminar[cite: 18].
+  * **Programação Assíncrona**: Permite que um programa execute várias tarefas ao mesmo tempo, sem que uma precise esperar a outra terminar.
+  
   * [cite\_start]**Concorrência**: É a alternância rápida entre tarefas, dando a impressão de que rodam ao mesmo tempo[cite: 20]. [cite\_start]É ideal para operações de I/O (rede, disco)[cite: 21]. [cite\_start]A analogia é um único garçom que anota um pedido, envia para a cozinha e atende outro cliente enquanto o primeiro prato é preparado[cite: 30, 34].
   * [cite\_start]**Paralelismo**: É a execução de múltiplas tarefas verdadeiramente ao mesmo tempo, geralmente em diferentes núcleos de CPU[cite: 24, 25]. [cite\_start]É ideal para cálculos pesados e processamento de dados[cite: 26]. [cite\_start]A analogia são vários garçons atendendo clientes diferentes simultaneamente[cite: 32].
 
