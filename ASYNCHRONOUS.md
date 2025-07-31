@@ -3,6 +3,8 @@
 
 No modelo síncrono, as tarefas são executadas em sequência. Uma operação deve ser concluída antes que a próxima possa começar.
 
+É usado quando o programa é simples e sequencial; quando há pouca entrada e saida de dados e a simplicidade do codigo é mais importante que a velocidade.
+
 ```python
 import time
 
