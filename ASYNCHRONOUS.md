@@ -28,13 +28,18 @@ Tarefa 2 concluída!
 # Programação Assíncrona, Concorrência e Paralelismo
 
   * **Programação Assíncrona**: Permite que um programa execute várias tarefas ao mesmo tempo, sem que uma precise esperar a outra terminar.
+
+  * **Concorrência**: É a alternância rápida entre tarefas, dando a impressão de que rodam ao mesmo tempo. É ideal para operações de I/O (API, banco de dados). 
   
-  * [cite\_start]**Concorrência**: É a alternância rápida entre tarefas, dando a impressão de que rodam ao mesmo tempo[cite: 20]. [cite\_start]É ideal para operações de I/O (rede, disco)[cite: 21]. [cite\_start]A analogia é um único garçom que anota um pedido, envia para a cozinha e atende outro cliente enquanto o primeiro prato é preparado[cite: 30, 34].
-  * [cite\_start]**Paralelismo**: É a execução de múltiplas tarefas verdadeiramente ao mesmo tempo, geralmente em diferentes núcleos de CPU[cite: 24, 25]. [cite\_start]É ideal para cálculos pesados e processamento de dados[cite: 26]. [cite\_start]A analogia são vários garçons atendendo clientes diferentes simultaneamente[cite: 32].
+  Analogia: é um único garçom que anota um pedido, envia para a cozinha e atende outro cliente enquanto o primeiro prato é preparado.
+  
+  * **Paralelismo**: É a execução de múltiplas tarefas verdadeiramente ao mesmo tempo, geralmente em diferentes núcleos de CPU. 
+  
+  É ideal para cálculos pesados e processamento de dados. A analogia são vários garçons atendendo clientes diferentes simultaneamente.
 
-### 3\. A Biblioteca `asyncio` e os Awaitables
+## A Biblioteca `asyncio` e os Awaitables
 
-[cite\_start]`asyncio` é a biblioteca padrão do Python para código assíncrono[cite: 62]. [cite\_start]Ela gerencia um "loop de eventos" que executa objetos do tipo **Awaitable** (aguardáveis)[cite: 75]. Existem 3 tipos principais:
+`asyncio` é a biblioteca padrão do Python para código assíncrono. [cite\_start]Ela gerencia um "loop de eventos" que executa objetos do tipo **Awaitable** (aguardáveis)[cite: 75]. Existem 3 tipos principais:
 
 #### a. Corrotinas (`async def`)
 
