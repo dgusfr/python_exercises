@@ -31,6 +31,8 @@ Tarefa 2 concluída!
 
   * **Programação Assíncrona**: Permite que um programa execute várias tarefas ao mesmo tempo, sem que uma precise esperar a outra terminar.
 
+  É usado quando temos várias entradas e saidas de dados; é necessário lidar com conexões simultanes; as tarefas podem ser executadas em paralelo sem dependerem umas das outras.
+
   * **Concorrência**: É a alternância rápida entre tarefas, dando a impressão de que rodam ao mesmo tempo. É ideal para operações de I/O (API, banco de dados). 
   
   Analogia: é um único garçom que anota um pedido, envia para a cozinha e atende outro cliente enquanto o primeiro prato é preparado.
