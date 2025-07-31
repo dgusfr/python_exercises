@@ -127,19 +127,31 @@ Isso demonstra como o `asyncio.create_task` permite iniciar e gerenciar múltipl
 
 Um `Future` é um objeto que representa um resultado que ainda não está disponível. É um mecanismo de baixo nível usado para comunicação entre tarefas, onde uma tarefa pode esperar pelo resultado que outra tarefa irá definir.
 
-No exemplo abaixo, `corrotina2` aguarda (`await futuro`) até que `corrotina1` defina um resultado (`futuro.set_result(...)`).
+No exemplo abaixo, o código usa `asyncio.Future` para **comunicação entre corrotinas**. `corrotina1` define um **resultado** no `Future` após 2 segundos, e `corrotina2` **aguarda** esse `Future` para obter o resultado antes de prosseguir. Isso sincroniza as tarefas, onde uma depende do valor gerado pela outra.
 
 ```python
-# corrotina1 define o resultado
-async def corrotina1(futuro):
-    await asyncio.sleep(2)
-    futuro.set_result("Resultado da Tarefa 1") 
+import asyncio
 
-# corrotina2 espera pelo resultado
+async def corrotina1(futuro):
+    print("Tarefa 1 iniciada.")
+    await asyncio.sleep(2)
+    futuro.set_result("Resultado da Tarefa 1")
+    print("Tarefa 1 finalizada.")
+
 async def corrotina2(futuro):
     print("Tarefa 2 iniciada, aguardando o futuro.")
-    resultado = await futuro [cite: 156]
-    print(f"Tarefa 2 finalizada com o resultado: {resultado}")
+    resultado = await futuro
+    print("Tarefa 2 finalizada com o resultado:", resultado)
+
+async def main():
+    futuro = asyncio.Future()
+    tarefa1 = asyncio.create_task(corrotina1(futuro))
+    tarefa2 = asyncio.create_task(corrotina2(futuro))
+    
+    await tarefa1
+    await tarefa2
+
+asyncio.run(main())
 ```
 
 **Saída:** A `Tarefa 2` fica pausada até que a `Tarefa 1` publique o resultado no objeto `futuro`.
