@@ -309,13 +309,77 @@ Neste caso, quando o laço encontra "Alura", ele imprime a mensagem de aviso e o
 
 -----
 
-### Funções Úteis em Laços
+### **`range()`**
 
-  *   **`range()`**: Gera uma sequência de números, frequentemente utilizada para controlar o número de iterações em laços `for`. Por exemplo, `range(6)` produz os números de 0 a 5.   
-  *   **`len()`**: É usada para obter o comprimento (número de itens) de uma coleção, como uma lista ou string. Isso permite saber quantas iterações um laço precisa realizar. 
+Gera uma sequência de números, frequentemente utilizada para controlar o número de iterações em laços `for`. 
+
+#### 1\. Iterando um número específico de vezes: `range(stop)`
+
+Esta é a forma mais comum de uso. Você passa um único argumento que funciona como o ponto de **parada (exclusivo)**. O laço sempre começará do zero.
+
+```python
+# Executa o bloco de código 5 vezes, para os índices de 0 a 4.
+for i in range(5):
+    print(f"Repetição número: {i}")
+```
+
+Neste caso, `range(5)` gera uma sequência de números que começa em `0` (padrão) e vai até, mas **não inclui**, o `5`. O resultado são os números `0, 1, 2, 3, 4`. É a maneira ideal de executar uma ação um número fixo de vezes.
+
+-----
+
+#### 2\. Definindo um início e fim: `range(start, stop)`
+
+Aqui, você define explicitamente o número de **início (inclusivo)** e o de **parada (exclusivo)**. O passo (incremento) entre os números é, por padrão, `1`.
+
+```python
+# Itera sobre os números de 1 a 5.
+for numero in range(1, 6):
+    print(numero)
+```
+
+O `range(1, 6)` gera a sequência `1, 2, 3, 4, 5`. O laço começa no `1` e para antes de chegar ao `6`. É útil quando você precisa iterar sobre um intervalo numérico específico que não começa em zero.
+
+-----
+
+#### 3\. Controlando o passo da iteração: `range(start, stop, step)`
+
+Esta é a forma mais completa, permitindo definir o **início**, a **parada** e o **passo** (o incremento ou decremento).
+
+#### Exemplo com passo positivo (incremento)
+
+Você pode pular números definindo um passo maior que 1.
+
+```python
+# Imprime os números pares de 2 até 10.
+for i in range(2, 11, 2):
+    print(i)
+```
+
+Aqui, a sequência começa em `2`, para antes do `11` e avança de `2` em `2`. O resultado é `2, 4, 6, 8, 10`.
+
+#### Exemplo com passo negativo (decremento)
+
+Para fazer uma contagem regressiva, o passo deve ser negativo. O valor de `start` precisa ser maior que o de `stop`.
+
+```python
+# Faz uma contagem regressiva de 10 até 1.
+for segundos in range(10, 0, -1):
+    print(f"{segundos}...")
+print("Lançar!")
+```
+
+Neste exemplo, que você mencionou, o laço começa em `10` e vai até, mas não inclui, o `0`, diminuindo `1` a cada passo (`-1`). A sequência gerada é `10, 9, 8, 7, 6, 5, 4, 3, 2, 1`. É a forma correta de criar um laço reverso com `range`.
+
+___
+
+### **`len()`**
+
+É usada para obter o comprimento (número de itens) de uma coleção, como uma lista ou string. Isso permite saber quantas iterações um laço precisa realizar. 
 
 ---
 
+<br>
+<br>
 
 ---
 
@@ -408,50 +472,6 @@ boas_vindas("Diego")
 <br>
 ---
 <br>
----
-
-
-
-
-## Documentação Oficial do Python
-- https://docs.python.org/3/  
-- https://docs.python.org/3/tutorial/modules.html  
-- https://docs.python.org/3/py-modindex.html  
-- https://docs.python.org/3/tutorial/errors.html#exceptions  
-- https://docs.python.org/3/tutorial/classes.html  
-
-## Tutoriais e Artigos Técnicos
-- **TutorialsPoint** – Sintaxe Básica  
-  - https://www.tutorialspoint.com/python/python_basic_syntax.htm  
-- **Programiz** – Conversão de Tipos  
-  - https://www.programiz.com/python-programming/type-conversion-and-casting  
-- **Real Python**  
-  - Variáveis: https://realpython.com/python-variables/  
-  - Exceções: https://realpython.com/python-exceptions/  
-  - Módulos e Pacotes: https://realpython.com/python-modules-packages/  
-  - Lambda: https://realpython.com/python-lambda/  
-  - POO: https://realpython.com/python3-object-oriented-programming/  
-- **DataCamp** – Decorators  
-  - https://www.datacamp.com/tutorial/decorators-python  
-- **PythonBasics** – Decorators  
-  - https://pythonbasics.org/decorators/  
-- **TutorialsTeacher** – Magic (Dunder) Methods  
-  - https://www.tutorialsteacher.com/python/magic-methods-in-python  
-
-## W3Schools – Seção Python
-- Página principal: https://www.w3schools.com/python/  
-- Variáveis: https://www.w3schools.com/python/python_variables.asp  
-- Listas: https://www.w3schools.com/python/python_lists.asp  
-- Tuplas: https://www.w3schools.com/python/python_tuples.asp  
-- Sets: https://www.w3schools.com/python/python_sets.asp  
-- Dicionários: https://www.w3schools.com/python/python_dictionaries.asp  
-- Inheritance: https://www.w3schools.com/python/python_inheritance.asp  
-- Lambda: https://www.w3schools.com/python/python_lambda.asp  
-- Iterators: https://www.w3schools.com/python/python_iterators.asp  
-
-## Livros
-- *Python Fluente* — Luciano Ramalho  
-
 ---
 
 
