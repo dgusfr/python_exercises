@@ -139,7 +139,7 @@ else:
 
 -----
 
-### Operadores
+#### Operadores
 
 Para construir as expressões lógicas das condicionais, utilizamos operadores de comparação e lógicos.
 
@@ -191,6 +191,49 @@ else:
 ```
 
 ---
+
+### Estrutura Condicional `match/case`
+
+Introduzida no Python 3.10, a estrutura `match/case` oferece uma forma mais declarativa e poderosa para o controle de fluxo, sendo uma alternativa moderna para cadeias longas de `if/elif/else`. 
+
+Ela é especializada em **comparação de padrões estruturais** (structural pattern matching).
+
+```python
+def processar_comando(comando):
+    match comando:
+        case "iniciar":
+            print("Sistema iniciando...")
+        
+        case ("enviar", destinatario):
+            print(f"Enviando dados para {destinatario}...")
+
+        case {"acao": "deletar", "id": item_id}:
+            print(f"Deletando item {item_id}.")
+
+        case _:
+            print("Comando não reconhecido.")
+
+# Exemplos de uso
+processar_comando("iniciar")
+processar_comando(("enviar", "servidor_central"))
+processar_comando({"acao": "deletar", "id": 101})
+processar_comando("pausar")
+```
+
+A instrução `match` avalia uma variável (o *sujeito*, `comando` no exemplo) e a compara, em ordem, com os padrões definidos em cada bloco `case`. 
+
+O código do primeiro `case` que corresponder perfeitamente ao padrão do sujeito é executado, e a estrutura é encerrada. 
+
+Se nenhum padrão corresponder, o bloco do `case _` (chamado de *wildcard* ou coringa) é executado, funcionando como um `else` padrão.
+
+O grande poder do `match/case` está na sua capacidade de não apenas comparar valores literais (como `case "iniciar"`), mas também de desestruturar tipos de dados complexos, como tuplas e dicionários. 
+
+No `case ("enviar", destinatario)`, a estrutura verifica se o comando é uma tupla de dois elementos começando com "enviar" e, em caso positivo, automaticamente atribui o segundo elemento à variável `destinatario`. 
+
+Da mesma forma, no `case {"acao": "deletar", ...}`, ele verifica se o comando é um dicionário com as chaves e valores especificados, extraindo o valor da chave `"id"` para a variável `item_id`. Isso torna o código mais legível e expressivo ao lidar com estruturas de dados variadas.
+
+
+____
 
 ## 6. Laços de Repetição
 
