@@ -149,12 +149,12 @@ Comparam valores e retornam `True` (verdadeiro) ou `False` (falso).
 
 | Operador | Descrição | Exemplo |
 | :--- | :--- | :--- |
-| `==` |  Verifica se um valor é **igual** a outro. [cite: 57] | `x == 10` |
-| `!=` |  Verifica se um valor é **diferente** de outro. [cite: 57] | `x != 10` |
-| `>` |  Verifica se um valor é **maior** que outro. [cite: 57] | `x > 10` |
-| `<` |  Verifica se um valor é **menor** que outro. [cite: 57] | `x < 10` |
-| `>=` |  Verifica se um valor é **maior ou igual** a outro. [cite: 57] | `x >= 10` |
-| `<=` |  Verifica se um valor é **menor ou igual** a outro. [cite: 57] | `x <= 10` |
+| `==` |  Verifica se um valor é **igual** a outro.  | `x == 10` |
+| `!=` |  Verifica se um valor é **diferente** de outro. | `x != 10` |
+| `>` |  Verifica se um valor é **maior** que outro.  | `x > 10` |
+| `<` |  Verifica se um valor é **menor** que outro.  | `x < 10` |
+| `>=` |  Verifica se um valor é **maior ou igual** a outro. | `x >= 10` |
+| `<=` |  Verifica se um valor é **menor ou igual** a outro.  | `x <= 10` |
 
 #### Operadores Lógicos
 
@@ -237,39 +237,85 @@ ____
 
 ## 6. Laços de Repetição
 
-### `while`
 
-Repete enquanto a condição for verdadeira.
+Laços são estruturas de código que permitem executar um bloco de código repetidamente enquanto uma condição for verdadeira. Em Python, as principais estruturas de laço são `for` e `while`. 
+
+A lógica de um laço pode ser entendida como: repita uma ação até que a condição de parada se torne falsa. 
+
+#### Laço `for`
+
+O laço `for` é utilizado para percorrer os itens de uma coleção de dados (iterável), como listas ou tuplas. Ele é ideal para situações em que o número de repetições é conhecido previamente. 
+
+```python
+nomes = ["Carlos", "Ana", "Pedro", "Maria"] 
+
+for nome in nomes: 
+  print(nome) 
+```
+
+Neste código, o laço `for` itera sobre a lista `nomes`, executando o comando `print(nome)` para cada um dos seus elementos. A palavra `in` e os dois pontos (`:`) na sintaxe são obrigatórios. 
+
+#### Laço `while`
+
+O laço `while` executa um bloco de código continuamente enquanto uma condição especificada for verdadeira. É muito útil quando o número de iterações é desconhecido, pois a repetição depende do resultado da condição. 
 
 ```python
 contador = 0
+
 while contador < 5:
-    print("Contador:", contador)
-    contador += 1
+    print(f"Contador atual: {contador}") 
+    contador += 1 
 ```
 
-### `for`
+O laço verifica a condição `contador < 5` e, se for verdadeira, executa o bloco de código. Dentro do laço, o valor do contador é impresso e depois incrementado. Esse processo se repete até que a condição se torne falsa, o que acontece quando o contador atinge o valor 5. Se a condição de saída nunca for alcançada, o laço se torna um **loop infinito**. 
 
-Percorre uma sequência ou intervalo de valores.
+-----
+
+### Controle de Fluxo em Laços
+
+É possível alterar o comportamento de um laço com as instruções `break` e `continue`.
+
+#### `break`
+
+A instrução `break` permite interromper e sair de um laço imediatamente, mesmo que a condição principal do laço ainda seja verdadeira. 
 
 ```python
-for i in range(5):
-    print("Número:", i)
+nomes = ["PM3", "Alura", "Latam", "Outros"] 
+
+for nome in nomes: 
+    print(nome) 
+    if nome == "Alura": 
+        print("Nome encontrado! Saindo do laço.") 
+        break 
 ```
 
-O `range(5)` gera os números de 0 a 4.
+Ao encontrar o nome "Alura", o laço imprime a mensagem de confirmação e a instrução `break` é executada, encerrando o laço.   Os nomes que vêm a seguir na lista não são processados. 
+
+#### `continue`
+
+A instrução `continue` permite pular a iteração atual e passar diretamente para a próxima, ignorando o restante do código dentro do bloco do laço para aquela iteração específica. 
+
+```python
+nomes = ["PM3", "Alura", "Latam", "Outros"] 
+
+for nome in nomes:
+    if nome == "Alura":
+      print("Ignorando Alura.") 
+      continue 
+    print(f"Nome: {nome}") 
+```
+
+Neste caso, quando o laço encontra "Alura", ele imprime a mensagem de aviso e o `continue` faz com que a execução pule a linha `print(f"Nome: {nome}")` e continue para o próximo item da lista. 
+
+-----
+
+### Funções Úteis em Laços
+
+  *   **`range()`**: Gera uma sequência de números, frequentemente utilizada para controlar o número de iterações em laços `for`. Por exemplo, `range(6)` produz os números de 0 a 5.   
+  *   **`len()`**: É usada para obter o comprimento (número de itens) de uma coleção, como uma lista ou string. Isso permite saber quantas iterações um laço precisa realizar. 
 
 ---
 
-
-## Exercício Sugerido
-
-Crie um programa que:
-
-1. Pergunte o nome e a idade do usuário.
-2. Verifique se a pessoa é maior de idade.
-3. Mostre uma mensagem personalizada.
-4. Conte de 0 até a idade informada usando um `for`.
 
 ---
 
