@@ -101,18 +101,98 @@ Nesse caso, `a` e `b` apontam para o mesmo local na memória, pois o valor é id
 
 ## 5. Condicionais
 
-Condicionais permitem executar blocos de código com base em condições.
+Claro. Abaixo está o conteúdo sobre condicionais em Python, estruturado de forma corrigida e didática.
+
+### Estruturas Condicionais em Python
+
+[cite\_start]Condicionais permitem que um programa execute diferentes ações com base em condições que podem ser verdadeiras ou falsas. [cite: 3]
+
+#### `if`, `elif` e `else`
+
+A estrutura básica de uma condicional é o `if`, que executa um bloco de código se sua condição for verdadeira. [cite\_start]O uso dos dois pontos (`:`) após a expressão é obrigatório. [cite: 5, 10]
 
 ```python
-idade = int(input("Digite sua idade: "))
-
-if idade >= 18:
-    print("Você é maior de idade.")
-else:
-    print("Você é menor de idade.")
+nome = "Alura"
+if nome == "Alura": # A condição verifica se a variável nome é igual a "Alura"
+    print("Boas vindas") # Este código só é executado se a condição for verdadeira
 ```
 
-Usamos `if`, `elif` (else if) e `else` para expressar decisões no código.
+[cite\_start]O bloco `else` é opcional e executado somente se a condição do `if` for falsa. [cite: 11]
+
+```python
+nome = "Start"
+if nome == "Alura":
+    print("Boas vindas")
+else:
+    # Como 'nome' não é "Alura", a condição do if é falsa e este bloco é executado
+    print("Nome desconhecido")
+```
+
+Para testar múltiplas condições em sequência, utiliza-se o `elif` (uma contração de "else if"). [cite\_start]Ele permite adicionar novas verificações antes de chegar ao `else` final. [cite: 44, 47]
+
+```python
+nome = "Latam"
+if nome == "Alura":
+    print("Bem-vindo à Alura!")
+elif nome == "Latam":
+    # A primeira condição foi falsa, então esta é testada e, por ser verdadeira, o bloco é executado
+    print("Bem-vindo ao Latam!")
+else:
+    print("Nome desconhecido.")
+```
+
+-----
+
+### Operadores
+
+Para construir as expressões lógicas das condicionais, utilizamos operadores de comparação e lógicos.
+
+#### Operadores de Comparação
+
+[cite\_start]Comparam valores e retornam `True` (verdadeiro) ou `False` (falso). [cite: 56]
+
+| Operador | Descrição | Exemplo |
+| :--- | :--- | :--- |
+| `==` | [cite\_start]Verifica se um valor é **igual** a outro. [cite: 57] | `x == 10` |
+| `!=` | [cite\_start]Verifica se um valor é **diferente** de outro. [cite: 57] | `x != 10` |
+| `>` | [cite\_start]Verifica se um valor é **maior** que outro. [cite: 57] | `x > 10` |
+| `<` | [cite\_start]Verifica se um valor é **menor** que outro. [cite: 57] | `x < 10` |
+| `>=` | [cite\_start]Verifica se um valor é **maior ou igual** a outro. [cite: 57] | `x >= 10` |
+| `<=` | [cite\_start]Verifica se um valor é **menor ou igual** a outro. [cite: 57] | `x <= 10` |
+
+#### Operadores Lógicos
+
+[cite\_start]São usados para combinar múltiplas condições. [cite: 60] [cite\_start]Os mais comuns são `and` e `or`. [cite: 61, 62]
+
+  * [cite\_start]**`and`**: Retorna `True` apenas se **todas** as condições forem verdadeiras. [cite: 63]
+
+<!-- end list -->
+
+```python
+idade = 25
+tem_documento = "sim"
+
+# Ambas as condições devem ser verdadeiras para o resultado ser verdadeiro
+if idade >= 18 and tem_documento == "sim":
+    print("Entrada permitida!")
+else:
+    print("Entrada negada.")
+```
+
+  * [cite\_start]**`or`**: Retorna `True` se **pelo menos uma** das condições for verdadeira. [cite: 64]
+
+<!-- end list -->
+
+```python
+feriado = "não"
+folga = "sim"
+
+# Basta que uma das condições seja verdadeira para o resultado ser verdadeiro
+if feriado == "sim" or folga == "sim":
+    print("Você pode descansar hoje!")
+else:
+    print("Dia normal de trabalho.")
+```
 
 ---
 
