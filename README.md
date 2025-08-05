@@ -101,15 +101,11 @@ Nesse caso, `a` e `b` apontam para o mesmo local na memória, pois o valor é id
 
 ## 5. Condicionais
 
-Claro. Abaixo está o conteúdo sobre condicionais em Python, estruturado de forma corrigida e didática.
+Condicionais permitem que um programa execute diferentes ações com base em condições que podem ser verdadeiras ou falsas. 
 
-### Estruturas Condicionais em Python
+### `if`, `elif` e `else`
 
-[cite\_start]Condicionais permitem que um programa execute diferentes ações com base em condições que podem ser verdadeiras ou falsas. [cite: 3]
-
-#### `if`, `elif` e `else`
-
-A estrutura básica de uma condicional é o `if`, que executa um bloco de código se sua condição for verdadeira. [cite\_start]O uso dos dois pontos (`:`) após a expressão é obrigatório. [cite: 5, 10]
+A estrutura básica de uma condicional é o `if`, que executa um bloco de código se sua condição for verdadeira. O uso dos dois pontos (`:`) após a expressão é obrigatório. 
 
 ```python
 nome = "Alura"
@@ -117,7 +113,7 @@ if nome == "Alura": # A condição verifica se a variável nome é igual a "Alur
     print("Boas vindas") # Este código só é executado se a condição for verdadeira
 ```
 
-[cite\_start]O bloco `else` é opcional e executado somente se a condição do `if` for falsa. [cite: 11]
+O bloco `else` é opcional e executado somente se a condição do `if` for falsa. 
 
 ```python
 nome = "Start"
@@ -128,7 +124,7 @@ else:
     print("Nome desconhecido")
 ```
 
-Para testar múltiplas condições em sequência, utiliza-se o `elif` (uma contração de "else if"). [cite\_start]Ele permite adicionar novas verificações antes de chegar ao `else` final. [cite: 44, 47]
+Para testar múltiplas condições em sequência, utiliza-se o `elif` (uma contração de "else if"). Ele permite adicionar novas verificações antes de chegar ao `else` final. 
 
 ```python
 nome = "Latam"
@@ -149,22 +145,22 @@ Para construir as expressões lógicas das condicionais, utilizamos operadores d
 
 #### Operadores de Comparação
 
-[cite\_start]Comparam valores e retornam `True` (verdadeiro) ou `False` (falso). [cite: 56]
+Comparam valores e retornam `True` (verdadeiro) ou `False` (falso). 
 
 | Operador | Descrição | Exemplo |
 | :--- | :--- | :--- |
-| `==` | [cite\_start]Verifica se um valor é **igual** a outro. [cite: 57] | `x == 10` |
-| `!=` | [cite\_start]Verifica se um valor é **diferente** de outro. [cite: 57] | `x != 10` |
-| `>` | [cite\_start]Verifica se um valor é **maior** que outro. [cite: 57] | `x > 10` |
-| `<` | [cite\_start]Verifica se um valor é **menor** que outro. [cite: 57] | `x < 10` |
-| `>=` | [cite\_start]Verifica se um valor é **maior ou igual** a outro. [cite: 57] | `x >= 10` |
-| `<=` | [cite\_start]Verifica se um valor é **menor ou igual** a outro. [cite: 57] | `x <= 10` |
+| `==` |  Verifica se um valor é **igual** a outro. [cite: 57] | `x == 10` |
+| `!=` |  Verifica se um valor é **diferente** de outro. [cite: 57] | `x != 10` |
+| `>` |  Verifica se um valor é **maior** que outro. [cite: 57] | `x > 10` |
+| `<` |  Verifica se um valor é **menor** que outro. [cite: 57] | `x < 10` |
+| `>=` |  Verifica se um valor é **maior ou igual** a outro. [cite: 57] | `x >= 10` |
+| `<=` |  Verifica se um valor é **menor ou igual** a outro. [cite: 57] | `x <= 10` |
 
 #### Operadores Lógicos
 
-[cite\_start]São usados para combinar múltiplas condições. [cite: 60] [cite\_start]Os mais comuns são `and` e `or`. [cite: 61, 62]
+ São usados para combinar múltiplas condições.  Os mais comuns são `and` e `or`. 
 
-  * [cite\_start]**`and`**: Retorna `True` apenas se **todas** as condições forem verdadeiras. [cite: 63]
+  *  **`and`**: Retorna `True` apenas se **todas** as condições forem verdadeiras. 
 
 <!-- end list -->
 
@@ -179,7 +175,7 @@ else:
     print("Entrada negada.")
 ```
 
-  * [cite\_start]**`or`**: Retorna `True` se **pelo menos uma** das condições for verdadeira. [cite: 64]
+  *  **`or`**: Retorna `True` se **pelo menos uma** das condições for verdadeira.
 
 <!-- end list -->
 
