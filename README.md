@@ -67,8 +67,126 @@ Os tipos básicos em Python incluem:
 
 * `int` (números inteiros)
 * `float` (números decimais)
-* `str` (textos)
+* `str` ou `string` (textos)
 * `bool` (valores booleanos: `True` ou `False`)
+
+### Strings em Python
+
+Strings são sequências de caracteres usadas para representar texto. Em Python, elas são delimitadas por aspas simples (`'`), duplas (`"`) ou triplas (`"""`).
+
+```python
+# Aspas simples ou duplas são usadas para strings de uma única linha.
+mensagem_simples = 'Olá, mundo!'
+mensagem_dupla = "Python é incrível!"
+
+# Aspas triplas permitem criar strings que abrangem múltiplas linhas.
+texto_multilinha = """Essa é uma string
+que pode ter múltiplas
+linhas."""
+```
+
+A escolha entre aspas simples e duplas é uma questão de preferência, mas aspas triplas são especificamente úteis para textos longos com quebras de linha.
+
+-----
+
+### Formatação com f-strings
+
+As f-strings (strings formatadas) são a maneira moderna e legível de incorporar variáveis e expressões diretamente dentro de uma string. A sintaxe utiliza a letra `f` antes das aspas.
+
+```python
+estudante = "Pedro"
+nota = 10
+
+# A variável é colocada entre chaves {} dentro da string.
+mensagem = f"{estudante} tirou a nota {nota}!"
+print(mensagem) # Saída: Pedro tirou a nota 10!
+```
+
+-----
+
+### Acessando Partes de uma String
+
+#### Indexação
+
+A indexação permite acessar um único caractere de uma string através de sua posição (índice). A contagem começa em `0`. Índices negativos são usados para acessar caracteres a partir do final da string, onde `-1` é o último caractere.
+
+```python
+texto = "Python"
+
+# Acessa o caractere na posição 0 (o primeiro).
+print(texto[0]) # Saída: P
+
+# Acessa o último caractere.
+print(texto[-1]) # Saída: n
+```
+
+#### Slicing (Fatiamento)
+
+O slicing extrai uma substring (uma parte da string) usando a sintaxe `[início:fim:passo]`.
+
+  * `início`: O índice onde a fatia começa (inclusivo).
+  * `fim`: O índice onde a fatia termina (exclusivo).
+  * `passo`: O intervalo entre os caracteres (opcional).
+
+<!-- end list -->
+
+```python
+texto = "Python"
+
+# Extrai do índice 1 até o 3 (o índice 4 não é incluído).
+print(texto[1:4])  # Saída: yth
+
+# Se o início for omitido, a fatia começa do índice 0.
+print(texto[:3])   # Saída: Pyt
+
+# Com um passo de 2, extrai caracteres de forma alternada.
+print(texto[::2])  # Saída: Pto
+```
+
+-----
+
+### Métodos de Manipulação e Verificação
+
+#### Limpeza e Formatação de Caixa
+
+Métodos comuns para transformar ou limpar strings.
+
+```python
+exemplo = "  Olá Mundo  "
+
+# .strip() remove espaços em branco do início e do fim.
+print(exemplo.strip()) # Saída: "Olá Mundo"
+
+# .lower() converte todos os caracteres para minúsculas.
+print(exemplo.lower()) # Saída: "  olá mundo  "
+
+# .upper() converte todos os caracteres para maiúsculas.
+print(exemplo.upper()) # Saída: "  OLÁ MUNDO  "
+
+# .replace() substitui uma substring por outra.
+print(exemplo.replace("Mundo", "Python").strip()) # Saída: "Olá Python"
+```
+
+#### Verificação de Conteúdo
+
+É comum verificar se uma string contém, começa ou termina com uma determinada substring.
+
+```python
+texto = "Python é poderoso"
+
+# O operador 'in' verifica se uma substring está presente.
+print("poderoso" in texto) # Saída: True
+print("Java" in texto)     # Saída: False
+
+# .startswith() verifica se a string começa com a substring.
+# É sensível a maiúsculas e minúsculas.
+print(texto.startswith("Py"))   # Saída: True
+print(texto.startswith("py"))   # Saída: False
+
+# .endswith() verifica se a string termina com a substring.
+print(texto.endswith("poderoso")) # Saída: True
+print(texto.endswith("oso"))      # Saída: True
+```
 
 ---
 
