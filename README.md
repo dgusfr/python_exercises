@@ -176,15 +176,24 @@ print(exemplo.strip()) # Saída: "Olá Mundo"
 Converte todos os caracteres para minúsculas.
 
 ```python
-#  
 print(exemplo.lower()) # Saída: "  olá mundo  "
+```
 
-# .upper() converte todos os caracteres para maiúsculas.
+* **.upper()**
+Converte todos os caracteres para maiúsculas.
+
+```python
 print(exemplo.upper()) # Saída: "  OLÁ MUNDO  "
+```
 
-# .replace() substitui uma substring por outra.
+
+* **.replace()**
+substitui uma substring por outra.
+
+```python
 print(exemplo.replace("Mundo", "Python").strip()) # Saída: "Olá Python"
 ```
+
 
 #### Verificação de Conteúdo
 
