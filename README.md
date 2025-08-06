@@ -89,7 +89,7 @@ A escolha entre aspas simples e duplas é uma questão de preferência, mas aspa
 
 -----
 
-### Formatação com f-strings
+#### Formatação com f-strings
 
 As f-strings (strings formatadas) são a maneira moderna e legível de incorporar variáveis e expressões diretamente dentro de uma string. A sintaxe utiliza a letra `f` antes das aspas.
 
@@ -104,9 +104,9 @@ print(mensagem) # Saída: Pedro tirou a nota 10!
 
 -----
 
-### Acessando Partes de uma String
+#### Acessando Partes de uma String
 
-#### Indexação
+* **Indexação**
 
 A indexação permite acessar um único caractere de uma string através de sua posição (índice). A contagem começa em `0`. Índices negativos são usados para acessar caracteres a partir do final da string, onde `-1` é o último caractere.
 
@@ -120,7 +120,7 @@ print(texto[0]) # Saída: P
 print(texto[-1]) # Saída: n
 ```
 
-#### Slicing (Fatiamento)
+* **Slicing (Fatiamento)**
 
 O slicing extrai uma substring (uma parte da string) usando a sintaxe `[início:fim:passo]`.
 
@@ -130,34 +130,53 @@ O slicing extrai uma substring (uma parte da string) usando a sintaxe `[início:
 
 <!-- end list -->
 
+**Extrai do índice 1 até o 3 (o índice 4 não é incluído):**
+
 ```python
 texto = "Python"
 
-# Extrai do índice 1 até o 3 (o índice 4 não é incluído).
 print(texto[1:4])  # Saída: yth
+```
 
-# Se o início for omitido, a fatia começa do índice 0.
+**Se o início for omitido, a fatia começa do índice 0**
+```python
 print(texto[:3])   # Saída: Pyt
 
-# Com um passo de 2, extrai caracteres de forma alternada.
+# mesmo que:
+print(texto[0:3]) 
+```
+
+
+**Com um passo de 2, extrai caracteres de forma alternada:**
+```python
 print(texto[::2])  # Saída: Pto
+
+# mesmo que:
+print(texto[0:5:2])
 ```
 
 -----
 
-### Métodos de Manipulação e Verificação
+#### Métodos de Manipulação e Verificação
 
-#### Limpeza e Formatação de Caixa
+##### Limpeza e Formatação de Caixa
 
 Métodos comuns para transformar ou limpar strings.
+
+* **.strip()**
+remove espaços em branco do início e do fim.
 
 ```python
 exemplo = "  Olá Mundo  "
 
-# .strip() remove espaços em branco do início e do fim.
 print(exemplo.strip()) # Saída: "Olá Mundo"
+```
 
-# .lower() converte todos os caracteres para minúsculas.
+* **.lower()**
+Converte todos os caracteres para minúsculas.
+
+```python
+#  
 print(exemplo.lower()) # Saída: "  olá mundo  "
 
 # .upper() converte todos os caracteres para maiúsculas.
