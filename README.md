@@ -195,7 +195,7 @@ print(exemplo.replace("Mundo", "Python").strip()) # Saída: "Olá Python"
 ```
 
 
-#### Verificação de Conteúdo
+##### Verificação de Conteúdo
 
 É comum verificar se uma string contém, começa ou termina com uma determinada substring.
 
