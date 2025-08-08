@@ -51,6 +51,7 @@ print("Olá,", nome)
 
 O valor digitado pelo usuário é armazenado na variável `nome` e depois exibido.
 
+
 ---
 
 ## 3. Variáveis e Tipos de Dados
@@ -432,40 +433,142 @@ Tratar exceções é importante para evitar que o usuário tenha uma má experi�
 
 ---
 
-## 9. Funções
+## Funções
 
-**Funções** são blocos de código reutilizáveis. Elas ajudam a organizar o programa, evitar repetição e facilitar a manutenção.
 
-Em Python, funções são definidas com a palavra-chave `def`.
+Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas são essenciais para organizar o código, evitar repetição e tornar os programas mais modulares.
 
-```python
-def saudacao(nome):
-    print("Olá,", nome)
-
-saudacao("João")
-saudacao("Maria")
-```
-
-Funções podem **receber parâmetros** e **retornar valores**.
+A sintaxe de uma função é definida com a palavra-chave `def`, seguida pelo nome da função e parênteses. O bloco de código da função é indentado e pode finalizar com uma instrução `return` para enviar um valor de volta.
 
 ```python
-def somar(a, b):
-    return a + b
+def ola_mundo(nome): # 'nome' é um parâmetro
+    # O bloco de código da função
+    return f"Olá, {nome}!"
 
-resultado = somar(5, 3)
-print("Resultado:", resultado)
+# Para chamar a função, usamos seu nome seguido por parênteses
+# "Laís" é o argumento passado para o parâmetro 'nome'
+mensagem_formatada = ola_mundo("Laís")
+print(mensagem_formatada) # Saída: Olá, Laís!
 ```
 
-Também é possível definir **valores padrão** para parâmetros:
+  *  **Parâmetros** são as variáveis listadas na definição da função.  
+  *  **Argumentos** são os valores reais passados para a função quando ela é chamada. 
+  *  Variáveis criadas dentro de uma função têm **escopo local**, ou seja, só existem e podem ser acessadas dentro dela. 
+
+-----
+
+### Tipos de Funções Definidas pelo Usuário
+
+#### Funções com Parâmetros Padrão
+
+ Permitem definir um valor padrão para um parâmetro, tornando-o opcional na chamada da função. 
 
 ```python
-def boas_vindas(nome="visitante"):
-    print("Bem-vindo,", nome)
+def cumprimentar(nome="Visitante"): # "Visitante" é o valor padrão
+    print(f"Olá, {nome}!")
 
-boas_vindas()
-boas_vindas("Diego")
+cumprimentar() # Saída: Olá, Visitante!
+cumprimentar("Jade") # Saída: Olá, Jade!
 ```
 
+ Se nenhum argumento for fornecido, o valor padrão é usado.   Caso contrário, o argumento passado substitui o padrão. 
+
+#### Funções Anônimas (Lambda)
+
+ Uma função `lambda` é uma função pequena e anônima, definida sem um nome.  Ela pode ter múltiplos argumentos, mas apenas uma única expressão. 
+
+```python
+# Sintaxe: lambda argumentos: expressão
+soma = lambda a, b: a + b
+print(soma(3, 5)) # Saída: 8
+```
+
+ Lambdas são úteis para operações simples ou como argumentos para outras funções (como `map` e `filter`). 
+
+#### Funções Recursivas
+
+ São funções que chamam a si mesmas para resolver um problema, dividindo-o em subproblemas menores.   É essencial que tenham uma **condição de parada** para evitar um loop infinito. 
+
+```python
+def fatorial(n):
+    # Condição de Parada: se n for 0, a recursão para.
+    if n == 0:
+        return 1
+    # Chamada Recursiva: a função chama a si mesma com um valor menor.
+    return n * fatorial(n - 1)
+
+print(fatorial(5)) # Saída: 120
+```
+
+#### Closures (Funções dentro de Funções)
+
+ Uma closure é uma função interna que "se lembra" do ambiente (variáveis) onde foi criada, mesmo depois que a função externa já terminou sua execução. 
+
+```python
+def multiplicador(n): # Função externa
+    def multiplica(x): # Closure (função interna)
+        return x * n # Usa a variável 'n' da função externa
+    return multiplica
+
+triplo = multiplicador(3) # 'triplo' agora é uma closure que lembra que n=3
+print(triplo(5)) # Saída: 15
+```
+
+ Closures são úteis para criar funções especializadas e encapsular lógicas sem a necessidade de usar variáveis globais. 
+
+-----
+
+### Funções Embutidas (`built-in`)
+
+ São funções já incorporadas ao Python, prontas para uso.
+
+#### Interação e Manipulação
+
+| Método | Conceito | Exemplo |
+| :--- | :--- | :--- |
+| `print()` |  Exibe valores no console. | `print("Olá, mundo!")` |
+| `input()` |  Lê uma entrada do usuário como string.  | `nome = input("Digite: ")` |
+| `type()` |  Retorna o tipo de um objeto. | `type(10)` |
+| `isinstance()` |  Verifica se um objeto pertence a um tipo específico.  | `isinstance(10.5, int)` |
+| `len()` |  Retorna o tamanho de um objeto (string, lista, etc.). | `len("Python")` |
+
+Dica: Para ler uma entrada separando os valores por espaços na mesma linha por exemplo 10 20 30, use o método split().
+
+```python
+entrada = input().split() 
+```
+
+#### Conversão e Criação de Tipos
+
+| Método | Conceito | Exemplo |
+| :--- | :--- | :--- |
+| `str()` |  Converte um valor para string. | `str(123)` |
+| `int()` |  Converte um valor para inteiro. | `int("10")` |
+| `float()` |  Converte um valor para ponto flutuante (decimal).  | `float("3.14")` |
+| `bool()` |  Converte um valor para Booleano (`True` ou `False`). | `bool(1)` |
+| `list()` |  Converte um iterável para lista.  | `list("abc")` |
+| `dict()` |  Cria um dicionário. | `dict(nome="Ana")` |
+| `set()` |  Cria um conjunto. | `set([1, 2, 3])` |
+
+#### Funções Matemáticas
+
+| Método | Conceito | Exemplo |
+| :--- | :--- | :--- |
+| `abs()` |  Retorna o valor absoluto de um número.  | `abs(-10)` |
+| `round()` |  Arredonda um número para um número de casas decimais.  | `round(3.1415, 2)` |
+| `max()` |  Retorna o maior valor entre os argumentos.  | `max(3, 5, 1)` |
+| `min()` |  Retorna o menor valor entre os argumentos.| `min(3, 5, 1)` |
+| `sum()` |  Retorna a soma dos itens de um iterável. | `sum([1, 2, 3])` |
+
+#### Funções para Iteráveis
+
+| Método | Conceito | Exemplo |
+| :--- | :--- | :--- |
+| `filter()` |  Filtra elementos de um iterável com base em uma função. | `list(filter(lambda x: x > 2, [1, 2, 3, 4]))` |
+| `map()` |  Aplica uma função a cada elemento de um iterável. | `list(map(lambda x: x * 2, [1, 2, 3]))` |
+| `zip()` |  Une dois ou mais iteráveis em pares de elementos.  | `list(zip([1, 2], ["a", "b"]))` |
+| `sorted()` |  Retorna uma nova lista ordenada a partir de um iterável.  | `sorted([3, 1, 4])` |
+| `reversed()` |  Retorna um iterador com os elementos na ordem inversa.   | `list(reversed([1, 2, 3]))` |
 ---
 
 ---
