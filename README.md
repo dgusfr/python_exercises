@@ -528,7 +528,6 @@ print(triplo(5)) # Saída: 15
 | :--- | :--- | :--- |
 | `print()` |  Exibe valores no console. | `print("Olá, mundo!")` |
 | `input()` |  Lê uma entrada do usuário como string.  | `nome = input("Digite: ")` |
-| `type()` |  Retorna o tipo de um objeto. | `type(10)` |
 | `isinstance()` |  Verifica se um objeto pertence a um tipo específico.  | `isinstance(10.5, int)` |
 | `len()` |  Retorna o tamanho de um objeto (string, lista, etc.). | `len("Python")` |
 
@@ -540,15 +539,140 @@ entrada = input().split()
 
 #### Conversão e Criação de Tipos
 
-| Método | Conceito | Exemplo |
-| :--- | :--- | :--- |
-| `str()` |  Converte um valor para string. | `str(123)` |
-| `int()` |  Converte um valor para inteiro. | `int("10")` |
-| `float()` |  Converte um valor para ponto flutuante (decimal).  | `float("3.14")` |
-| `bool()` |  Converte um valor para Booleano (`True` ou `False`). | `bool(1)` |
-| `list()` |  Converte um iterável para lista.  | `list("abc")` |
-| `dict()` |  Cria um dicionário. | `dict(nome="Ana")` |
-| `set()` |  Cria um conjunto. | `set([1, 2, 3])` |
+A função `type()` é usada para verificar o tipo de dado de uma variável ou objeto em Python. Para usá-la, basta passar a variável como argumento.
+
+```python
+numero = 10
+texto = "Olá, mundo!"
+lista = [1, 2, 3]
+
+print(type(numero))
+print(type(texto))
+print(type(lista))
+```
+
+**Saída:**
+
+```
+<class 'int'>
+<class 'str'>
+<class 'list'>
+```
+
+Ela retorna a classe do objeto, informando se é um inteiro (`int`), uma string (`str`), uma lista (`list`), etc. É muito útil para depurar e entender com que tipo de dado você está trabalhando.
+
+##### Typecasting (Conversão de Tipos) 
+
+Typecasting é o processo de transformar um valor de um tipo de dado em outro. Isso é fundamental em Python, pois muitas operações exigem que os dados estejam em um formato específico. A conversão pode ser:
+
+  * **Implícita**: O Python faz automaticamente, como ao somar um inteiro e um float (o resultado é um float).
+  * **Explícita**: O programador força a conversão usando funções específicas. É sobre esta que vamos focar.
+
+A conversão explícita é feita usando funções nativas que têm o mesmo nome do tipo de dado para o qual você deseja converter.
+
+##### Convertendo para Inteiro (`int()`)
+
+A função `int()` converte um valor para um número inteiro. Ao converter um float, a parte decimal é **truncada** (removida), não arredondada.
+
+```python
+valor_float = 19.85
+valor_str = "100"
+
+inteiro_de_float = int(valor_float)
+inteiro_de_str = int(valor_str)
+
+print(f"Float {valor_float} para int: {inteiro_de_float}") # Saída: 19
+print(f"String '{valor_str}' para int: {inteiro_de_str}") # Saída: 100
+```
+
+##### Convertendo para Ponto Flutuante (`float()`)
+
+A função `float()` converte um valor para um número de ponto flutuante (com casas decimais).
+
+```python
+valor_int = 42
+valor_str = "3.14"
+
+float_de_int = float(valor_int)
+float_de_str = float(valor_str)
+
+print(f"Inteiro {valor_int} para float: {float_de_int}") # Saída: 42.0
+print(f"String '{valor_str}' para float: {float_de_str}") # Saída: 3.14
+```
+
+##### Convertendo para String (`str()`)
+
+A função `str()` converte praticamente qualquer valor para sua representação em formato de texto (string).
+
+```python
+valor_int = 500
+valor_float = 99.9
+valor_lista = [1, 2, 3]
+
+str_de_int = str(valor_int)
+str_de_float = str(valor_float)
+str_de_lista = str(valor_lista)
+
+print(f"String de inteiro: '{str_de_int}'")     # Saída: '500'
+print(f"String de float: '{str_de_float}'")     # Saída: '99.9'
+print(f"String de lista: '{str_de_lista}'")     # Saída: '[1, 2, 3]'
+```
+
+##### Convertendo para Booleano (`bool()`)
+
+A função `bool()` converte um valor para `True` ou `False`. A regra geral é que valores "vazios" ou nulos são `False`, e a maioria dos outros valores é `True`.
+
+  * **Tornam-se `False`**: `0`, `0.0`, `None`, strings vazias (`""`), listas/tuplas/dicionários/conjuntos vazios (`[]`, `()`, `{}`, `set()`).
+  * **Tornam-se `True`**: Qualquer número diferente de zero, strings não vazias e coleções com elementos.
+
+<!-- end list -->
+
+```python
+print(f"bool(0): {bool(0)}")               # Saída: False
+print(f"bool(''): {bool('')}")             # Saída: False
+print(f"bool([]): {bool([])}")             # Saída: False
+print(f"bool(1): {bool(1)}")               # Saída: True
+print(f"bool('texto'): {bool('texto')}")   # Saída: True
+```
+
+##### Convertendo para Tipos de Coleção
+
+Você também pode converter entre diferentes tipos de coleções.
+
+```python
+texto = "abc"
+tupla = (1, 2, 3, 2) # Tupla com elemento duplicado
+
+# list() cria uma lista a partir de um iterável
+lista_de_texto = list(texto)
+print(f"String para lista: {lista_de_texto}") # Saída: ['a', 'b', 'c']
+
+# set() cria um conjunto, removendo elementos duplicados
+conjunto_de_tupla = set(tupla)
+print(f"Tupla para conjunto: {conjunto_de_tupla}") # Saída: {1, 2, 3}
+
+# tuple() cria uma tupla
+tupla_de_lista = tuple(lista_de_texto)
+print(f"Lista para tupla: {tupla_de_lista}") # Saída: ('a', 'b', 'c')
+```
+
+
+##### Lidando com Erros de Conversão
+
+Tentar uma conversão impossível, como `int("olá")`, gera um erro do tipo `ValueError`. A forma correta de lidar com isso é usando um bloco `try...except`.
+
+```python
+entrada_usuario = "25b"
+
+try:
+    numero = int(entrada_usuario)
+    print(f"Número convertido: {numero}")
+except ValueError:
+    print(f"Erro: '{entrada_usuario}' não é um número inteiro válido.")
+```
+
+---
+---
 
 #### Funções Matemáticas
 
