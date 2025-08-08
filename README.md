@@ -614,6 +614,117 @@ boas_vindas("Diego")
 
 ---
 
+<br>
+<br>
+<br>
+
+___
+
+
+# Expressões Regulares (Regex) 
+
+Expressões regulares são padrões usados para encontrar ou substituir sequências de caracteres em um texto. Em Python, as operações de regex são realizadas através do módulo `re`. Para começar, ele deve ser importado.
+
+```python
+import re
+```
+
+-----
+
+## Componentes de um Padrão Regex
+
+Um padrão de regex é construído com caracteres literais e especiais.
+
+  * **Caracteres Literais**: Correspondem exatamente a si mesmos. Por exemplo, a regex `Python` encontrará a string "Python".
+  * **Caracteres Especiais**: Símbolos com um significado específico que definem padrões complexos. Para usar um caractere especial como literal, ele deve ser "escapado" com uma barra invertida (`\`).
+
+Abaixo estão os principais grupos de caracteres especiais.
+
+### Metacaracteres (Caracteres Especiais)
+
+| Símbolo | Descrição |
+| :--- | :--- |
+| `.` | Corresponde a qualquer caractere, exceto nova linha. |
+| `\d` | Corresponde a qualquer dígito (0-9). |
+| `\D` | Corresponde a qualquer caractere que não seja um dígito. |
+| `\w` | Corresponde a qualquer caractere alfanumérico (letras, números e `_`). |
+| `\W` | Corresponde a qualquer caractere que não seja alfanumérico. |
+| `\s` | Corresponde a qualquer espaço em branco (espaço, tabulação, etc.). |
+| `\S` | Corresponde a qualquer caractere que não seja espaço em branco. |
+
+#### Classes de Caracteres
+
+São grupos de caracteres definidos entre colchetes (`[]`).
+
+| Símbolo | Descrição |
+| :--- | :--- |
+| `[abc]` | Corresponde a um único caractere: 'a', 'b' ou 'c'. |
+| `[^abc]` | Corresponde a qualquer caractere que **não** seja 'a', 'b' ou 'c'. |
+| `[a-z]` | Corresponde a qualquer letra minúscula de 'a' a 'z'. |
+| `[A-Z]` | Corresponde a qualquer letra maiúscula de 'A' a 'Z'. |
+| `[0-9]` | Corresponde a qualquer dígito de '0' a '9'. |
+
+#### Quantificadores
+
+Especificam o número de vezes que um padrão deve ocorrer.
+
+| Símbolo | Descrição |
+| :--- | :--- |
+| `*` | Corresponde a **0 ou mais** ocorrências do padrão anterior. |
+| `+` | Corresponde a **1 ou mais** ocorrências do padrão anterior. |
+| `?` | Corresponde a **0 ou 1** ocorrência do padrão anterior. |
+| `{n}` | Corresponde a exatamente **n** ocorrências do padrão anterior. |
+| `{n,}` | Corresponde a **n ou mais** ocorrências do padrão anterior. |
+| `{n,m}` | Corresponde a **entre n e m** ocorrências do padrão anterior. |
+
+-----
+
+### Usando Regex em Python: Exemplo Prático
+
+O exemplo a seguir usa o módulo `re` para encontrar um endereço de e-mail em um texto.
+
+```python
+import re
+
+texto = "Entre em contato pelo email support@example.com"
+
+# O 'r' antes da string indica que é uma "raw string", evitando problemas com a barra invertida.
+padrao_email = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
+
+# re.search() procura o padrão em qualquer parte do texto.
+resultado = re.search(padrao_email, texto)
+
+# É crucial verificar se uma correspondência foi encontrada antes de usar .group().
+if resultado:
+    # .group() retorna o texto que correspondeu ao padrão.
+    print("Email encontrado:", resultado.group()) # Saída: Email encontrado: support@example.com
+else:
+    print("Nenhum email encontrado.")
+```
+
+Neste código, `re.search()` procura pelo padrão de e-mail no texto. Se encontrar, ele retorna um objeto de correspondência; caso contrário, retorna `None`. O método `resultado.group()` é então usado para extrair a string exata que foi encontrada.
+
+### Outros Métodos Úteis do Módulo `re`
+
+| Método | Descrição | Exemplo de Uso |
+| :--- | :--- | :--- |
+| `search` | Procura pelo padrão em qualquer parte da string e retorna a primeira ocorrência. | `re.search(r"\d+", "Há 1234 alunos")` |
+| `match` | Verifica se o padrão corresponde apenas no **início** da string. | `re.match(r"abc", "abcdef")` |
+| `findall` | Retorna **todas** as ocorrências do padrão em uma lista. | `re.findall(r"\d+", "3 gatos e 2 cachorros")` |
+| `sub` | **Substitui** as ocorrências do padrão por outra string. | `re.sub(r"\d", "#", "Meu número é 1234")` |
+
+### Exemplos de Padrões
+
+  * **Telefone**: A regex `\(\d{2}\)\s\d{4,5}-\d{4}` pode encontrar números de telefone como "(11) 98765-4321".
+      * `\(` e `\)`: Parênteses literais.
+      * `\d{2}`: Exatamente dois dígitos.
+      * `\s`: Um espaço em branco.
+      * `\d{4,5}`: De quatro a cinco dígitos.
+  * **Data**: A regex `\b\d{2}/\d{2}/\d{4}\b` pode encontrar datas como "25/12/2025".
+      * `\b`: Garante que a correspondência é uma "palavra" completa, evitando encontrar datas dentro de outros números.
+
+É altamente recomendável usar ferramentas online como o **regex101** para testar e depurar seus padrões antes de aplicá-los no código.
+
 ---
 <br>
 ---
