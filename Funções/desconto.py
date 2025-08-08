@@ -1,5 +1,12 @@
-porcentagem = input("Digite a porcentagem de desconto: (Ex: 10%)")
-compra = input("Digite o valor da compra: ")
+porcentagem_str = input("Digite a porcentagem de desconto: (Ex: 10%)")
+compra_str = input("Digite o valor da compra: ")
+
+try:
+    porcentagem = float(porcentagem_str.replace("%", "")) / 100
+    compra = float(compra_str)
+except ValueError:
+    print("Entrada inválida.")
+    exit()
 
 
 def aplicar_desconto(valor_compra):
