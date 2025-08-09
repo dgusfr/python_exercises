@@ -15,19 +15,3 @@ Carla desativou as notificações. Nada foi enviado.
 Todas as notificações foram processadas!
 ```
 """
-
-import asyncio
-
-
-async def corrotina(nome, status, preferencia):
-    print("Enviando notificações...")
-    print(f"Tarefa {status} iniciada.")
-    await asyncio.sleep(preferencia)
-    print(f"Tarefa {status} concluída.")
-
-
-async def main():
-    await asyncio.gather(corrotina("1", 2), corrotina("2", 3), corrotina("3", 1))
-
-
-asyncio.run(main())
