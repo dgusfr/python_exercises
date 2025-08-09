@@ -19,10 +19,11 @@ Todas as notificações foram processadas!
 import asyncio
 
 
-async def corrotina(nome, tempo):
-    print(f"Tarefa {nome} iniciada.")
-    await asyncio.sleep(tempo)
-    print(f"Tarefa {nome} concluída.")
+async def corrotina(nome, status, preferencia):
+    print("Enviando notificações...")
+    print(f"Tarefa {status} iniciada.")
+    await asyncio.sleep(preferencia)
+    print(f"Tarefa {status} concluída.")
 
 
 async def main():
