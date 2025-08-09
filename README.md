@@ -531,31 +531,6 @@ ___
 
 ---
 
-## Tratamento de Exceções (Exceptions)
-
-**Exceções** são erros que ocorrem durante a execução do programa. Se não forem tratadas, o programa pode parar.
-
-O Python fornece uma estrutura para **capturar e tratar esses erros** usando `try`, `except` e, opcionalmente, `finally`.
-
-```python
-try:
-    numero = int(input("Digite um número: "))
-    resultado = 10 / numero
-    print("Resultado:", resultado)
-except ValueError:
-    print("Erro: você digitou um valor inválido.")
-except ZeroDivisionError:
-    print("Erro: divisão por zero não é permitida.")
-finally:
-    print("Execução finalizada.")
-```
-
-O bloco `try` tenta executar o código. Se ocorrer algum erro, o Python procura o `except` correspondente para tratar o problema. O `finally`, se presente, é executado sempre.
-
-Tratar exceções é importante para evitar que o usuário tenha uma má experiência com o programa.
-
----
-
 ## Funções
 
 Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas são essenciais para organizar o código, evitar repetição e tornar os programas mais modulares.
@@ -776,22 +751,6 @@ tupla_de_lista = tuple(lista_de_texto)
 print(f"Lista para tupla: {tupla_de_lista}") # Saída: ('a', 'b', 'c')
 ```
 
-
-#### Lidando com Erros de Conversão
-
-Tentar uma conversão impossível, como `int("olá")`, gera um erro do tipo `ValueError`. A forma correta de lidar com isso é usando um bloco `try...except`.
-
-```python
-entrada_usuario = "25b"
-
-try:
-    numero = int(entrada_usuario)
-    print(f"Número convertido: {numero}")
-except ValueError:
-    print(f"Erro: '{entrada_usuario}' não é um número inteiro válido.")
-```
-
----
 ---
 
 #### Funções Matemáticas
@@ -1211,6 +1170,351 @@ Tarefa 1 concluída.
 Tarefa 2 concluída.
 ```
 
------
+---
+
+# Projetos em Python
+
+Quando precisamos desenvolver um projeto ou nos deparamos com um problema na programação, muitas vezes não sabemos exatamente por onde começar. Essa é a situação que enfrentamos agora.
+
+Nosso problema é simples: realizar a **soma de dois números** digitados pelo usuário.
+
+## Identificando o problema
+
+Primeiramente, precisamos **identificar o problema geral**, que é a soma de dois números fornecidos pelo usuário. Para resolver esse problema, vamos **dividi-lo em subproblemas** para seguir um passo a passo:
+
+1.  Pedir dois números ao usuário;
+2.  Somar esses números;
+3.  Mostrar o resultado para o usuário;
+4.  Após a execução bem-sucedida desse processo, testar e melhorar o código.
+
+## Criando o código
+
+Sendo assim, podemos criar o código inicial. Para isso, criamos um arquivo onde adicionamos o primeiro esboço do código.
+
+A primeira variável chamada `numero1` recebe um valor do `input()` do usuário. Lembrando que o `input()` retorna uma `string`. Em seguida, convertemos essa `string` para `float` (número decimal). A segunda variável, `numero2`, segue o mesmo processo.
+
+Depois, criamos a variável `soma`, que realiza a soma desses dois números, e utilizamos o `print()` para exibir o valor dessa soma.
+
+```python
+numero1 = float(input())
+numero2 = float(input())
+
+soma = numero1 + numero2
+print(soma)
+```
+
+> **Saída:**
+>
+> ```
+> 2
+> 5
+> 7.0
+> ```
+
+A saída que obtemos é simples: `2`, `5` e `7.0`. No entanto, o nosso código não é muito intuitivo. Não sabemos o que representam cada número da saída. Além disso, a soma não está encapsulada, ou seja, sempre que precisarmos somar valores, teremos que criar novamente a variável `soma`. Isso não é o ideal para o nosso projeto.
+
+## Melhorando o código
+
+O primeiro passo para melhorar o código é **encapsular a lógica** de soma dentro de uma função e **separar as responsabilidades** em funções distintas.
+
+Levando isso em conta, definimos a função `def somar()`, que recebe os parâmetros `a` e `b`, representando os dois valores, e retorna a soma `a + b`.
+
+Além disso, no `input()` onde capturamos as variáveis `numero1` e `numero2`, podemos informar ao usuário o que é preciso digitar. Por exemplo, "Digite o primeiro número" e "Digite o segundo número".
+
+Por fim, o `resultado` será uma chamada para a função `somar()`, passando os dois valores das variáveis. Com isso, podemos repetir esse resultado quantas vezes quisermos. O `print()`, que vem logo após o `resultado`, exibirá a soma concatenada a uma frase explicativa.
+
+```python
+def somar(a, b):
+    return a + b
+
+numero1 = float(input("Digite o primeiro número: "))
+numero2 = float(input("Digite o segundo número: "))
+
+resultado = somar(numero1, numero2)
+print(f"A soma é: {resultado}")
+```
+
+> **Saída:**
+>
+> ```
+> Digite o primeiro número: 2
+> Digite o segundo número: 5
+> A soma é: 7.0
+> ```
+
+Quando verificamos a saída desse código, ela se torna mais clara. Sabemos que digitamos um primeiro número (que é `2`) e um segundo número (que é `5`), e recebemos a soma desses valores (que é `7.0`).
+
+## Tratando possíveis erros (Exception)
+
+No entanto, precisamos **tratar possíveis erros** que o código possa ter, como quando o usuário digita algo inválido. Por exemplo, se alguém digitar uma letra em vez de um número, não conseguiremos converter esse valor para `float`, o que quebraria o código.
+
+Para evitar isso, colocamos o código que criamos para `numero1`, `numero2`, `resultado` e `print()` dentro de um bloco `try/except`. O `try` tentará executar o código. Caso não consiga, devido a um valor inválido, o `except` exibirá uma mensagem de erro.
+
+```python
+def somar(a, b):
+    return a + b
+
+try:
+    numero1 = float(input("Digite o primeiro número: "))
+    numero2 = float(input("Digite o segundo número: "))
+
+    resultado = somar(numero1, numero2)
+    print(f"A soma é: {resultado}")
+except ValueError:
+    print("Erro: Digite apenas números válidos!")
+```
+
+> **Saída:**
+>
+> ```
+> Digite o primeiro número: abc
+> Erro: Digite apenas números válidos!
+> ```
+
+Para testar o código, podemos digitar `abc` como o primeiro número. Assim, receberemos automaticamente a mensagem de erro, informando que apenas números válidos devem ser digitados.
+
+Dessa forma, o código não quebrará, apenas informará ao usuário que a execução não foi possível.
+
+## Testando manualmente
+
+Além disso, podemos **testar manualmente** diversos cenários possíveis. Por exemplo, além de digitar um texto, o usuário pode simplesmente não inserir valor algum.
+
+> **Saída:**
+>
+> ```
+> Digite o primeiro número: 5
+> Digite o segundo número: 
+> Erro: Digite apenas números válidos!
+> ```
+
+Se alguém digitar o primeiro número, mas apenas pressionar "Enter" no segundo campo, sem digitar valor algum, deve receber um erro, pois esse valor não pôde ser convertido, já que não existe.
+
+> **Saída:**
+>
+> ```
+> Digite o primeiro número: 2
+> Digite o segundo número: 5
+> A soma é: 7.0
+> ```
+
+Da mesma maneira, quando alteramos um código, é necessário testar novamente para verificar se o código está funcionando corretamente. Novamente, podemos digitar `2` e `5` para conferir se a soma será `7.0`.
+
+## Explorando possíveis erros em projetos
+
+No entanto, o `ValueError` não é o único erro que pode ocorrer. Existem diversos possíveis erros que podem surgir em um projeto, e precisamos estar cientes disso.
+
+| Erro | Mensagem | Motivo | Solução |
+| :--- | :--- | :--- | :--- |
+| **Entrada Inválida** | `ValueError` | Ocorre quando tentamos converter um valor que não pode ser transformado no tipo esperado. Ex: `float("abc")`. | Tratar erro com bloco `try/except`. |
+| **Tipo Inválido** | `TypeError` | Ocorre quando realizamos operações incompatíveis entre tipos de dados. Ex: `10 + "5"`. | Converter valores antes de operações. Ex: `int("5")`. |
+| **Índice fora da lista** | `IndexError` | Ocorre ao tentar acessar um índice que não existe em uma lista. Ex: acessar `lista[5]` em uma lista de 3 itens. | Conferir `len(lista)` antes de acessar um índice. |
+| **Chave inexistente**| `KeyError` | Ocorre ao tentar acessar uma chave que não existe em um dicionário. | Usar `.get("chave", valor_padrao)` para evitar erro. |
+| **Erro de importação** | `ImportError` | Ocorre quando um módulo é encontrado, mas não pode ser carregado corretamente. | Verificar se o módulo está instalado e disponível. |
+| **Módulo não encontrado** | `ModuleNotFoundError` | Ocorre quando tentamos importar um módulo que não está instalado ou não existe. | Garantir que o módulo está instalado com `pip install modulo`. |
+| **Atributo inexistente** | `AttributeError` | Ocorre quando tentamos acessar um atributo ou método que não existe em um objeto. Ex: `"abc".append(5)`. | Converter valores antes de operações. Ex: `int("5")`. |
+| **Sintaxe inválida**| `SyntaxError` | Ocorre quando há um erro na escrita do código, como esquecer um `:` ou parênteses. | Revisar a sintaxe e corrigir erros antes de rodar o código. |
 
 
+---
+
+# Contador de Palavras em Python
+
+Agora que entendemos o passo a passo de desenvolver um projeto e construí-lo, recebemos um novo problema: criar um contador de palavras. O projeto deve receber uma frase do usuário e contar quantas vezes cada palavra aparece.
+
+Primeiro, devemos criar uma função para o contador e inseri-la no arquivo `contador.py`.
+
+A função `contar_palavras()` receberá apenas a `frase` como parâmetro. Nela, faremos o mesmo processo anterior. Criaremos uma variável `palavras` que recebe `frase.split()`. Depois, imprimiremos essas palavras para verificar o que foi recebido e fazer um `return` para enviar o tamanho dessas palavras.
+
+**`contador.py`:**
+
+```python
+def contar_palavras(frase):
+    palavras = frase.split()
+    print(palavras)
+    return len(palavras)
+```
+
+Agora, a lógica de receber essa frase e passá-la para o usuário estará em um arquivo chamado `main.py`, que será criado no mesmo diretório de `contador.py`.
+
+No `main.py`, importamos a função `contar_palavras` do `contador`. Em seguida, criamos uma variável `frase` para receber o `input()` do usuário e a variável `quantidade` que executará a função `contar_palavras()`, passando a frase.
+
+Por fim, fazemos um `print()` para exibir um texto concatenado com a quantidade de palavras.
+
+**`main.py`:**
+
+```python
+from contador import contar_palavras
+
+frase = input("Digite uma frase: ")
+quantidade = contar_palavras(frase)
+print(f"A frase tem {quantidade} palavras.")
+```
+
+> **Saída:**
+>
+> ```
+> Digite uma frase: livros são livros.
+> ['livros', 'são', 'livros.']
+> A frase tem 3 palavras.
+> ```
+
+Para testar, digitamos a frase "livros são livros.". Na saída, recebemos a informação de que foram armazenadas as palavras "livros", "são" e "livros.", totalizando três palavras.
+
+Contudo, existe um problema nesse projeto. As palavras "livros" e "livros." estão sendo consideradas palavras diferentes, e a pontuação na frase está sendo considerada uma palavra válida, o que não é adequado.
+
+## Explorando possíveis entradas do usuário
+
+Por isso, precisamos identificar as possíveis entradas do usuário e as problemáticas associadas a elas.
+
+| Tipo de Entrada | Exemplo | Problema |
+| :--- | :--- | :--- |
+| **Entrada Vazia** | Usuário pressiona Enter sem digitar nada (`""`). | O código pode falhar ou retornar valores incorretos. |
+| **Apenas espaços** | `"   "` | Deve ser tratado como vazio. |
+| **Apenas pontuação** | `.,!?:;` | Não contém palavras válidas. |
+| **Texto com pontuação** | `"Olá, mundo!"` | A pontuação interfere na contagem correta. |
+| **Caracteres especiais e acentos** | `"Python é incrível!"` | Pode gerar palavras separadas caso haja tratamento incorreto. |
+| **Vários espaços entre palavras** | `"Essa   frase   é   curta !"` | O `split()` pode gerar listas incorretas. |
+| **Palavras repetidas** | `"Python python é bom"` | Deve contar corretamente a frequência. |
+| **Maiúsculas e minúsculas** | `"Python PYTHON python"` | O código deve tratar palavras como iguais. |
+| **Números na frase** | `"Faço 26 anos em 2 meses."` | Dependendo do contexto, pode ser palavra válida ou não. |
+| **Somente números** | `"123 456 789"` | Números podem ser tratados como palavras. |
+| **Mistura de letras e números** | `"Python3 é melhor que Python2?"` | A pontuação pode separar indevidamente. |
+
+Por exemplo, uma entrada vazia, onde o usuário pressiona "Enter" sem digitar nada, não pode ser considerada válida, pois o código pode falhar. Também não deveríamos considerar entradas com apenas espaços ou pontuações.
+
+Do mesmo modo, é importante tratar caracteres especiais, acentos, pontuações dentro do texto e vários espaços entre palavras, pois podem gerar listas incorretas com a função `split()`.
+
+Além disso, palavras repetidas, independentemente de conter letras maiúsculas ou minúsculas, devem ser consideradas como uma única palavra no cálculo do tamanho da frase.
+
+De acordo com a regra de negócio estabelecida nesse projeto, números na frase serão considerados palavras válidas, mas isso pode ser ajustado conforme o contexto. Também devemos nos atentar para entradas que contenham apenas números ou uma mistura de letras e números.
+
+## Tratando o código
+
+Para começar a tratar essas questões no projeto, podemos remover as pontuações e converter todas as palavras para letras minúsculas, garantindo que sejam consideradas iguais - independente da capitalização.
+
+Dentro do arquivo `contador.py`, podemos criar uma função chamada `limpar_texto()`, que receberá o texto como parâmetro. A primeira ação será utilizar a função `lower()` para transformar todo o texto em letras minúsculas.
+
+Em seguida, criaremos uma variável chamada `caracteres`, na qual listaremos todos os caracteres que não queremos considerar.
+
+Depois, passaremos por um bloco de repetição para cada caractere dentro dessa string de `caracteres`, utilizando a função `replace()` para substituir o caractere por nada, ou seja, apagando-o do texto.
+
+Assim, retornaremos o texto limpo e tratado, o qual será utilizado na função `contar_palavras()`.
+
+**`contador.py`:**
+
+```python
+def limpar_texto(texto):
+    texto = texto.lower()
+    caracteres = ".,!?:;\"'()[]{}"
+    for char in caracteres:
+        texto = texto.replace(char, "")
+    return texto
+```
+
+Na função `contar_palavras()`, chamaremos a função `limpar_texto()` para obter a frase limpa. Em seguida, dividiremos as palavras dessa frase limpa através do `split()`. Por último, retornaremos a quantidade de palavras.
+
+```python
+def contar_palavras(frase):
+    frase = limpar_texto(frase)
+    palavras = frase.split()
+    return len(palavras)
+```
+
+Só que ainda precisamos verificar a frequência dessas palavras e evitar palavras inválidas.
+
+Por isso, ainda na função `contar_palavras()`, depois de limpar a frase, podemos verificar se há algo válido nessa variável. Se não houver nada válido, retornaremos um dicionário vazio, pois não existem palavras válidas nesse momento. Caso contrário, separaremos as palavras com `frase.split()`, transformando-as em uma lista novamente.
+
+A contagem será feita em um dicionário, onde a chave será a palavra e o valor será a quantidade de ocorrências na frase. Para adicionar essas palavras no dicionário vazio, vamos utilizar um bloco de repetição `for` onde passaremos por cada palavra dentro de `palavras`.
+
+Se a palavra já existir no dicionário, somaremos 1 à contagem. Caso contrário, criaremos uma nova chave com a palavra e iniciaremos a contagem em 1, ou seja, teremos a primeira ocorrência da palavra. Finalmente, retornaremos o dicionário de contagem.
+
+```python
+def contar_palavras(frase):
+    frase = limpar_texto(frase)
+    if not frase.strip():
+        return {}
+    
+    palavras = frase.split()
+    contagem = {}
+    
+    for palavra in palavras:
+        contagem[palavra] = contagem.get(palavra, 0) + 1
+    
+    return contagem
+```
+
+Agora, temos duas possibilidades de retorno: um dicionário vazio ou um dicionário com todas as palavras e suas frequências.
+
+Feito isso, podemos aprimorar o código no arquivo `main.py`, verificando se a entrada está vazia e apresentando a contagem da frequência de palavras de forma clara para o usuário.
+
+No momento em que armazenamos a frase, podemos remover todos os espaços vazios através do método `strip()`.
+
+Em seguida, fazemos uma verificação com o `if`. Se a frase estiver vazia, imprimos uma mensagem indicando que nenhuma frase foi digitada. Caso contrário, passamos a frase para a função `contar_palavras()` e armazenamos isso na variável `resultado`.
+
+Com isso, podemos fazer outro `if`. Dessa vez, queremos verificar se há um `resultado`, ou seja, se recebemos um dicionário que não está vazio, imprimimos cada palavra e sua quantidade. Para isso, fazemos um `for` em `resultado.items()` que retorna o par chave e valor do dicionário. Caso contrário, indicamos que nenhuma palavra válida foi encontrada.
+
+**`main.py`:**
+
+```python
+from contador import contar_palavras
+
+frase = input("Digite uma frase: ").strip()
+if not frase:
+    print("Erro: Nenhuma frase foi digitada.")
+else:
+    resultado = contar_palavras(frase)
+    if resultado:
+        print("Contagem de Palavras:")
+        for palavra, quantidade in resultado.items():
+            print(f"{palavra}: {quantidade}")
+    else:
+        print("Nenhuma palavra válida foi encontrada.")
+```
+
+Com isso, o `main` trata as condições de nenhuma frase digitada e nenhuma palavra válida encontrada.
+
+## Testando diferentes situações
+
+Agora, podemos verificar exemplos de resposta.
+
+No primeiro exemplo, digitamos a palavra "OLÁ, mUndo\!" com uma mistura de letras maiúsculas e minúsculas, além de vírgula e exclamação. Ainda assim, o programa considera apenas 2 palavras válidas, como esperado.
+
+> **Saída:**
+>
+> ```
+> Digite uma frase: OLÁ, mUndo!
+> Contagem de Palavras:
+> olá: 1
+> mundo: 1
+> ```
+
+Também podemos digitar "python(] é incrível incrível.", com pontuação e palavras repetidas. Na contagem, foram identificadas apenas uma ocorrência das palavras "python" e "é", mas duas ocorrências da palavra "incrível".
+
+> **Saída:**
+>
+> ```
+> Digite uma frase: python(] é incrível incrível.
+> Contagem de Palavras:
+> python: 1
+> é: 1
+> incrível: 2
+> ```
+
+Além disso, podemos escrever palavras que contém letras e números, como a pergunta "Python3 é melhor que o Python2 em 2025?". Nossa regra de negócio ainda considera essas ocorrências como palavras válidas.
+
+> **Saída:**
+>
+> ```
+> Digite uma frase: Python3 é melhor que Python2 em 2025?
+> Contagem de Palavras:
+> python3: 1
+> é: 1
+> melhor: 1
+> que: 1
+> python2: 1
+> em: 1
+> 2025: 1
+> ```
+
+
+---
