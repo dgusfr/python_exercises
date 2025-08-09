@@ -531,7 +531,7 @@ ___
 
 ---
 
-## 8. Tratamento de Exceções (Exceptions)
+## Tratamento de Exceções (Exceptions)
 
 **Exceções** são erros que ocorrem durante a execução do programa. Se não forem tratadas, o programa pode parar.
 
@@ -557,7 +557,6 @@ Tratar exceções é importante para evitar que o usuário tenha uma má experi�
 ---
 
 ## Funções
-
 
 Funções são blocos de código reutilizáveis que executam uma tarefa específica. Elas são essenciais para organizar o código, evitar repetição e tornar os programas mais modulares.
 
