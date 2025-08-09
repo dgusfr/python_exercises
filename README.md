@@ -22,9 +22,7 @@
 
 --- 
 
-# Python Básico
-
-## 1. Sintaxe Básica
+# Sintaxe Básica
 
 Python é uma linguagem de programação de alto nível, conhecida por sua sintaxe simples e legível.
 
@@ -40,7 +38,7 @@ Neste exemplo, `print()` é uma função que exibe mensagens na tela.
 
 ---
 
-## 2. Entrada e Saída de Dados
+# Entrada e Saída de Dados
 
 A entrada de dados em Python é feita com a função `input()`. A saída, com a função `print()`.
 
@@ -54,7 +52,7 @@ O valor digitado pelo usuário é armazenado na variável `nome` e depois exibid
 
 ---
 
-## 3. Variáveis e Tipos de Dados
+# Variáveis 
 
 Uma **variável** armazena um valor na memória. Em Python, não é necessário declarar o tipo da variável antes de usá-la.
 
@@ -64,6 +62,35 @@ nome = "João"
 altura = 1.75
 ```
 
+## Processamento e Memória
+
+Todo programa realiza processamento e utiliza memória para armazenar dados.
+
+### Alocação de Memória
+
+Em Python, a alocação de memória é automática. Quando você cria uma variável, o interpretador reserva espaço na memória para ela.
+
+```python
+a = 5
+b = 7
+c = a + b
+```
+
+Cada variável ocupa um espaço na memória com seu valor.
+
+Python também realiza **otimização de memória**. Se duas variáveis possuem o mesmo valor imutável, elas podem compartilhar o mesmo endereço:
+
+```python
+a = 5
+b = 5
+```
+
+Nesse caso, `a` e `b` apontam para o mesmo local na memória, pois o valor é idêntico e imutável (inteiros são imutáveis em Python).
+
+---
+
+# Tipos de Dados
+
 Os tipos básicos em Python incluem:
 
 * `int` (números inteiros)
@@ -71,7 +98,7 @@ Os tipos básicos em Python incluem:
 * `str` ou `string` (textos)
 * `bool` (valores booleanos: `True` ou `False`)
 
-### Strings em Python
+## Strings em Python
 
 Strings são sequências de caracteres usadas para representar texto. Em Python, elas são delimitadas por aspas simples (`'`), duplas (`"`) ou triplas (`"""`).
 
@@ -90,7 +117,7 @@ A escolha entre aspas simples e duplas é uma questão de preferência, mas aspa
 
 -----
 
-#### Formatação com f-strings
+### Formatação com f-strings
 
 As f-strings (strings formatadas) são a maneira moderna e legível de incorporar variáveis e expressões diretamente dentro de uma string. A sintaxe utiliza a letra `f` antes das aspas.
 
@@ -105,7 +132,7 @@ print(mensagem) # Saída: Pedro tirou a nota 10!
 
 -----
 
-#### Acessando Partes de uma String
+### Acessando Partes de uma String
 
 * **Indexação**
 
@@ -158,9 +185,9 @@ print(texto[0:5:2])
 
 -----
 
-#### Métodos de Manipulação e Verificação
+### Métodos de Manipulação e Verificação
 
-##### Limpeza e Formatação de Caixa
+#### Limpeza e Formatação de Caixa
 
 Métodos comuns para transformar ou limpar strings.
 
@@ -196,7 +223,7 @@ print(exemplo.replace("Mundo", "Python").strip()) # Saída: "Olá Python"
 ```
 
 
-##### Verificação de Conteúdo
+#### Verificação de Conteúdo
 
 É comum verificar se uma string contém, começa ou termina com uma determinada substring.
 
@@ -219,38 +246,12 @@ print(texto.endswith("oso"))      # Saída: True
 
 ---
 
-## 4. Programação com Python: Processamento e Memória
 
-Todo programa realiza processamento e utiliza memória para armazenar dados.
-
-### Alocação de Memória
-
-Em Python, a alocação de memória é automática. Quando você cria uma variável, o interpretador reserva espaço na memória para ela.
-
-```python
-a = 5
-b = 7
-c = a + b
-```
-
-Cada variável ocupa um espaço na memória com seu valor.
-
-Python também realiza **otimização de memória**. Se duas variáveis possuem o mesmo valor imutável, elas podem compartilhar o mesmo endereço:
-
-```python
-a = 5
-b = 5
-```
-
-Nesse caso, `a` e `b` apontam para o mesmo local na memória, pois o valor é idêntico e imutável (inteiros são imutáveis em Python).
-
----
-
-## 5. Condicionais
+# Condicionais
 
 Condicionais permitem que um programa execute diferentes ações com base em condições que podem ser verdadeiras ou falsas. 
 
-### `if`, `elif` e `else`
+## `if`, `elif` e `else`
 
 A estrutura básica de uma condicional é o `if`, que executa um bloco de código se sua condição for verdadeira. O uso dos dois pontos (`:`) após a expressão é obrigatório. 
 
@@ -286,7 +287,7 @@ else:
 
 -----
 
-#### Operadores
+### Operadores
 
 Para construir as expressões lógicas das condicionais, utilizamos operadores de comparação e lógicos.
 
@@ -339,7 +340,7 @@ else:
 
 ---
 
-### Estrutura Condicional `match/case`
+## Estrutura Condicional `match/case`
 
 Introduzida no Python 3.10, a estrutura `match/case` oferece uma forma mais declarativa e poderosa para o controle de fluxo, sendo uma alternativa moderna para cadeias longas de `if/elif/else`. 
 
@@ -382,14 +383,14 @@ Da mesma forma, no `case {"acao": "deletar", ...}`, ele verifica se o comando é
 
 ____
 
-## 6. Laços de Repetição
+# Laços de Repetição
 
 
 Laços são estruturas de código que permitem executar um bloco de código repetidamente enquanto uma condição for verdadeira. Em Python, as principais estruturas de laço são `for` e `while`. 
 
 A lógica de um laço pode ser entendida como: repita uma ação até que a condição de parada se torne falsa. 
 
-#### Laço `for`
+## Laço `for`
 
 O laço `for` é utilizado para percorrer os itens de uma coleção de dados (iterável), como listas ou tuplas. Ele é ideal para situações em que o número de repetições é conhecido previamente. 
 
@@ -402,7 +403,7 @@ for nome in nomes:
 
 Neste código, o laço `for` itera sobre a lista `nomes`, executando o comando `print(nome)` para cada um dos seus elementos. A palavra `in` e os dois pontos (`:`) na sintaxe são obrigatórios. 
 
-#### Laço `while`
+## Laço `while`
 
 O laço `while` executa um bloco de código continuamente enquanto uma condição especificada for verdadeira. É muito útil quando o número de iterações é desconhecido, pois a repetição depende do resultado da condição. 
 
