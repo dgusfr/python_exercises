@@ -1036,25 +1036,42 @@ Biblioteca padrão do Python para escrita de código assíncrono, usada para ope
   * `async def` define a função como corrotina.
   * `await` pausa a execução para aguardar outra corrotina.
 
-<!-- end list -->
 
 ```python
 import asyncio
 
-async def corrotina():
-    print("Início.") 
+async def corrotina(numero):
+    print(f"Iniciando tarefa {numero}.")
     await asyncio.sleep(2)
-    print("Fim.")
+    print(f"Tarefa {numero} concluída!")
 
-asyncio.run(corrotina())
+async def main():
+    await corrotina(1)
+    await corrotina(2)
+
+asyncio.run(main())
 ```
 
 **Saída:**
 
+``` 
+Iniciando tarefa 1. 
+ ...2 seg depois:
+Tarefa 1 concluída! 
+Iniciando tarefa 2. 
+ ...2 seg depois:
+Tarefa 2 concluída!
 ```
-Início.
-Fim.
-```
+
+No código, apesar de usarmos a biblioteca **Asyncio**, a funcionalidade do nosso código está **síncrona**, porque a tarefa 1 é iniciada e após 2 segundos concluída, e só então ela passa para a próxima tarefa.
+
+Isso se deve ao fato de que estamos usando **await** de forma **sequencial** na função main, ou seja, aguardamos a **corrotina** 1 finalizar completamente e depois iniciamos a corrotina 2. 
+
+Quando utilizamos `await corrotina(1)` seguido de `await corrotina(2)`, o interpretador **suspende** a execução de main durante o primeiro await, retomando apenas quando a primeira corrotina termina. 
+
+Somente após isso é que a segunda corrotina é chamada e executada. Essa abordagem elimina qualquer **concorrência** entre as tarefas, fazendo com que elas sejam executadas uma após a outra, resultando em um comportamento **síncrono** mesmo dentro de um contexto assíncrono.
+
+Para as corrotinas trabalherem em **concorrencia** é necessartio usarmos tasks:
 
 #### TASKS (TAREFAS)
 
@@ -1084,7 +1101,7 @@ asyncio.run(main())
 Iniciando tarefa 1.
 Iniciando tarefa 2.
 Tarefa 1 concluída!
-Tarefa 2 [concluída!]
+Tarefa 2 concluída!
 ```
 
 #### FUTURE (FUTUROS)
