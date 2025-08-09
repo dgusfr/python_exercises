@@ -531,30 +531,6 @@ ___
 
 ---
 
-
-## 7. Conversão de Tipos (Typecasting)
-
-Em Python, às vezes é necessário **converter** um valor de um tipo para outro. Esse processo é chamado de **typecasting** ou **type conversion**.
-
-A conversão pode ser automática (implícita) ou feita manualmente (explícita).
-
-```python
-# Conversão implícita
-x = 10
-y = 2.5
-z = x + y  # x (int) é convertido automaticamente para float
-print(z)
-
-# Conversão explícita
-idade_str = "30"
-idade_int = int(idade_str)  # converte string para inteiro
-print(idade_int + 5)
-```
-
-Python possui funções como `int()`, `float()`, `str()`, `bool()` para conversão explícita.
-
----
-
 ## 8. Tratamento de Exceções (Exceptions)
 
 **Exceções** são erros que ocorrem durante a execução do programa. Se não forem tratadas, o programa pode parar.
