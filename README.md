@@ -579,9 +579,7 @@ print(mensagem_formatada) # Saída: Olá, Laís!
 
 -----
 
-### Tipos de Funções Definidas pelo Usuário
-
-#### Funções com Parâmetros Padrão
+### Funções com Parâmetros Padrão
 
  Permitem definir um valor padrão para um parâmetro, tornando-o opcional na chamada da função. 
 
@@ -595,7 +593,7 @@ cumprimentar("Jade") # Saída: Olá, Jade!
 
  Se nenhum argumento for fornecido, o valor padrão é usado.   Caso contrário, o argumento passado substitui o padrão. 
 
-#### Funções Anônimas (Lambda)
+### Funções Anônimas (Lambda)
 
  Uma função `lambda` é uma função pequena e anônima, definida sem um nome.  Ela pode ter múltiplos argumentos, mas apenas uma única expressão. 
 
@@ -607,7 +605,7 @@ print(soma(3, 5)) # Saída: 8
 
  Lambdas são úteis para operações simples ou como argumentos para outras funções (como `map` e `filter`). 
 
-#### Funções Recursivas
+### Funções Recursivas
 
  São funções que chamam a si mesmas para resolver um problema, dividindo-o em subproblemas menores.   É essencial que tenham uma **condição de parada** para evitar um loop infinito. 
 
@@ -622,7 +620,7 @@ def fatorial(n):
 print(fatorial(5)) # Saída: 120
 ```
 
-#### Closures (Funções dentro de Funções)
+### Closures (Funções dentro de Funções)
 
  Uma closure é uma função interna que "se lembra" do ambiente (variáveis) onde foi criada, mesmo depois que a função externa já terminou sua execução. 
 
@@ -683,7 +681,7 @@ print(type(lista))
 
 Ela retorna a classe do objeto, informando se é um inteiro (`int`), uma string (`str`), uma lista (`list`), etc. É muito útil para depurar e entender com que tipo de dado você está trabalhando.
 
-##### Typecasting (Conversão de Tipos) 
+### Typecasting (Conversão de Tipos) 
 
 Typecasting é o processo de transformar um valor de um tipo de dado em outro. Isso é fundamental em Python, pois muitas operações exigem que os dados estejam em um formato específico. A conversão pode ser:
 
@@ -692,7 +690,7 @@ Typecasting é o processo de transformar um valor de um tipo de dado em outro. I
 
 A conversão explícita é feita usando funções nativas que têm o mesmo nome do tipo de dado para o qual você deseja converter.
 
-##### Convertendo para Inteiro (`int()`)
+#### Convertendo para Inteiro (`int()`)
 
 A função `int()` converte um valor para um número inteiro. Ao converter um float, a parte decimal é **truncada** (removida), não arredondada.
 
@@ -707,7 +705,7 @@ print(f"Float {valor_float} para int: {inteiro_de_float}") # Saída: 19
 print(f"String '{valor_str}' para int: {inteiro_de_str}") # Saída: 100
 ```
 
-##### Convertendo para Ponto Flutuante (`float()`)
+#### Convertendo para Ponto Flutuante (`float()`)
 
 A função `float()` converte um valor para um número de ponto flutuante (com casas decimais).
 
@@ -722,7 +720,7 @@ print(f"Inteiro {valor_int} para float: {float_de_int}") # Saída: 42.0
 print(f"String '{valor_str}' para float: {float_de_str}") # Saída: 3.14
 ```
 
-##### Convertendo para String (`str()`)
+#### Convertendo para String (`str()`)
 
 A função `str()` converte praticamente qualquer valor para sua representação em formato de texto (string).
 
@@ -740,7 +738,7 @@ print(f"String de float: '{str_de_float}'")     # Saída: '99.9'
 print(f"String de lista: '{str_de_lista}'")     # Saída: '[1, 2, 3]'
 ```
 
-##### Convertendo para Booleano (`bool()`)
+#### Convertendo para Booleano (`bool()`)
 
 A função `bool()` converte um valor para `True` ou `False`. A regra geral é que valores "vazios" ou nulos são `False`, e a maioria dos outros valores é `True`.
 
@@ -757,7 +755,7 @@ print(f"bool(1): {bool(1)}")               # Saída: True
 print(f"bool('texto'): {bool('texto')}")   # Saída: True
 ```
 
-##### Convertendo para Tipos de Coleção
+#### Convertendo para Tipos de Coleção
 
 Você também pode converter entre diferentes tipos de coleções.
 
@@ -779,7 +777,7 @@ print(f"Lista para tupla: {tupla_de_lista}") # Saída: ('a', 'b', 'c')
 ```
 
 
-##### Lidando com Erros de Conversão
+#### Lidando com Erros de Conversão
 
 Tentar uma conversão impossível, como `int("olá")`, gera um erro do tipo `ValueError`. A forma correta de lidar com isso é usando um bloco `try...except`.
 
@@ -933,5 +931,7 @@ Neste código, `re.search()` procura pelo padrão de e-mail no texto. Se encontr
 ---
 <br>
 ---
+
+
 
 
