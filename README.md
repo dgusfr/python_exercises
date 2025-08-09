@@ -1106,7 +1106,41 @@ Tarefa 2 concluída!
 
 #### FUTURE (FUTUROS)
 
-É um objeto que representa um valor que ainda não está pronto e que será definido no futuro, usado em integração com APIs de baixo nível.
+É um objeto que representa um valor que ainda não está pronto e que será definido no futuro, usado em integração com APIs de baixo nível.]
+
+* Exemplo básico
+
+```python
+import asyncio
+
+async def corrotina(futuro):
+    print("Início.")
+    await asyncio.sleep(2)
+    futuro.set_result("Fim.")
+
+async def main():
+    futuro = asyncio.Future()
+    asyncio.create_task(corrotina(futuro))
+    resultado = await futuro
+    print(resultado)
+
+asyncio.run(main())
+```
+
+**Saída:**
+
+```
+Início. 
+Fim. 
+```
+
+O código utiliza um `asyncio.Future` como um mecanismo de sinalização entre duas corrotinas. A função `main` cria o `Future` e pausa sua execução com `await futuro`, aguardando que um resultado seja definido. 
+
+Concorrentemente, a `corrotina`, executada como uma tarefa em segundo plano, realiza seu trabalho (simulado por `asyncio.sleep(2)`) e, ao final, chama `futuro.set_result("Fim.")`. Esta chamada "desperta" a `main`, que recebe o valor "Fim." do `Future` e o imprime. 
+
+Essencialmente, é uma forma de uma tarefa notificar outra sobre a conclusão de uma operação e lhe entregar um resultado.
+
+* Exemplo avançado
 
 ```python
 import asyncio
@@ -1174,6 +1208,7 @@ Tarefa 2 iniciada.
 Tarefa 3 iniciada.
 Tarefa 3 concluída.
 Tarefa 1 concluída.
+Tarefa 2 concluída.
 ```
 
 -----
