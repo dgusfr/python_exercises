@@ -428,7 +428,9 @@ Ao final, `\b` (backspace) é usado para apagar os dois últimos caracteres (a v
 
 #### Formatando a Saída com Caracteres de Escape
 
-Caracteres de escape são sequências especiais que representam ações de formatação. Os mais comuns são `\n` (nova linha) e `\t` (tabulação horizontal). Eles podem ser usados dentro de strings para organizar a saída, como na criação de tabelas simples.
+Caracteres de escape são sequências especiais que representam ações de formatação. Os mais comuns são `\n` (nova linha) e `\t` (tabulação horizontal). 
+
+Eles podem ser usados dentro de strings para organizar a saída, como na criação de tabelas simples.
 
 ```python
 produtos = [
@@ -441,7 +443,11 @@ for produto in produtos:
   print(f'{produto["id"]}\t{produto["nome"]}\t\t${produto["preco"]:.2f}')
 ```
 
-Este exemplo cria um cabeçalho e, em seguida, itera sobre uma lista de dicionários. A string de formatação (f-string) utiliza `\t` para alinhar os dados em colunas, simulando uma tabela. O uso de `\t\t` ajusta o espaçamento para o alinhamento da coluna "Preço", compensando a diferença de comprimento entre "Produto" e os nomes dos itens. O `\n` é adicionado implicitamente pelo `print()` ao final de cada linha, movendo a impressão para a linha seguinte a cada iteração.
+Este exemplo cria um cabeçalho e, em seguida, itera sobre uma lista de dicionários. A string de formatação (f-string) utiliza `\t` para alinhar os dados em colunas, simulando uma tabela. 
+
+O uso de `\t\t` ajusta o espaçamento para o alinhamento da coluna "Preço", compensando a diferença de comprimento entre "Produto" e os nomes dos itens. 
+
+O `\n` é adicionado implicitamente pelo `print()` ao final de cada linha, movendo a impressão para a linha seguinte a cada iteração.
 
 ## Laço `while`
 
