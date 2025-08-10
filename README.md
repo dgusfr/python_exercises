@@ -403,6 +403,43 @@ for nome in nomes:
 
 Neste código, o laço `for` itera sobre a lista `nomes`, executando o comando `print(nome)` para cada um dos seus elementos. A palavra `in` e os dois pontos (`:`) na sintaxe são obrigatórios. 
 
+
+### Controle da Saída de Impressão no Laço `for`
+
+Por padrão, a função `print()` insere uma quebra de linha (`\n`) ao final de sua execução. É possível alterar esse comportamento e controlar a formatação da saída com o parâmetro `end` e caracteres de escape, como `\t` para tabulação.
+
+#### Imprimindo na Mesma Linha com `end`
+
+O parâmetro nomeado `end` da função `print()` substitui o caractere de nova linha padrão por qualquer outra string. Isso é útil para exibir resultados de um laço na mesma linha.
+
+```python
+nomes = ["Carlos", "Ana", "Pedro"]
+
+print("Nomes:", end=" ")
+for nome in nomes:
+  print(nome, end=", ")
+print("\b\b.") # Remove a última vírgula e espaço, adiciona um ponto.
+```
+
+Neste código, `end=" "` no primeiro `print` evita a quebra de linha após "Nomes:". Dentro do laço, `end=", "` imprime cada nome seguido de uma vírgula e um espaço, mantendo o cursor na mesma linha. Ao final, `\b` (backspace) é usado para apagar os dois últimos caracteres (a vírgula e o espaço extras) antes de adicionar um ponto final, resultando em uma lista formatada de maneira limpa: `Nomes: Carlos, Ana, Pedro.`.
+
+#### Formatando a Saída com Caracteres de Escape
+
+Caracteres de escape são sequências especiais que representam ações de formatação. Os mais comuns são `\n` (nova linha) e `\t` (tabulação horizontal). Eles podem ser usados dentro de strings para organizar a saída, como na criação de tabelas simples.
+
+```python
+produtos = [
+  {"id": 1, "nome": "Teclado", "preco": 150.00},
+  {"id": 2, "nome": "Mouse", "preco": 89.90}
+]
+
+print("ID\tProduto\t\tPreço")
+for produto in produtos:
+  print(f'{produto["id"]}\t{produto["nome"]}\t\t${produto["preco"]:.2f}')
+```
+
+Este exemplo cria um cabeçalho e, em seguida, itera sobre uma lista de dicionários. A string de formatação (f-string) utiliza `\t` para alinhar os dados em colunas, simulando uma tabela. O uso de `\t\t` ajusta o espaçamento para o alinhamento da coluna "Preço", compensando a diferença de comprimento entre "Produto" e os nomes dos itens. O `\n` é adicionado implicitamente pelo `print()` ao final de cada linha, movendo a impressão para a linha seguinte a cada iteração.
+
 ## Laço `while`
 
 O laço `while` executa um bloco de código continuamente enquanto uma condição especificada for verdadeira. É muito útil quando o número de iterações é desconhecido, pois a repetição depende do resultado da condição. 
