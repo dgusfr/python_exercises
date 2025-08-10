@@ -1564,3 +1564,114 @@ Além disso, podemos escrever palavras que contém letras e números, como a per
 
 
 ---
+
+<br>
+<br>
+
+-----
+
+# List Comprehension
+
+É possível escrever este loop `for` para obter os preços de maneira mais concisa utilizando list comprehension. O código permanece quase idêntico, mas é reduzido a uma única linha:
+
+```python
+precos = [produto[1] for produto in produtos]
+```
+
+Criamos novamente a lista vazia de preços, mas agora com list comprehension, extraindo os dados da coluna 1 dos preços.
+
+```python
+precos = [produto[1] for produto in produtos]
+soma_precos = sum(precos)
+soma_precos
+```
+
+> ```
+> 55.120000000000005
+> ```
+
+A soma dos preços continua sendo realizada da mesma maneira que anteriormente. Executamos a célula com "Shift + Enter" e obtemos o mesmo resultado.
+
+```python
+soma_precos = sum([produto[1] for produto in produtos])
+soma_precos
+```
+
+> ```
+> 55.120000000000005
+> ```
+
+É possível simplificar ainda mais, colocando a função `sum()` em torno do list comprehension para retornar diretamente à soma dos preços.
+
+## List comprehension com `if` e `else`
+
+Outro exemplo de list comprehension pode envolver o uso de `if/else`. Suponhamos que seja necessário verificar se o `estoque` está alto ou baixo.
+
+```python
+status_estoque = [
+    [produto[0], "Estoque baixo" if produto[2] < 20 else "Estoque OK"]
+    for produto in produtos
+]
+```
+
+Escrevemos o nome do produto, que está na coluna zero (produto[0]), e em seguida aplicamos um list comprehension com uma regra utilizando if/else. A lista `status_estoque` verifica se a quantidade é menor que 20, considerando o estoque como baixo, ou, caso contrário, como "ok". Em seguida, percorremos cada produto na lista para gerar a lista `status_estoque` dessa maneira.
+
+```python
+status_estoque
+```
+
+```
+['Arroz', 'Estoque OK'],
+```
+```
+['Feijão', 'Estoque OK'],
+['Macarrão', 'Estoque OK'],
+['Óleo', 'Estoque baixo'],
+['Açúcar', 'Estoque OK'],
+['Sal', 'Estoque OK'],
+['Café', 'Estoque baixo'],
+['Leite', 'Estoque OK']]
+```
+
+Executamos a célula e, em uma nova célula, chamamos o `status_estoque`. Observamos que há produtos que o estoque está "Ok" e outros que constam como "Baixo".
+
+## Dict comprehension
+
+Além de listas, também poderíamos utilizar tuplas ou dicionários. Vamos criar um exemplo utilizando um `dicionário` para representar a lista de produtos.
+
+```python
+estoque = {
+    "Arroz": {"quantidade": 30, "preco": 25.00},
+    "Feijão": {"quantidade": 15, "preco": 18.50},
+    "Macarrão": {"quantidade": 50, "preco": 10.00},
+    "Óleo": {"quantidade": 10, "preco": 22.00},
+    "Açúcar": {"quantidade": 40, "preco": 8.00},
+    "Café": {"quantidade": 5, "preco": 30.00},
+}
+```
+
+Criamos um dicionário chamado `estoque`, no qual cada produto é associado a um par chave-valor, sendo que o valor é um dicionário contendo a quantidade e o preço do produto. Podemos aplicar os conceitos de list comprehension por meio de dict comprehension para trabalhar com este dicionário. Executamos a célula.
+
+```python
+estoque_com_desconto = {
+    nome: {
+        "quantidade": dados["quantidade"],
+        "preco": dados["preco"] * 0.9 if dados["preco"] > 20 else dados["preco"]
+    }
+    for nome, dados in estoque.items()
+}
+estoque_com_desconto
+```
+
+ ```
+ {'Arroz': {'quantidade': 30, 'preco': 22.5},
+ ```
+ ```
+ 'Feijão': {'quantidade': 15, 'preco': 18.5},
+ 'Macarrão': {'quantidade': 50, 'preco': 10.0},
+ 'Óleo': {'quantidade': 10, 'preco': 19.8},
+ 'Açúcar': {'quantidade': 40, 'preco': 8.0},
+ 'Café': {'quantidade': 5, 'preco': 27.0}}
+ ```
+
+Criamos o dicionário `estoque_com_desconto`, aplicando um desconto nos preços superiores a 20. Capturamos o nome do produto (valor do dicionário) e percorremos os produtos no dicionário estoque e atualizamos os preços, aplicando um desconto de 0.9 quando o preço for maior que 20. Em seguida, percorremos os nomes dos produtos no dicionário e os dados no dicionário de estoque utilizando o método `estoque.items()`. Após a execução do código, observamos que o dicionário resultante tem os preços alterados conforme a regra definida.
