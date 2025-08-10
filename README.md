@@ -1572,25 +1572,43 @@ Além disso, podemos escrever palavras que contém letras e números, como a per
 
 # List Comprehension
 
-É possível escrever este loop `for` para obter os preços de maneira mais concisa utilizando list comprehension. O código permanece quase idêntico, mas é reduzido a uma única linha:
+List comprehensions em Python são uma forma concisa de criar listas. Elas oferecem uma sintaxe mais clara e geralmente mais rápida para gerar uma lista a partir de uma sequência existente.
+
+Veja a nossa lista de produtos:
+
+```python
+produtos = [
+    ["Arroz", 5.99, 30],
+    ["Feijão", 8.49, 20],
+    ["Macarrão", 4.79, 50],
+    ["Óleo", 7.89, 15],
+    ["Açúcar", 3.99, 40],
+    ["Sal", 2.49, 100],
+    ["Café", 14.99, 10],
+    ["Leite", 6.49, 25],
+]
+```
+
+Poderiamos extrair os precos dos produtos da seguinte maneira:
+
+```python
+precos = []
+
+for produto in produtos:
+    precos.append(produto[1])
+    
+
+print(precos)
+# [5.99, 8.49, 4.79, 7.89, 3.99, 2.49, 14.99, 6.49]
+```
+
+Note que temos que criar uma nova lista para armazenar os itens que manipulamos da primeira lista de produtos, é possível fazer isso de maneira mais concisa utilizando **list comprehension**. O código permanece quase idêntico, mas é reduzido a uma única linha:
 
 ```python
 precos = [produto[1] for produto in produtos]
 ```
 
 Criamos novamente a lista vazia de preços, mas agora com list comprehension, extraindo os dados da coluna 1 dos preços.
-
-```python
-precos = [produto[1] for produto in produtos]
-soma_precos = sum(precos)
-soma_precos
-```
-
-> ```
-> 55.120000000000005
-> ```
-
-A soma dos preços continua sendo realizada da mesma maneira que anteriormente. Executamos a célula com "Shift + Enter" e obtemos o mesmo resultado.
 
 ```python
 soma_precos = sum([produto[1] for produto in produtos])
@@ -1614,7 +1632,9 @@ status_estoque = [
 ]
 ```
 
-Escrevemos o nome do produto, que está na coluna zero (produto[0]), e em seguida aplicamos um list comprehension com uma regra utilizando if/else. A lista `status_estoque` verifica se a quantidade é menor que 20, considerando o estoque como baixo, ou, caso contrário, como "ok". Em seguida, percorremos cada produto na lista para gerar a lista `status_estoque` dessa maneira.
+Escrevemos o nome do produto, que está na coluna zero (produto[0]), e em seguida aplicamos um list comprehension com uma regra utilizando if/else. 
+
+A lista `status_estoque` verifica se a quantidade é menor que 20, considerando o estoque como baixo, ou, caso contrário, como "ok". Em seguida, percorremos cada produto na lista para gerar a lista `status_estoque` dessa maneira.
 
 ```python
 status_estoque
@@ -1650,7 +1670,9 @@ estoque = {
 }
 ```
 
-Criamos um dicionário chamado `estoque`, no qual cada produto é associado a um par chave-valor, sendo que o valor é um dicionário contendo a quantidade e o preço do produto. Podemos aplicar os conceitos de list comprehension por meio de dict comprehension para trabalhar com este dicionário. Executamos a célula.
+Criamos um dicionário chamado `estoque`, no qual cada produto é associado a um par chave-valor, sendo que o valor é um dicionário contendo a quantidade e o preço do produto. 
+
+Podemos aplicar os conceitos de list comprehension por meio de dict comprehension para trabalhar com este dicionário. Executamos a célula.
 
 ```python
 estoque_com_desconto = {
@@ -1674,4 +1696,6 @@ estoque_com_desconto
  'Café': {'quantidade': 5, 'preco': 27.0}}
  ```
 
-Criamos o dicionário `estoque_com_desconto`, aplicando um desconto nos preços superiores a 20. Capturamos o nome do produto (valor do dicionário) e percorremos os produtos no dicionário estoque e atualizamos os preços, aplicando um desconto de 0.9 quando o preço for maior que 20. Em seguida, percorremos os nomes dos produtos no dicionário e os dados no dicionário de estoque utilizando o método `estoque.items()`. Após a execução do código, observamos que o dicionário resultante tem os preços alterados conforme a regra definida.
+Criamos o dicionário `estoque_com_desconto`, aplicando um desconto nos preços superiores a 20. Capturamos o nome do produto (valor do dicionário) e percorremos os produtos no dicionário estoque e atualizamos os preços, aplicando um desconto de 0.9 quando o preço for maior que 20.
+
+ Em seguida, percorremos os nomes dos produtos no dicionário e os dados no dicionário de estoque utilizando o método `estoque.items()`. Após a execução do código, observamos que o dicionário resultante tem os preços alterados conforme a regra definida.
