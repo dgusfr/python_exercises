@@ -21,3 +21,9 @@ Neste código, o `for` loop itera sobre a lista, e `int(t)` é executado para ca
 O `return int(t)` é executado **após o loop ter terminado**. Neste ponto, a variável `t` ainda contém o **último valor da iteração**. Portanto, a função apenas converte e retorna o último item da lista, ignorando todos os anteriores.
 
 A **list comprehension** é uma construção que lida com a iteração, conversão e coleta dos resultados de uma só vez, retornando a lista completa. O seu segundo código é uma sequência de comandos que não armazena os resultados intermediários, retornando apenas o valor do último comando.
+
+-----
+
+
+
+Biblioteca unicode para retirar assento de uma frase 
