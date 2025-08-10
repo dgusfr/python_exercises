@@ -422,7 +422,9 @@ print("\b\b.")
 # Remove a última vírgula e espaço, adiciona um ponto.
 ```
 
-Neste código, `end=" "` no primeiro `print` evita a quebra de linha após "Nomes:". Dentro do laço, `end=", "` imprime cada nome seguido de uma vírgula e um espaço, mantendo o cursor na mesma linha. Ao final, `\b` (backspace) é usado para apagar os dois últimos caracteres (a vírgula e o espaço extras) antes de adicionar um ponto final, resultando em uma lista formatada de maneira limpa: `Nomes: Carlos, Ana, Pedro.`.
+Neste código, `end=" "` no primeiro `print` evita a quebra de linha após "Nomes:". Dentro do laço, `end=", "` imprime cada nome seguido de uma vírgula e um espaço, mantendo o cursor na mesma linha. 
+
+Ao final, `\b` (backspace) é usado para apagar os dois últimos caracteres (a vírgula e o espaço extras) antes de adicionar um ponto final, resultando em uma lista formatada de maneira limpa: `Nomes: Carlos, Ana, Pedro.`.
 
 #### Formatando a Saída com Caracteres de Escape
 
