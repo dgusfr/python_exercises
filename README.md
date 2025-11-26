@@ -18,8 +18,6 @@
   - [9. Funções](#9-funções)
 
 
-
-
 --- 
 
 # Sintaxe Básica
