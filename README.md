@@ -98,20 +98,16 @@ Os tipos básicos em Python incluem:
 
 ## Strings em Python
 
-Strings são sequências de caracteres usadas para representar texto. Em Python, elas são delimitadas por aspas simples (`'`), duplas (`"`) ou triplas (`"""`).
+Strings são sequências de caracteres usadas para representar texto. Em Python, elas são delimitadas por aspas simples (`'`) ou duplas (`"`) para strings de uma única linha e aspas triplas (`"""`) para strings de múltiplas linhas.
 
 ```python
-# Aspas simples ou duplas são usadas para strings de uma única linha.
 mensagem_simples = 'Olá, mundo!'
 mensagem_dupla = "Python é incrível!"
 
-# Aspas triplas permitem criar strings que abrangem múltiplas linhas.
 texto_multilinha = """Essa é uma string
 que pode ter múltiplas
 linhas."""
 ```
-
-A escolha entre aspas simples e duplas é uma questão de preferência, mas aspas triplas são especificamente úteis para textos longos com quebras de linha.
 
 -----
 
