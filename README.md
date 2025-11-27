@@ -85,7 +85,7 @@ b = 5
 
 Nesse caso, `a` e `b` apontam para o mesmo local na memória, pois o valor é idêntico e imutável (inteiros são imutáveis em Python).
 
----
+----
 
 # Tipos de Dados
 
