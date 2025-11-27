@@ -16,7 +16,7 @@ Saída: Erro: O CPF deve ter exatamente 11 dígitos.
 
 
 def validar_cpf():
-    cpf = input("Digite seu CPF (Sem pontos e traços): ")
+    cpf = input("Digite seu CPF: ")
     if not cpf.isdigit():
         return "Erro: O CPF deve conter apenas números."
     if len(cpf) != 11:
