@@ -1696,11 +1696,3 @@ Criamos o dicionário `estoque_com_desconto`, aplicando um desconto nos preços 
  Em seguida, percorremos os nomes dos produtos no dicionário e os dados no dicionário de estoque utilizando o método `estoque.items()`. Após a execução do código, observamos que o dicionário resultante tem os preços alterados conforme a regra definida.
 
 
-
-
-
-
-
-
-
-
