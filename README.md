@@ -1697,3 +1697,6 @@ Criamos o dicionário `estoque_com_desconto`, aplicando um desconto nos preços 
 
 
 
+
+
+
